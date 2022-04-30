@@ -1,0 +1,70 @@
+Judul
+Gambar
+id menu
+nama menu
+
+
+Data Master
+- Data Peserta Didik Baru
+- Data Orang Tua / Wali
+- Data Alamat
+- Data Sekolah
+
+- Data Panitia PPDB
+- Data Kepala Sekolah
+
+
+flow ada 8 
+1. Pengelolaan Data Master PPDB
+2. Pendaftaran Penerimaan Peserta Didik Baru (PPDB)
+3. login Penerimaan Peserta Didik Baru (PPDB)
+4. Menyetujui Pendaftaran PPDB
+5. Upload Bukti Pembayaran PPDB
+6. Cetak Bukti Pendaftaran PPDB
+7. Cetak Bukti Pembayaran PPDB
+8. Laporan PPDB
+
+detail proses 
+====================================================
+1. Pengelolaan Data Master PPDB
+login -> menu utama -> menu kelola data -> sub menu peserta didik baru -> crud
+login -> menu utama -> menu kelola data -> sub menu panitia ppdb -> crud
+login -> menu utama -> menu kelola data -> sub menu data kepala sekolah -> crud
+all -> logout
+====================================================
+2. Pendaftaran Penerimaan Peserta Didik Baru (PPDB)
+persetujuan ketentuan -> isi formulir -> upload document (bisa di edit) -> username pass -> login -> logout
+====================================================
+3. login Penerimaan Peserta Didik Baru (PPDB)
+login -> (else) alert "username atau password salah" 
+login -> (if) masuk menu utama
+====================================================
+4. Menyetujui Pendaftaran PPDB
+login -> manu utama -> menu pendaftaran -> approval table -> logout
+====================================================
+5. Upload Bukti Pembayaran PPDB
+- peserta didik
+login -> menu utama -> upload bukti pembayaran -> upload bukti pembayaran -> jika ditolak muncul notifikasi pembayaran di tolak & upload ulang bukti pembayaran -> jika di terima muncul notifikasi pembayaran di terima 
+- panitia
+login -> menu utama -> menu verifikasi pembayaran -> di tolak / di terima
+====================================================
+6. Cetak Bukti Pendaftaran PPDB
+login -> menu utama -> cetak buku pendaftaran -> tombol bukti pendaftaran -> simpan pdf -> logout
+====================================================
+7. Cetak Bukti Pembayaran PPDB
+login -> menu utama -> menu cetak peserta didik baru -> tombol cetak bukti pendaftaran -> simpan pdf -> logout
+====================================================
+8. Laporan PPDB
+login -> menu utama -> menu laporan -> sub menu laporan - peserta didik baru -> klik tombok cetak laporan -> unduh pdf -> logout
+====================================================
+
+
+hirarki menu 
+Menu utama
+kelola data -> peserta didik baru, panitia ppdb, kepala sekolah
+pendaftaran
+bukti pembayaran
+verifikasi pembayaran
+cetak buku pendaftaran
+cetak peserta didik baru
+laporan -> peserta didik baru
