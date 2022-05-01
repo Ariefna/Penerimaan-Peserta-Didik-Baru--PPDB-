@@ -82,19 +82,37 @@ Table Database
 View
 ====
 login
-Menu utama
-kelola data -> peserta didik baru
-kelola data -> panitia ppdb
-kelola data -> kepala sekolah
-pendaftaran
-bukti pembayaran
-verifikasi pembayaran
-cetak buku pendaftaran
-cetak peserta didik baru
-laporan -> peserta didik baru
+Menu utama                          | Progress
+kelola data -> peserta didik baru   | Pending
+--------------------------------
+create                          | Pending
+Read                            | Pending
+Delete                          | Pending
+Ubah                            | Pending
+--------------------------------
+kelola data -> panitia ppdb         | Pending
+--------------------------------
+create                          | Pending
+Read                            | Pending
+Delete                          | Pending
+Ubah                            | Pending
+--------------------------------
+kelola data -> kepala sekolah       | Pending
+--------------------------------
+create                          | Pending
+Read                            | Pending
+Delete                          | Pending
+Ubah                            | Pending
+--------------------------------
+pendaftaran                         | Pending
+bukti pembayaran                    | Pending
+verifikasi pembayaran               | Pending  
+cetak buku pendaftaran              | Pending
+cetak peserta didik baru            | Pending
+laporan -> peserta didik baru       | Pending
 ====
 Controller
 ==========
-index.php
+index.php                           | Sudah
 ==========
 
