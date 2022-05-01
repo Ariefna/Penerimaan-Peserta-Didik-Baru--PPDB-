@@ -57,9 +57,8 @@ login -> menu utama -> menu cetak peserta didik baru -> tombol cetak bukti penda
 8. Laporan PPDB
 login -> menu utama -> menu laporan -> sub menu laporan - peserta didik baru -> klik tombok cetak laporan -> unduh pdf -> logout
 ====================================================
-
-
 hirarki menu 
+============
 Menu utama
 kelola data -> peserta didik baru, panitia ppdb, kepala sekolah
 pendaftaran
@@ -68,3 +67,34 @@ verifikasi pembayaran
 cetak buku pendaftaran
 cetak peserta didik baru
 laporan -> peserta didik baru
+====================================================
+tahap pengerjaan ***
+================
+Database
+========
+- Data Peserta Didik Baru
+- Data Orang Tua / Wali
+- Data Alamat
+- Data Sekolah
+- Data Panitia PPDB
+- Data Kepala Sekolah
+========
+View
+====
+login
+Menu utama
+kelola data -> peserta didik baru
+kelola data -> panitia ppdb
+kelola data -> kepala sekolah
+pendaftaran
+bukti pembayaran
+verifikasi pembayaran
+cetak buku pendaftaran
+cetak peserta didik baru
+laporan -> peserta didik baru
+====
+Controller
+==========
+index.php
+==========
+
