@@ -72,12 +72,12 @@ tahap pengerjaan ***
 ================
 Database
 ========
-- Data Peserta Didik Baru
-- Data Orang Tua / Wali
-- Data Alamat
-- Data Sekolah
-- Data Panitia PPDB
-- Data Kepala Sekolah
+- Data Peserta Didik Baru   | Progress
+- Data Orang Tua / Wali     | Progress
+- Data Alamat               | Sudah
+- Data Sekolah              | Progress
+- Data Panitia PPDB         | Progress
+- Data Kepala Sekolah       | Progress
 ========
 View
 ====

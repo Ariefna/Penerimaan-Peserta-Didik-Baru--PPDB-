@@ -1,0 +1,32 @@
+CREATE TABLE Peserta (
+    PesertaID int UNSIGNED NOT NULL PRIMARY KEY,
+    Updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Flag ENUM('Insert','Detele'),
+);
+CREATE TABLE Wali (
+    WaliID int UNSIGNED NOT NULL PRIMARY KEY,
+    Updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Flag ENUM('Insert','Detele'),
+);
+CREATE TABLE Alamat (
+    AlamatID int UNSIGNED NOT NULL PRIMARY KEY,
+    PesertaID int,
+    Provinsi varchar(150),
+    Kabupaten_kota varchar(150),
+    Kecamatan varchar(150),
+    Kode_Pos varchar(150),
+    Alamat varchar(150),
+    Updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Flag ENUM('Insert','Detele'),
+    FOREIGN KEY (PesertaID) REFERENCES Peserta(PesertaID)
+);
+CREATE TABLE Panitia (
+    PanitiaID int UNSIGNED NOT NULL PRIMARY KEY,
+    Updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Flag ENUM('Insert','Detele'),
+);
+CREATE TABLE Kepala_Sekolah (
+    KepalaSekolahID int UNSIGNED NOT NULL PRIMARY KEY,
+    Updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    Flag ENUM('Insert','Detele'),
+);
