@@ -169,6 +169,35 @@
                             </a>
                         </li>
                         <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
+                                <p>
+                                    Master
+                                    <i class="fas fa-angle-left right"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="?page=master_peserta" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Peserta</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?page=master_panitia" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Panitia</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="?page=master_KepalaSekolah" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Kepala Sekolah</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
                             <a href="pages/gallery.html" class="nav-link">
                                 <i class="nav-icon far fa-image"></i>
                                 <p>Pendaftaran</p>

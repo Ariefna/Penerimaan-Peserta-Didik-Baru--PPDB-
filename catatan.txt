@@ -68,6 +68,10 @@ cetak buku pendaftaran
 cetak peserta didik baru
 laporan -> peserta didik baru
 ====================================================
+start project linux
+===================
+php -S localhost:8000
+===================
 tahap pengerjaan ***
 ================
 Table Database
@@ -85,10 +89,10 @@ login
 Menu utama                          | Progress
 kelola data -> peserta didik baru   | Pending
 --------------------------------
-create                          | Pending
-Read                            | Pending
+create                          | Progress
+Read                            | Progress
 Delete                          | Pending
-Ubah                            | Pending
+Ubah                            | Progress
 --------------------------------
 kelola data -> panitia ppdb         | Pending
 --------------------------------
