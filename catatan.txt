@@ -70,7 +70,7 @@ laporan -> peserta didik baru
 ====================================================
 tahap pengerjaan ***
 ================
-Database
+Table Database
 ========
 - Data Peserta Didik Baru   | Progress
 - Data Orang Tua / Wali     | Progress
