@@ -109,14 +109,18 @@ Delete                          | Pending
 Ubah                            | Pending
 --------------------------------
 pendaftaran                         | Pending
+verifikasi pendaftaran              | Pending  
 bukti pembayaran                    | Pending
 verifikasi pembayaran               | Pending  
-cetak buku pendaftaran              | Pending
+cetak Bukti pendaftaran             | Pending
+cetak Bukti pembayaran              | Pending
 cetak peserta didik baru            | Pending
 laporan -> peserta didik baru       | Pending
 ====
 Controller
 ==========
 index.php                           | Sudah
+==========
+Dashboard
 ==========
 
