@@ -6,62 +6,155 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h3 class="card-title">Data Master Peserta</h3>
+                        <h4>Data Siswa</h4>
+
+                        <div class="card-header-action">
+                            <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a>
+                            <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
+                                <i class="far fa-edit"></i> Tambah Data
+                            </button>
+                            <button type="button" class="btn btn-primary m-b-5" data-toggle="modal" data-target="#importdata"><i class="sidebar-item-icon fa fa-upload"></i>
+                                Import Data
+                            </button>&nbsp;
+                            <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
+                                <i class="fa fa-trash"></i> Hapus Data
+                            </button>
+
+                        </div>
+
                     </div>
-                    <!-- /.card-header -->
+
                     <div class="card-body">
-                        <table id="example2" class="table table-bordered table-hover">
-                            <thead>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Delivery Order</th>
-                                    <th>Kode Pelanggan</th>
-                                    <th>Tanggal</th>
-                                    <th>Jumlah Pengiriman</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php
-                                $query = "SELECT a.id_sj, kode_sj,kodepl, DATE_FORMAT(tanggal, '%d %M %Y') as tanggal, status, sum(qty) FROM table_sj_detail a join table_sj b on a.id_sj = b.id_sj join table_kodesj c on a.id_sj = c.id_sj group by kode_sj order by id_sj desc";
-                                $result = mysqli_query($conn, $query);
-                                $i = 1;
-                                while ($rows = mysqli_fetch_array($result)) {
-                                    echo '<tr>
-											<td align="center">' . $i . '</td>
-											<td align="center">' . $rows['kode_sj'] . '</td>
-											<td align="center">' . $rows['kodepl'] . '</td>
-											<td align="center">' . $rows['tanggal'] . '</td>
-											<td align="center">' . $rows['sum(qty)'] . '</td>
-											<td align="center">' . $sts . '</td>
-											<td class="text-center"><a href="sj.php?kode_sj=' . $rows['kode_sj'] . '" class="btn btn-success btn-sm" target="_blank" style="margin-right:5px" ' . $btn . '>Print</a><a href="?page=createapprovesj&sj=' . $rows['id_sj'] . '" class="btn btn-warning btn-sm">Detail</a></td>
-											</tr>';
-                                    $i++;
-                                }
-                                ?>
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <th>No</th>
-                                    <th>Kode Delivery Order</th>
-                                    <th>Kode Pelanggan</th>
-                                    <th>Tanggal</th>
-                                    <th>Jumlah Pengiriman</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
-                                </tr>
-                            </tfoot>
-                        </table>
+                        <div class="table-responsive">
+                            <table style="font-size: 12px" class="table table-striped table-sm" id="table-1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            No
+                                        </th>
+                                        <th>NISN</th>
+                                        <th>Password</th>
+                                        <th>Nama Siswa</th>
+                                        <th>L/P</th>
+                                        <th>TTL</th>
+                                        <th>Kelas</th>
+                                        <th>Status</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query = mysqli_query($koneksi, "select * from siswa WHERE status='1'");
+                                    $no = 0;
+                                    while ($siswa = mysqli_fetch_array($query)) {
+                                        $no++;
+                                    ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $siswa['nisn'] ?></td>
+                                            <td><?= $siswa['password'] ?></td>
+                                            <td><?= $siswa['nama_siswa'] ?></td>
+                                            <td><?= $siswa['jk'] ?></td>
+                                            <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
+                                            <td><?= $siswa['kelas'] ?></td>
+
+                                            <td>
+                                                <?php if ($siswa['status'] == 1) { ?>
+                                                    <span class="badge badge-success">Aktif</span>
+                                                <?php } elseif ($siswa['status'] == 2) { ?>
+                                                    <span class="badge badge-danger">Mutasi </span>
+                                                <?php } else { ?>
+                                                    <span class="badge badge-warning">DO/Keluar</span>
+                                                <?php } ?>
+                                            </td>
+                                            <td>
+                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?pg=ubahsiswa&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
+                                                <!-- Button trigger modal -->
+                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
+                                                    <i class="fas fa-user    "></i>
+                                                </button>
+                                                <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
+                                                <!-- Modal -->
+                                                <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <form id="form-edit<?= $no ?>">
+                                                                <div class="modal-header">
+                                                                    <h5 class="modal-title">Ubah Status Siswa</h5>
+                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                        <span aria-hidden="true">&times;</span>
+                                                                    </button>
+                                                                </div>
+                                                                <div class="modal-body">
+
+                                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
+
+                                                                    <div class="form-group">
+                                                                        <div class="control-label">Pilih Status</div>
+                                                                        <div class="custom-switches-stacked mt-2">
+                                                                            <label class="custom-switch">
+                                                                                <input type="radio" name="status" value="1" class="custom-switch-input" checked>
+                                                                                <span class="custom-switch-indicator"></span>
+                                                                                <span class="custom-switch-description">Aktif</span>
+                                                                            </label>
+                                                                            <label class="custom-switch">
+                                                                                <input type="radio" name="status" value="2" class="custom-switch-input">
+                                                                                <span class="custom-switch-indicator"></span>
+                                                                                <span class="custom-switch-description">Mutasi</span>
+                                                                            </label>
+                                                                            <label class="custom-switch">
+                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
+                                                                                <span class="custom-switch-indicator"></span>
+                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
+                                                                            </label>
+
+
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn btn-primary">Save</button>
+                                                                    </div>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <script>
+                                            $('#form-edit<?= $no ?>').submit(function(e) {
+                                                e.preventDefault();
+                                                $.ajax({
+                                                    type: 'POST',
+                                                    url: 'admin/mod_siswa/crud_siswa.php?pg=status',
+                                                    data: $(this).serialize(),
+                                                    success: function(data) {
+
+                                                        iziToast.success({
+                                                            title: 'OKee!',
+                                                            message: 'Status Berhasil diubah',
+                                                            position: 'topRight'
+                                                        });
+                                                        setTimeout(function() {
+                                                            window.location.reload();
+                                                        }, 2000);
+                                                        $('#modal-edit<?= $no ?>').modal('hide');
+                                                        //$('#bodyreset').load(location.href + ' #bodyreset');
+                                                    }
+                                                });
+                                                return false;
+                                            });
+                                        </script>
+                                    <?php }
+                                    ?>
+
+
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
-                    <!-- /.card-body -->
                 </div>
-                <!-- /.card -->
-
-
-                <!-- /.card -->
             </div>
-            <!-- /.col -->
         </div>
     </div>
     <!-- /.container-fluid -->
