@@ -82,7 +82,7 @@
                         e.preventDefault();
                         $.ajax({
                             type: 'post',
-                            url: 'admin/mod_setting/crud_setting.php?pg=ubah',
+                            url: 'model/json/admin/mod_setting/crud_setting.php?pg=ubah',
                             data: new FormData(this),
                             processData: false,
                             contentType: false,

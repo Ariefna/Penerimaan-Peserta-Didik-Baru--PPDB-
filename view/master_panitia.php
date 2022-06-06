@@ -6,7 +6,7 @@
             <div class='col-md-8'>
                 <div class='box box-solid'>
                     <div class='box-header'>
-                        <h3 class='box-title'><img src='../assets/manajemen_user.svg' width='20'> Manajemen User</h3>
+                        <h3 class='box-title'><i class="fa fa-user" aria-hidden="true"></i> Manajemen User</h3>
                     </div><!-- /.box-header -->
                     <div class='box-body'>
                         <div class='table-responsive'>
@@ -42,7 +42,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <button data-id="<?= $user['id_user'] ?>" class="hapus btn btn-danger btn-sm"><i class="fas fa-trash-alt    "></i> Hapus</button>
+                                                <button data-id="<?= $user['id_user'] ?>" class="hapus btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i> Hapus</button>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                                     <i class="fas fa-edit    "></i> Edit
@@ -107,7 +107,7 @@
                                                 e.preventDefault();
                                                 $.ajax({
                                                     type: 'POST',
-                                                    url: 'admin/mod_user/crud_user.php?pg=ubah',
+                                                    url: 'model/json/admin/mod_user/crud_user.php?pg=ubah',
                                                     data: $(this).serialize(),
                                                     success: function(data) {
                                                         if (data == 'OK') {
@@ -127,8 +127,6 @@
                                                                 position: 'topRight'
                                                             });
                                                         }
-
-                                                        //$('#bodyreset').load(location.href + ' #bodyreset');
                                                     }
                                                 });
                                                 return false;
@@ -168,10 +166,8 @@
                                 <select class="form-control" name="level" id="level" required>
                                     <option value="">Pilih Level</option>
                                     <option value="admin">Administrator</option>
-
                                 </select>
                             </div>
-
                             <div class='form-group'>
                                 <div class='row'>
                                     <div class='col-md-12'>
@@ -188,3 +184,74 @@
         </div>
     </div>
 </section>
+<script>
+    $(function() {
+        $("#txtConfirmPassword").keyup(function() {
+            var password = $("#txtNewPassword").val();
+            $("#divCheckPasswordMatch").html(password == $(this).val() ? "Passwords match." : "Passwords do not match!");
+        });
+
+    });
+    $('#form-tambah').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'model/json/admin/mod_user/crud_user.php?pg=tambah',
+            data: $(this).serialize(),
+            success: function(data) {
+                if (data == 'OK') {
+                    iziToast.success({
+                        title: 'Mantap!',
+                        message: 'Data Berhasil ditambahkan',
+                        position: 'topRight'
+                    });
+                    setTimeout(function() {
+                        window.location.reload();
+                    }, 2000);
+                    $('#tambahdata').modal('hide');
+                } else {
+                    iziToast.error({
+                        title: 'Maaf!',
+                        message: 'Data Gagal ditambahkan atau username sudah ada',
+                        position: 'topRight'
+                    });
+                }
+                //$('#bodyreset').load(location.href + ' #bodyreset');
+            }
+        });
+        return false;
+    });
+
+    $('#table-1').on('click', '.hapus', function() {
+        var id = $(this).data('id');
+        // console.log(id);
+        swal({
+            title: 'Are you sure?',
+            text: 'Akan menghapus data ini!',
+            icon: 'warning',
+            buttons: true,
+            dangerMode: true,
+        }).then((result) => {
+            if (result) {
+                $.ajax({
+                    url: 'model/json/admin/mod_user/crud_user.php?pg=hapus',
+                    method: "POST",
+                    data: 'id_user=' + id,
+                    success: function(data) {
+
+                        iziToast.success({
+                            title: 'Horee!',
+                            message: 'Data Berhasil dihapus',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+
+                    }
+                });
+            }
+        })
+
+    });
+</script>

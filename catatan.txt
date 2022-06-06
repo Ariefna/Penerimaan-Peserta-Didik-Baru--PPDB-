@@ -76,12 +76,12 @@ tahap pengerjaan ***
 ================
 Table Database
 ========
-- Data Peserta Didik Baru   | Progress
-- Data Orang Tua / Wali     | Progress
-- Data Alamat               | Sudah
-- Data Sekolah              | Progress
-- Data Panitia PPDB         | Progress
-- Data Kepala Sekolah       | Progress
+- Data Peserta Didik Baru           | Progress
+- Data Orang Tua / Wali             | Progress
+- Data Alamat                       | Sudah
+- Data Sekolah                      | Progress
+- Data Panitia PPDB                 | Progress
+- Data Kepala Sekolah               | Progress
 ========
 View
 ====
@@ -89,24 +89,24 @@ login
 Menu utama                          | Progress
 kelola data -> peserta didik baru   | Pending
 --------------------------------
-create                          | Progress
-Read                            | Progress
-Delete                          | Pending
-Ubah                            | Progress
+create                              | Progress
+Read                                | Progress
+Delete                              | Pending
+Ubah                                | Progress
 --------------------------------
 kelola data -> panitia ppdb         | Pending
 --------------------------------
-create                          | Pending
-Read                            | Pending
-Delete                          | Pending
-Ubah                            | Pending
+create                              | Pending
+Read                                | Pending
+Delete                              | Pending
+Ubah                                | Pending
 --------------------------------
 kelola data -> kepala sekolah       | Pending
 --------------------------------
-create                          | Pending
-Read                            | Pending
-Delete                          | Pending
-Ubah                            | Pending
+create                              | Pending
+Read                                | Pending
+Delete                              | Pending
+Ubah                                | Pending
 --------------------------------
 pendaftaran                         | Pending
 verifikasi pendaftaran              | Pending  

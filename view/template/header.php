@@ -26,6 +26,17 @@
     <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css" />
     <!-- summernote -->
     <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css" />
+
+
+    <!-- CSS TOASTR -->
+    <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="../assets/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/modules/summernote/summernote-bs4.css">
+
+
+    <!-- JS Libraies -->
+    <script src="../assets/modules/jquery.min.js"></script>
+    <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
 </head>
 
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -259,7 +270,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1 class="m-0">ISI</h1>
+                            <h1 class="m-0"></h1>
                         </div>
                         <!-- /.col -->
                         <div class="col-sm-6">

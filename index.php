@@ -1,8 +1,9 @@
 <!-- start koneksi -->
 <?php include 'model/koneksi.php'; ?>
+<?php include 'model/json/config/function.php'; ?>
 <?php
-$waktu = getdate();
-$waktu2 = date("Y-m-d H:i:s");
+// $waktu = getdate();
+// $waktu2 = date("Y-m-d H:i:s");
 session_start();
 if (!isset($_SESSION['nama'])) {
 ?>

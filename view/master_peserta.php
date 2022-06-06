@@ -9,13 +9,13 @@
                         <h4>Data Siswa</h4>
 
                         <div class="card-header-action">
-                            <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a>
+                            <!-- <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a> -->
                             <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
                                 <i class="far fa-edit"></i> Tambah Data
                             </button>
-                            <button type="button" class="btn btn-primary m-b-5" data-toggle="modal" data-target="#importdata"><i class="sidebar-item-icon fa fa-upload"></i>
+                            <!-- <button type="button" class="btn btn-primary m-b-5" data-toggle="modal" data-target="#importdata"><i class="sidebar-item-icon fa fa-upload"></i>
                                 Import Data
-                            </button>&nbsp;
+                            </button>&nbsp; -->
                             <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
                                 <i class="fa fa-trash"></i> Hapus Data
                             </button>
@@ -44,7 +44,7 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = mysqli_query($koneksi, "select * from siswa WHERE status='1'");
+                                    $query = mysqli_query($koneksi, "select * from siswa order by status");
                                     $no = 0;
                                     while ($siswa = mysqli_fetch_array($query)) {
                                         $no++;
@@ -68,7 +68,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?pg=ubahsiswa&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                                     <i class="fas fa-user    "></i>
@@ -126,7 +126,7 @@
                                                 e.preventDefault();
                                                 $.ajax({
                                                     type: 'POST',
-                                                    url: 'admin/mod_siswa/crud_siswa.php?pg=status',
+                                                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=status',
                                                     data: $(this).serialize(),
                                                     success: function(data) {
 
@@ -160,3 +160,116 @@
     <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+<!-- Modal -->
+<div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="form-tambah">
+                <div class="modal-header">
+                    <h5 class="modal-title">Tambah Data Siswa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label>NISN</label>
+                        <input type="text" name="nisn" class="form-control nisn" required="">
+                    </div>
+                    <div class="form-group">
+                        <label>Nama Siswa</label>
+                        <input type="text" name="nama" class="form-control" required="">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="kelas">Kelas</label>
+                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" required>
+                            <option value="">Pilih kelas</option>
+                            <?php
+                            $query = mysqli_query($koneksi, "select * from kelas where status='1'");
+                            while ($kelas = mysqli_fetch_array($query)) {
+                            ?>
+                                <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
+                            <?php } ?>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="jurusan">Pilihan Jurusan</label>
+                        <select class="form-control" name="jurusan" id="jurusan" required>
+                            <option value="">Pilih Jurusan</option>
+                            <?php
+                            $query = mysqli_query($koneksi, "select * from jurusan where status='1'");
+                            while ($jurusan = mysqli_fetch_array($query)) {
+                            ?>
+                                <option value="<?= $jurusan['nama_jurusan'] ?>"><?= $jurusan['nama_jurusan'] ?></option>
+                            <?php } ?>
+
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="text" name="password" class="form-control password" required="">
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="hapusdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="form-konfirmasi">
+                <div class="modal-header">
+                    <h5 class="modal-title">Hapus Data Siswa</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+
+                    Terdapat <b><?= rowcount($koneksi, 'siswa') ?></b> Jumlah data Siswa Akan Di Hapus.
+
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Hapus Semua</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="importdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form id="form-import">
+                <div class="modal-header">
+                    <h5 class="modal-title">Import Data</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <label for="file">Import File Excel</label>
+                        <input type="file" class="form-control-file" name="file" id="file" placeholder="" aria-describedby="helpfile" required>
+                        <small id="helpfile" class="form-text text-muted">File harus .xls</small>
+                    </div>
+
+                    <p><a href="template_excel/importsiswa.xls">Download Format</a></p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-primary">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
