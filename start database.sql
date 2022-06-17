@@ -177,6 +177,8 @@ CREATE TABLE `siswa` (
   `jurusan` varchar(256) DEFAULT NULL,
   `file_kip` varchar(256) DEFAULT NULL,
   `file_kk` varchar(256) DEFAULT NULL,
+  `file_pembayaran` varchar(256) DEFAULT NULL,
+  `status_pay` int(1) DEFAULT 0,
   `file_ijazah` varchar(256) DEFAULT NULL,
   `file_akte` varchar(256) DEFAULT NULL,
   `file_shun` varchar(256) DEFAULT NULL,
