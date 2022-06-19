@@ -11,20 +11,6 @@ CREATE TABLE `jenis` (
   PRIMARY KEY (id_jenis)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `jurusan` (
-  `id_jurusan` varchar(50) NOT NULL,
-  `nama_jurusan` varchar(100) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL,
-  PRIMARY KEY (id_jurusan)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
-CREATE TABLE `kelas` (
-  `id_kelas` varchar(50) NOT NULL,
-  `nama_kelas` varchar(100) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL,
-  PRIMARY KEY (id_kelas)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 CREATE TABLE `kontak` (
   `id_kontak`int(11) NOT NULL AUTO_INCREMENT,
   `nama_kontak` varchar(50) DEFAULT NULL,
@@ -86,7 +72,6 @@ CREATE TABLE wilayah (
 
 CREATE TABLE siswa (
   `id_siswa` int NOT NULL,
-  `kelas` varchar(50) DEFAULT NULL,
   `nama_siswa` varchar(50) NOT NULL,
   `nisn` varchar(10) NOT NULL,
   `nis` varchar(50) DEFAULT NULL,
@@ -184,7 +169,6 @@ CREATE TABLE siswa (
   `alamat_wali` varchar(50) DEFAULT NULL,
   `kodepos_wali` varchar(50) DEFAULT NULL,
   `foto` varchar(128) NOT NULL,
-  `jurusan` varchar(50) DEFAULT NULL,
   `file_kip` varchar(50) DEFAULT NULL,
   `file_kk` varchar(50) DEFAULT NULL,
   `file_pembayaran` varchar(50) DEFAULT NULL,
