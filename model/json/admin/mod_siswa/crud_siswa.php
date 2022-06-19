@@ -276,8 +276,7 @@ if ($pg == 'import') {
                 $pekerjaan_wali = $data->val($i, 70);
                 $penghasilan_wali = $data->val($i, 71);
                 $no_hp_wali = addslashes($data->val($i, 72));
-                $tgl_siswa = $data->val($i, 73);;
-                $kelas = $data->val($i, 74);
+                $tgl_siswa = $data->val($i, 73);
                 $password = $data->val($i, 75);
 
                 if ($nama_siswa <> "") {
@@ -355,7 +354,6 @@ if ($pg == 'import') {
                         'penghasilan_wali' => $penghasilan_wali,
                         'no_hp_wali' => $no_hp_wali,
                         'tgl_siswa' => $tgl_siswa,
-                        'kelas' => $kelas,
                         'password' => $password,
                         'status' => 1
                     ];
@@ -382,7 +380,6 @@ if ($pg == 'tambah') {
 
             'nisn' => $_POST['nisn'],
             'nama_siswa' => ucwords(strtolower($nama)),
-            'kelas' => $_POST['kelas'],
             'jurusan' => $_POST['jurusan'],
             'password' => $_POST['password'],
             'status' => '1',

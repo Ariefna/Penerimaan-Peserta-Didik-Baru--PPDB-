@@ -20,7 +20,6 @@
                                         <th>Nama Siswa</th>
                                         <th>L/P</th>
                                         <th>TTL</th>
-                                        <th>Kelas</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -39,7 +38,6 @@
                                             <td><?= $siswa['nama_siswa'] ?></td>
                                             <td><?= $siswa['jk'] ?></td>
                                             <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
-                                            <td><?= $siswa['kelas'] ?></td>
 
                                             <td>
                                                 <?php if ($siswa['status_pay'] == 0) { ?>

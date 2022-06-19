@@ -37,7 +37,6 @@
                                         <th>Nama Siswa</th>
                                         <th>L/P</th>
                                         <th>TTL</th>
-                                        <th>Kelas</th>
                                         <th>Status</th>
                                         <th>Action</th>
                                     </tr>
@@ -56,7 +55,6 @@
                                             <td><?= $siswa['nama_siswa'] ?></td>
                                             <td><?= $siswa['jk'] ?></td>
                                             <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
-                                            <td><?= $siswa['kelas'] ?></td>
 
                                             <td>
                                                 <?php if ($siswa['status'] == 1) { ?>
@@ -210,33 +208,6 @@
                     <div class="form-group">
                         <label>Nama Siswa</label>
                         <input type="text" name="nama" class="form-control" required="">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="kelas">Kelas</label>
-                        <select class="form-control" style="width: 100%" name="kelas" id="kelas" required>
-                            <option value="">Pilih kelas</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from kelas where status='1'");
-                            while ($kelas = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $kelas['nama_kelas'] ?>"><?= $kelas['nama_kelas'] ?></option>
-                            <?php } ?>
-
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="jurusan">Pilihan Jurusan</label>
-                        <select class="form-control" name="jurusan" id="jurusan" required>
-                            <option value="">Pilih Jurusan</option>
-                            <?php
-                            $query = mysqli_query($koneksi, "select * from jurusan where status='1'");
-                            while ($jurusan = mysqli_fetch_array($query)) {
-                            ?>
-                                <option value="<?= $jurusan['nama_jurusan'] ?>"><?= $jurusan['nama_jurusan'] ?></option>
-                            <?php } ?>
-
-                        </select>
                     </div>
                     <div class="form-group">
                         <label>Password</label>

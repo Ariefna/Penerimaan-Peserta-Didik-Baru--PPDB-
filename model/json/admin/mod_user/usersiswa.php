@@ -23,7 +23,6 @@
                                 <th>Nama Siswa</th>
                                 <th>Username</th>
                                 <th>Password</th>
-                                <th>Kelas</th>
                                 <th>Status</th>
                                 <th>Action</th>
                             </tr>
@@ -40,7 +39,6 @@
                                     <td><?= $siswa['nama'] ?></td>
                                     <td><?= $siswa['nisn'] ?></td>
                                     <td><?= $siswa['password'] ?></td>
-                                    <td><?= $siswa['kelas'] ?></td>
                                     <td>
                                         <?php if ($siswa['status'] == 1) { ?>
                                             <span class="badge badge-success">Aktif</span>
