@@ -289,7 +289,7 @@
 
                 $('#importdata').modal('hide');
                 iziToast.success({
-                    title: 'Mantap!',
+                    title: 'berhasil!',
                     message: data,
                     position: 'topRight'
                 });

@@ -197,7 +197,7 @@
                 success: function(data) {
 
                     iziToast.success({
-                        title: 'Mantap!',
+                        title: 'berhasil!',
                         message: 'Data Berhasil ditambahkan',
                         position: 'topRight'
                     });

@@ -1,45 +1,8 @@
 <?php
-if (isset($_POST['username'])) {
-    $username = htmlentities((trim($_POST['username'])));
-    $password = htmlentities(md5($_POST['password']));
-    $login = mysqli_query($conn, "select * from tabel_admin where username='$username' and password='$password'");
-    $cek_login = mysqli_num_rows($login);
-    if (empty($cek_login)) {
-?>
-        <script language="javascript">
-            alert("Username atau password salah");
-        </script>
-    <?php
-    } else {
-        while ($row = mysqli_fetch_array($login)) {
-            $id_admin = $row['id_admin'];
-            $nama = $row['nama'];
-            $_SESSION['id_admin'] = $id_admin;
-            if ($nama == "kacab") {
-                $_SESSION['rule'] = "kacab";
-            } elseif ($nama == "keuangan") {
-                $_SESSION['rule'] = "keuangan";
-            }
-        }
-    ?>
-        <script language="javascript">
-            document.location.href = "?page=utama";
-        </script>
-    <?php
-    }
-} else {
-    // unset($_POST['username']);
-    ?>
-    <script language="javascript">
-        document.location.href = "?page=utama";
-    </script>
-<?php
-
+if (isset($_GET['page'])) {
+    header('Location: index.php');
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -56,6 +19,14 @@ if (isset($_POST['username'])) {
     <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+
+    <!-- CSS TOASTR -->
+    <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="../assets/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../assets/modules/summernote/summernote-bs4.css">
+    <script src="dist/js/demo.js"></script>
+    <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition login-page">
@@ -68,9 +39,9 @@ if (isset($_POST['username'])) {
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Sign in to start your session</p>
 
-                <form action="" method="post">
+                <form id="form-login" action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -78,7 +49,7 @@ if (isset($_POST['username'])) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -98,6 +69,9 @@ if (isset($_POST['username'])) {
                         <div class="col-4">
                             <button type="submit" class="btn btn-primary btn-block">Sign In</button>
                         </div>
+                        <div class="col-12 mt-3">
+                            <a class="btn btn-warning text-white btn-block" data-toggle="modal" data-target="#tambahdata">Register</a>
+                        </div>
                         <!-- /.col -->
                     </div>
                 </form>
@@ -112,6 +86,41 @@ if (isset($_POST['username'])) {
     </div>
     <!-- /.login-box -->
 
+    <!-- modal register -->
+    <div class="modal fade" id="tambahdata" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="form-tambah">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Registrasi Peserta</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label>NISN</label>
+                            <input type="text" name="nisn" class="form-control nisn" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Nama Siswa</label>
+                            <input type="text" name="nama" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Password</label>
+                            <input type="text" name="password" class="form-control password" required="">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <!-- jQuery -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
@@ -121,6 +130,81 @@ if (isset($_POST['username'])) {
 
 
     <script>
+        $('#form-tambah').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=tambah',
+                data: $(this).serialize(),
+                beforeSend: function() {
+                    $('form button').on("click", function(e) {
+                        e.preventDefault();
+                    });
+                },
+                success: function(data) {
+                    if (data == 'OK') {
+                        iziToast.success({
+                            title: 'Jos . . .',
+                            message: 'data siswa berhasil disimpan',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            document.location.href = "?page=utama";
+                        }, 2000);
+                    } else {
+                        iziToast.error({
+                            title: 'Salah . . .',
+                            message: data,
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    }
+
+                    $('#tambahdata').modal('hide');
+                }
+            });
+            return false;
+        });
+        $('#form-login').submit(function(e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'model/json/login.php',
+                data: $(this).serialize(),
+                beforeSend: function() {
+                    $('form button').on("click", function(e) {
+                        e.preventDefault();
+                    });
+                },
+                success: function(data) {
+                    if (data == 'ok') {
+                        iziToast.success({
+                            title: 'Jos . . .',
+                            message: 'Selamat Anda berhasil Masuk',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
+                    } else {
+                        iziToast.error({
+                            title: 'Salah . . .',
+                            message: data,
+                            position: 'topRight'
+                        });
+                        console.log(data)
+                        // setTimeout(function() {
+                        //     window.location.reload();
+                        // }, 2000);
+                    }
+
+                    $('#tambahdata').modal('hide');
+                }
+            });
+            return false;
+        });
         $(".toggle-password").click(function() {
             var input = $($(this).attr("toggle"));
             $(this).toggleClass("fa-eye fa-eye-slash");

@@ -241,7 +241,7 @@
                 success: function(data) {
                     if (data == 'OK') {
                         iziToast.success({
-                            title: 'Mantap!',
+                            title: 'berhasil!',
                             message: 'Data Berhasil ditambahkan',
                             position: 'topRight'
                         });

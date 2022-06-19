@@ -5,7 +5,7 @@
 // $waktu = getdate();
 // $waktu2 = date("Y-m-d H:i:s");
 session_start();
-if (!isset($_SESSION['nama'])) {
+if (isset($_SESSION['nama'])) {
 ?>
     <!-- Model -->
     <?php //include 'model/db.php'; 

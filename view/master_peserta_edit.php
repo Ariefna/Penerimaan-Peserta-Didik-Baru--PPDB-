@@ -304,7 +304,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                         }
                                                                         ?>
                                                                         <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
                                                                         while ($d = mysqli_fetch_array($daerah)) {
                                                                         ?>
 
@@ -808,7 +808,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                         <!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' required>
                                                                         <option value=""><?= $siswa['prov_ayah'] ?></option>
                                                                         <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
                                                                         while ($d = mysqli_fetch_array($daerah)) {
                                                                         ?>
                                                                             <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
@@ -1097,7 +1097,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                         <!--<select class='form-control' id="form_prov_ibu" name='prov_ibu' readonly>
                                                                         <option value=""><?= $siswa['prov_ibu'] ?></option>
                                                                         <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
                                                                         while ($d = mysqli_fetch_array($daerah)) {
                                                                         ?>
                                                                             <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
@@ -1357,7 +1357,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                         <!--<select class='form-control' id="form_prov_wali" name='prov_wali' readonly>
                                                                         <option value=""><?= $siswa['prov_wali'] ?></option>
                                                                         <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah_2020 WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
                                                                         while ($d = mysqli_fetch_array($daerah)) {
                                                                         ?>
                                                                             <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
@@ -2244,7 +2244,7 @@ if (isset($_GET['action']) == 'edit') {
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap!',
+                    title: 'berhasil!',
                     message: data,
                     position: 'topRight'
                 });

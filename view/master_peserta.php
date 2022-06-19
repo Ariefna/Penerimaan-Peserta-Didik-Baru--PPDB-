@@ -26,7 +26,7 @@
 
                     <div class="card-body">
                         <div class="table-responsive">
-                            <table style="font-size: 12px" class="table table-striped table-sm" id="table-1">
+                            <table style="font-size: 16px" class="table table-bordered table-striped" id="table-1">
                                 <thead>
                                     <tr>
                                         <th class="text-center">
@@ -122,6 +122,37 @@
                                             </td>
                                         </tr>
                                         <script>
+                                            $('#table-1').on('click', '.hapus', function() {
+                                                var id = $(this).data('id');
+                                                swal.fire({
+                                                    title: 'Are you sure?',
+                                                    text: "Akan menghapus data ini!",
+                                                    icon: 'warning',
+                                                    showCancelButton: true,
+                                                    confirmButtonColor: '#3085d6',
+                                                    cancelButtonColor: '#d33',
+                                                    confirmButtonText: 'Yes, delete it!'
+                                                }).then((result) => {
+                                                    if (result) {
+                                                        $.ajax({
+                                                            url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=hapus',
+                                                            method: "POST",
+                                                            data: 'id_siswa=' + id,
+                                                            success: function(data) {
+                                                                iziToast.success({
+                                                                    title: 'Yups . . .',
+                                                                    message: 'Data Siswa Berhasil dihapus',
+                                                                    position: 'topRight'
+                                                                });
+                                                                setTimeout(function() {
+                                                                    window.location.reload();
+                                                                }, 2000);
+                                                            }
+                                                        });
+                                                    }
+                                                })
+
+                                            });
                                             $('#form-edit<?= $no ?>').submit(function(e) {
                                                 e.preventDefault();
                                                 $.ajax({
@@ -273,3 +304,63 @@
         </div>
     </div>
 </div>
+<script>
+    $('#form-tambah').submit(function(e) {
+        e.preventDefault();
+        $.ajax({
+            type: 'POST',
+            url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=tambah',
+            data: $(this).serialize(),
+            beforeSend: function() {
+                $('form button').on("click", function(e) {
+                    e.preventDefault();
+                });
+            },
+            success: function(data) {
+
+                iziToast.success({
+                    title: 'Jos . . .',
+                    message: 'data siswa berhasil disimpan',
+                    position: 'topRight'
+                });
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
+                $('#tambahdata').modal('hide');
+                //$('#bodyreset').load(location.href + ' #bodyreset');
+            }
+        });
+        return false;
+    });
+    $('#form-konfirmasi').submit(function(e) {
+        e.preventDefault();
+        swal.fire({
+            title: 'Are you sure?',
+            text: "Akan menghapus data ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result) {
+                $.ajax({
+                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=konfirmasi',
+                    method: "POST",
+                    data: $(this).serialize(),
+                    success: function(data) {
+                        iziToast.success({
+                            title: 'Terimakasih!',
+                            message: 'Data Berhasil di Hapus',
+                            position: 'topRight'
+                        });
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 1000);
+                    }
+                });
+            }
+        })
+
+    });
+</script>

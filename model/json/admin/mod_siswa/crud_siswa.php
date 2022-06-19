@@ -4,9 +4,9 @@ require("../../../koneksi.php");
 require("../../../json/config/functions.crud.php");
 // require("../../config/excel_reader.php");
 session_start();
-// if (!isset($_SESSION['id_user'])) {
-//     die('Anda tidak diijinkan mengakses langsung');
-// }
+if (!isset($_SESSION['id_user']) && $pg != 'tambah') {
+    die('Anda tidak diijinkan mengakses langsung');
+}
 if ($pg == 'simpan') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     $email = str_replace("'", "`", $_POST['email']);
@@ -373,20 +373,35 @@ if ($pg == 'import') {
 }
 
 if ($pg == 'tambah') {
-    $nama = str_replace("'", "`", $_POST['nama']);
-    $data = [
+    $query = mysqli_query($koneksi, "select * from siswa where nisn='" . $_POST['nisn'] . "' and status='1'");
+    $ceklogin = mysqli_num_rows($query);
+    if ($ceklogin == 0) {
 
-        'nisn' => $_POST['nisn'],
-        'nama_siswa' => ucwords(strtolower($nama)),
-        'kelas' => $_POST['kelas'],
-        'jurusan' => $_POST['jurusan'],
-        'password' => $_POST['password'],
-        'status' => '1',
-        'foto' => 'default.png'
+        $nama = str_replace("'", "`", $_POST['nama']);
+        $data = [
 
-    ];
-    $exec = insert($koneksi, 'siswa', $data);
-    echo mysqli_error($koneksi);
+            'nisn' => $_POST['nisn'],
+            'nama_siswa' => ucwords(strtolower($nama)),
+            'kelas' => $_POST['kelas'],
+            'jurusan' => $_POST['jurusan'],
+            'password' => $_POST['password'],
+            'status' => '1',
+            'prov' => '1',
+            'prov_ayah' => '1',
+            'prov_ibu' => '1',
+            'prov_wali' => '1',
+            'foto' => 'default.png'
+
+        ];
+        $exec = insert($koneksi, 'siswa', $data);
+        if ($exec != 'OK') {
+            echo mysqli_error($koneksi);
+        } else {
+            echo $exec;
+        }
+    } else {
+        echo "nisn sudah tersedia";
+    }
 }
 if ($pg == 'hapus') {
     $id_siswa = $_POST['id_siswa'];

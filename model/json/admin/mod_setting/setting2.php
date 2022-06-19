@@ -119,7 +119,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap!',
+                    title: 'berhasil!',
                     message: data,
                     position: 'topRight'
                 });

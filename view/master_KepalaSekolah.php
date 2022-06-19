@@ -93,12 +93,21 @@
                                 });
                             },
                             success: function(data) {
+                                if ("gagal" == data) {
+                                    iziToast.error({
+                                        title: 'Failed',
+                                        message: data,
+                                        position: 'topRight'
+                                    });
+                                } else {
+                                    iziToast.success({
+                                        title: 'berhasil!',
+                                        message: data,
+                                        position: 'topRight'
+                                    });
+                                }
 
-                                iziToast.success({
-                                    title: 'Mantap!',
-                                    message: data,
-                                    position: 'topRight'
-                                });
+
                                 setTimeout(function() {
                                     window.location.reload();
                                 }, 2000);

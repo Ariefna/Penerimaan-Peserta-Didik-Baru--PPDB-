@@ -78,14 +78,14 @@ CREATE TABLE `user` (
 
 
 CREATE TABLE wilayah (
-     `kode` int NOT NULL AUTO_INCREMENT,
+  `kode` int NOT NULL AUTO_INCREMENT,
   `nama` varchar(25) DEFAULT NULL,
   PRIMARY KEY (kode)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE siswa (
-     `id_siswa` int NOT NULL,
+  `id_siswa` int NOT NULL,
   `kelas` varchar(50) DEFAULT NULL,
   `nama_siswa` varchar(50) NOT NULL,
   `nisn` varchar(10) NOT NULL,

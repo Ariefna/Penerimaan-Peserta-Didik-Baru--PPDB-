@@ -1,0 +1,51 @@
+Kebutuhan Pengguna
+- User
+- deskripsi alur
+==================================
+- Upload Bukti Pembayaran
+- Peserta
+- pilih menu Upload bukti pembayaran -> form -> upload -> cetak
+- Sekolah
+- admin
+- pilih menu data sekolah -> tampil data sekolah -> crud
+- Peserta Didik Baru
+- admin
+- pilih menu data peserta ppdb -> tampil data peserta ppdb -> crud
+- Panitia PPDB
+- admin
+- pilih menu data panitia ppdb -> tampil data panitia ppdb -> crud
+- Orang Tua / Wali
+- admin
+- pilih menu data panitia ppdb -> tampil data panitia ppdb -> crud
+- Alamat (alamat siapa?)
+- admin
+- pilih menu data alamat -> tampil data alamat -> crud
+- Pendaftaran Peserta Didik Baru
+- peserta
+- menu daftar -> form peserta didik baru -> cetak
+- Upload Bukti Pembayaran
+- kepala sekolah
+- menu laporan -> cetak laporan
+- Dashboard
+- kepala sekolah
+- menu Dashboard -> tampilkan data
+- Pendaftaran Peserta Didik Baru
+- panitia ppdb
+- halaman Pendaftaran -> menampilkan form data pembayaran peserta didik baru
+
+
+catatan baru
+
+menu
+==================================
+master peserta              selesai
+master panitia              selesai
+master kepala sekolah       selesai
+pendaftaran                 selesai
+document pendaftaran        progress
+bukti pembayaran            panding
+verikasi pembayaran         panding
+cetak buku pendaftaran      panding
+cetak peserta didik baru    panding
+laporan peserta didik baru  panding
+

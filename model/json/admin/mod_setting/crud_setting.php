@@ -20,68 +20,63 @@ if ($pg == 'SIDADIKon') {
         'SIDADIK' => 1
     ];
     $where = [
-         'id_setting' => 1
+        'id_setting' => 1
     ];
     update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
+
+    echo "Terimakasih";
 }
 if ($pg == 'SIDADIK1') {
     $data = [
         'SIDADIK' => $_POST['SIDADIK']
-	
+
     ];
-	$where = [
+    $where = [
         'id_setting' => 1
 
     ];
     $exec = update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
 
+    echo "Terimakasih";
 }
 
 
 
 if ($pg == 'ubahSIDADIK') {
     $data = [
-        
+
         'SIDADIK' => $_POST['SIDADIK'],
-        
+
     ];
     $where = [
         'id_setting' => 1
     ];
     $exec = update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
-
-    
 }
 if ($pg == 'live') {
     $data = [
-        
+
         'klikchat' => $_POST['klikchat'],
-		'livechat' => $_POST['livechat'],
-		'nolivechat' => $_POST['nolivechat'],
-        
+        'livechat' => $_POST['livechat'],
+        'nolivechat' => $_POST['nolivechat'],
+
     ];
     $where = [
         'id_setting' => 1
     ];
     $exec = update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
-
-    
 }
 if ($pg == 'ubah') {
     $data = [
-        
+
         'nama_sekolah' => $_POST['nama_sekolah'],
         'nsm' => $_POST['nsm'],
         'npsn' => $_POST['npsn']
-        
+
     ];
     $where = [
         'id_setting' => 1
@@ -96,8 +91,8 @@ if ($pg == 'ubah') {
             $ext = explode('.', $logo);
             $ext = end($ext);
             if (in_array($ext, $ektensi)) {
-                $dest = 'assets/img/logo/logo' . rand(1, 1000) . '.' . $ext;
-                $upload = move_uploaded_file($temp, '../../' . $dest);
+                $dest = 'assets/img/logo' . rand(1, 1000) . '.' . $ext;
+                $upload = move_uploaded_file($temp, '../../../../' . $dest);
                 if ($upload) {
                     $data2 = [
                         'logo' => $dest
@@ -108,13 +103,13 @@ if ($pg == 'ubah') {
                 }
             }
         }
-		if ($_FILES['kop']['name'] <> '') {
+        if ($_FILES['kop']['name'] <> '') {
             $kop = $_FILES['kop']['name'];
             $temp = $_FILES['kop']['tmp_name'];
             $ext = explode('.', $kop);
             $ext = end($ext);
             if (in_array($ext, $ektensi)) {
-                $dest = 'assets/img/kop/kop'  . rand(1, 1000) . '.' . $ext;
+                $dest = 'assets/img/kop'  . rand(1, 1000) . '.' . $ext;
                 $upload = move_uploaded_file($temp, '../../' . $dest);
                 if ($upload) {
                     $data2 = [
@@ -126,7 +121,7 @@ if ($pg == 'ubah') {
                 }
             }
         }
-		if ($_FILES['logo_SIDADIK']['name'] <> '') {
+        if ($_FILES['logo_SIDADIK']['name'] <> '') {
             $logo_SIDADIK = $_FILES['logo_SIDADIK']['name'];
             $temp = $_FILES['logo_SIDADIK']['tmp_name'];
             $ext = explode('.', $logo_SIDADIK);
@@ -159,86 +154,14 @@ if ($pg == 'ubah') {
     }
 }
 if ($pg == 'profile') {
-	 $nama = str_replace("'", "`", $_POST['nama']);
+    $nama = str_replace("'", "`", $_POST['nama']);
     $data = [
         'nsm' => $_POST['nsm'],
-		'npsn' => $_POST['npsn'],
-		'jenjang' => $_POST['jenjang'],
-		'nama_sekolah' => ucwords(strtoupper($nama)),
+        'npsn' => $_POST['npsn'],
+        'jenjang' => $_POST['jenjang'],
+        'nama_sekolah' => ucwords(strtoupper($nama)),
         'status' => $_POST['status'],
-        
-    ];
-	$where = [
-        'id_setting' => 1
 
-    ];
-    $exec = update($koneksi, 'setting', $data, $where);
-    echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
-
-}
-if ($pg == 'alamat') {
-    $data = [
-        'alamat' => $_POST['alamat'],
-		'provinsi' => $_POST['provinsi'],
-		'kab' => $_POST['kab'],
-        'kec' => $_POST['kec'],
-        
-    ];
-	$where = [
-        'id_setting' => 1
-
-    ];
-    $exec = update($koneksi, 'setting', $data, $where);
-    echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
-
-}
-if ($pg == 'kontak') {
-    $data = [
-        'no_telp' => $_POST['no_telp'],
-		'email' => $_POST['email'],
-		'web' => $_POST['web'],
-                
-    ];
-	$where = [
-        'id_setting' => 1
-
-    ];
-    $exec = update($koneksi, 'setting', $data, $where);
-    echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
-
-}
-if ($pg == 'kepala') {
-    $data = [
-        'kepala' => $_POST['kepala'],
-		'nip' => $_POST['nip'],
-		
-                
-    ];
-	$where = [
-        'id_setting' => 1
-
-    ];
-    $exec = update($koneksi, 'setting', $data, $where);
-    echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
-
-}
-if ($pg == 'ubah2') {
-$data = [
-       
-		'nama_sekolah' => $_POST['nama'],
-        'alamat' => $_POST['alamat'],
-        'kota' => $_POST['kota'],
-		'npsn' => $_POST['npsn'],
-        
-        
     ];
     $where = [
         'id_setting' => 1
@@ -246,9 +169,76 @@ $data = [
     ];
     $exec = update($koneksi, 'setting', $data, $where);
     echo mysqli_error($koneksi);
-    
-                    echo "Terimakasih";
 
+    echo "Terimakasih";
+}
+if ($pg == 'alamat') {
+    $data = [
+        'alamat' => $_POST['alamat'],
+        'provinsi' => $_POST['provinsi'],
+        'kab' => $_POST['kab'],
+        'kec' => $_POST['kec'],
+
+    ];
+    $where = [
+        'id_setting' => 1
+
+    ];
+    $exec = update($koneksi, 'setting', $data, $where);
+    echo mysqli_error($koneksi);
+
+    echo "Terimakasih";
+}
+if ($pg == 'kontak') {
+    $data = [
+        'no_telp' => $_POST['no_telp'],
+        'email' => $_POST['email'],
+        'web' => $_POST['web'],
+
+    ];
+    $where = [
+        'id_setting' => 1
+
+    ];
+    $exec = update($koneksi, 'setting', $data, $where);
+    echo mysqli_error($koneksi);
+
+    echo "Terimakasih";
+}
+if ($pg == 'kepala') {
+    $data = [
+        'kepala' => $_POST['kepala'],
+        'nip' => $_POST['nip'],
+
+
+    ];
+    $where = [
+        'id_setting' => 1
+
+    ];
+    $exec = update($koneksi, 'setting', $data, $where);
+    echo mysqli_error($koneksi);
+
+    echo "Terimakasih";
+}
+if ($pg == 'ubah2') {
+    $data = [
+
+        'nama_sekolah' => $_POST['nama'],
+        'alamat' => $_POST['alamat'],
+        'kota' => $_POST['kota'],
+        'npsn' => $_POST['npsn'],
+
+
+    ];
+    $where = [
+        'id_setting' => 1
+
+    ];
+    $exec = update($koneksi, 'setting', $data, $where);
+    echo mysqli_error($koneksi);
+
+    echo "Terimakasih";
 }
 if ($pg == 'infobayar') {
     $data = [
@@ -268,7 +258,7 @@ if ($pg == 'infobayar') {
 if ($pg == 'aktifSIDADIK') {
     $data = [
         'tgl_pengumuman' => $_POST['tgl_pengumuman']
-		
+
     ];
     $where = [
         'id_setting' => 1

@@ -4,9 +4,9 @@ require("../../../koneksi.php");
 require("../../../json/config/function.php");
 require("../../../json/config/functions.crud.php");
 session_start();
-// if (!isset($_SESSION['id_user'])) {
-//     die('Anda tidak diijinkan mengakses langsung');
-// }
+if (!isset($_SESSION['id_user'])) {
+    die('Anda tidak diijinkan mengakses langsung');
+}
 if ($pg == 'ubah') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     if ($_POST['password'] <> "") {
