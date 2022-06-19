@@ -1,8 +1,8 @@
 <?php
-require($_SERVER['DOCUMENT_ROOT'] . "/../koneksi.php");
-// require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/function.php");
-require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/functions.crud.php");
-// require($_SERVER['DOCUMENT_ROOT'] . "/config/excel_reader.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/model/koneksi.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/model/json/config/function.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/model/json/config/functions.crud.php");
+// require($_SERVER['DOCUMENT_ROOT'] . "/model/json/config/excel_reader.php");
 session_start();
 if (!isset($_SESSION['id_user']) && $pg != 'tambah') {
     die('Anda tidak diijinkan mengakses langsung');
@@ -189,6 +189,19 @@ if ($pg == 'status') {
     $id_siswa = $_POST['id_siswa'];
     update($koneksi, 'siswa', $data, $where);
 }
+if ($pg == 'status_pay') {
+    $status = (isset($_POST['status'])) ? $_POST['status'] : 0;
+    $nama = str_replace("'", "`", $_POST['nama']);
+    $data = [
+        'status_pay' => $status
+    ];
+    $where = [
+        'id_siswa' => $_POST['id_siswa']
+    ];
+    $id_siswa = $_POST['id_siswa'];
+    update($koneksi, 'siswa', $data, $where);
+}
+
 
 if ($pg == 'import') {
     if (isset($_FILES['file']['name'])) {

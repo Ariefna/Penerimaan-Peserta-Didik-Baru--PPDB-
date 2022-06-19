@@ -1,7 +1,9 @@
 <?php
-require $_SERVER['DOCUMENT_ROOT'] . "/config/database.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/config/function.php";
-require $_SERVER['DOCUMENT_ROOT'] . "/config/functions.crud.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/model/json/config/database.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/model/json/config/function.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/model/json/config/functions.crud.php";
+
+
 session_start();
 if (!isset($_SESSION['id_user'])) {
     die('Anda tidak diijinkan mengakses langsung');
@@ -92,7 +94,7 @@ if ($pg == 'ubah') {
             $ext = end($ext);
             if (in_array($ext, $ektensi)) {
                 $dest = 'assets/img/logo' . rand(1, 1000) . '.' . $ext;
-                $upload = move_uploaded_file($temp, '$_SERVER['DOCUMENT_ROOT'] . "/$_SERVER['DOCUMENT_ROOT'] . "/' . $dest);
+                $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT']  . '/' . $dest);
                 if ($upload) {
                     $data2 = [
                         'logo' => $dest

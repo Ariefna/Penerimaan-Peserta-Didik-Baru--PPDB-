@@ -1,6 +1,5 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/model/koneksi.php";
-// include 'https://localhost:8000/model/koneksi.php';
 session_start();
 if (isset($_POST['username'])) {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);

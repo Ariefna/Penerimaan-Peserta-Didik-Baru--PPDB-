@@ -3,8 +3,8 @@ if ($_GET['id'] <> '5448dfhcr27467576c78a50vi98j0ruv0w') {
     die('Ip anda sudah tercatat disistem ini');
 }
 session_start();
-require "../config/database.php";
-//require "../config/function.php";
+require $_SERVER['DOCUMENT_ROOT'] . "/model/config/database.php";
+//require $_SERVER['DOCUMENT_ROOT'] . "/model/config/function.php";
 
 
 $username = mysqli_real_escape_string($koneksi, $_POST['username']);

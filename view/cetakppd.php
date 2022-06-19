@@ -76,20 +76,13 @@
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="1" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Aktif</span>
+                                                                                <span class="custom-switch-description">Approve</span>
                                                                             </label>
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Mutasi</span>
+                                                                                <span class="custom-switch-description">Don't Approve</span>
                                                                             </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
-                                                                            </label>
-
-
                                                                         </div>
                                                                     </div>
                                                                     <div class="modal-footer">
@@ -138,7 +131,7 @@
                                                 e.preventDefault();
                                                 $.ajax({
                                                     type: 'POST',
-                                                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=status',
+                                                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=status_pay',
                                                     data: $(this).serialize(),
                                                     success: function(data) {
 
