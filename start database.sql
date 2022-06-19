@@ -28,8 +28,6 @@ CREATE TABLE `setting` (
   `web` text NOT NULL, --ok
   `kepala` text NOT NULL, --ok
   `nip` text NOT NULL, --ok
-  `kop` varchar(50) NOT NULL, --ok
-  `logo_sidadik` varchar(100) NOT NULL, --ok
   PRIMARY KEY (id_setting),
   CONSTRAINT FK_User FOREIGN KEY (id_user)
   REFERENCES user(id_user)

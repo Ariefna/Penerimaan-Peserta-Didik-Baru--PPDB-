@@ -44,30 +44,6 @@
                                 <div class='box-tools pull-right btn-group'>
                                     <button type='submit' id="save-btn" class='btn btn-sm btn-flat btn-success'><i class='fa fa-check'></i> Simpan</button>
                                 </div>
-                                <!--<div class='form-group'>
-							<div class='row'>
-								<div class='col-md-12'>
-									<label>Kop Sekolah</label>
-									<input type='file' name='kop' class='form-control' />
-								</div>
-								<div class="col-sm-6 col-md-12">
-									&nbsp;<br />
-									<img src="../<?= $setting['kop'] ?>" class="img-thumbnail" width="800">
-								</div>
-							</div>
-						</div>
-						<div class='form-group'>
-							<div class='row'>
-								<div class='col-md-12'>
-									<label>Logo sidadik</label>
-									<input type='file' name='logo_sidadik' class='form-control' />
-								</div>
-								<div class="col-sm-6 col-md-12">
-									&nbsp;<br />
-									<img src="../<?= $setting['logo_sidadik'] ?>" class="img-thumbnail" width="800">
-								</div>
-							</div>
-						</div>-->
 
                             </div><!-- /.box-body -->
                         </div><!-- /.box -->
