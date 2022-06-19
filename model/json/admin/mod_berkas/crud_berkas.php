@@ -1,7 +1,7 @@
 <?php
-require("../../koneksi.php");
-require("../../config/function.php");
-require("../../config/functions.crud.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/koneksi.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/config/function.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/config/functions.crud.php");
 session_start();
 if (!isset($_SESSION['id_user'])) {
     die('Anda tidak diijinkan mengakses langsung');
@@ -15,7 +15,7 @@ if ($pg == 'ubah') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'assets/upload/kk/kk' . rand(1, 1000) . '.' . $ext;
-            $upload = move_uploaded_file($temp, '../../' . $dest);
+            $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
             if ($upload) {
                 $data2 = [
                     'file_kk' => $dest
@@ -34,7 +34,7 @@ if ($pg == 'ubah') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'assets/upload/ijazah/ijazah' . rand(1, 1000) . '.' . $ext;
-            $upload = move_uploaded_file($temp, '../../' . $dest);
+            $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
             if ($upload) {
                 $data2 = [
                     'file_ijazah' => $dest
@@ -53,7 +53,7 @@ if ($pg == 'ubah') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'assets/upload/akta/akta' . rand(1, 1000) . '.' . $ext;
-            $upload = move_uploaded_file($temp, '../../' . $dest);
+            $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
             if ($upload) {
                 $data2 = [
                     'file_akte' => $dest
@@ -72,7 +72,7 @@ if ($pg == 'ubah') {
         $ext = end($ext);
         if (in_array($ext, $ektensi)) {
             $dest = 'assets/upload/kip/kip' . rand(1, 1000) . '.' . $ext;
-            $upload = move_uploaded_file($temp, '../../' . $dest);
+            $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
             if ($upload) {
                 $data2 = [
                     'file_kip' => $dest

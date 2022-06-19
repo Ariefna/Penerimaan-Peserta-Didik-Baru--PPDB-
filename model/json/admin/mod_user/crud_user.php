@@ -1,8 +1,8 @@
 <?php
 
-require("../../../koneksi.php");
-require("../../../json/config/function.php");
-require("../../../json/config/functions.crud.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/../koneksi.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/function.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/functions.crud.php");
 session_start();
 if (!isset($_SESSION['id_user'])) {
     die('Anda tidak diijinkan mengakses langsung');

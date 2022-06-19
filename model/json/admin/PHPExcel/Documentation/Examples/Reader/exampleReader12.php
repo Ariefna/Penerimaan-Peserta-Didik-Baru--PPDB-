@@ -20,7 +20,7 @@ date_default_timezone_set('Europe/London');
 <?php
 
 /**  Set Include path to point at the PHPExcel Classes folder  **/
-set_include_path(get_include_path() . PATH_SEPARATOR . '../../../Classes/');
+set_include_path(get_include_path() . PATH_SEPARATOR . '$_SERVER['DOCUMENT_ROOT'] . "/../Classes/');
 
 /**  Include PHPExcel_IOFactory  **/
 include 'PHPExcel/IOFactory.php';

@@ -1,8 +1,8 @@
 <?php
-require("../../../koneksi.php");
-// require("../../../json/config/function.php");
-require("../../../json/config/functions.crud.php");
-// require("../../config/excel_reader.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/../koneksi.php");
+// require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/function.php");
+require($_SERVER['DOCUMENT_ROOT'] . "/../json/config/functions.crud.php");
+// require($_SERVER['DOCUMENT_ROOT'] . "/config/excel_reader.php");
 session_start();
 if (!isset($_SESSION['id_user']) && $pg != 'tambah') {
     die('Anda tidak diijinkan mengakses langsung');

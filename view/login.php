@@ -14,25 +14,25 @@ if (isset($_GET['page'])) {
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/plugins/fontawesome-free/css/all.min.css">
     <!-- icheck bootstrap -->
-    <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
     <!-- Theme style -->
-    <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/dist/css/adminlte.min.css">
 
     <!-- CSS TOASTR -->
-    <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
-    <link rel="stylesheet" href="../assets/modules/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="../assets/modules/summernote/summernote-bs4.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets/modules/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets/modules/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets/modules/summernote/summernote-bs4.css">
     <script src="dist/js/demo.js"></script>
-    <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
+    <script src="http://localhost:8000/assets/modules/izitoast/js/iziToast.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
 <body class="hold-transition login-page">
     <div class="login-box">
         <div class="login-logo">
-            <a href="../../index2.html"><b>Admin</b>LTE</a>
+            <a href="http://localhost:8000/index2.html"><b>Admin</b>LTE</a>
         </div>
         <!-- /.login-logo -->
         <div class="card">
@@ -122,11 +122,11 @@ if (isset($_GET['page'])) {
     </div>
 
     <!-- jQuery -->
-    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="http://localhost:8000/plugins/jquery/jquery.min.js"></script>
     <!-- Bootstrap 4 -->
-    <script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="http://localhost:8000/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- AdminLTE App -->
-    <script src="../../dist/js/adminlte.min.js"></script>
+    <script src="http://localhost:8000/dist/js/adminlte.min.js"></script>
 
 
     <script>

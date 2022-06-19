@@ -17,7 +17,7 @@
 
     <link rel="stylesheet" href="dist/css/adminlte.min.css" />
 
-    <link rel="stylesheet" href="../assets/modules/izitoast/css/iziToast.min.css">
+    <link rel="stylesheet" href="http://localhost:8000/assets/modules/izitoast/css/iziToast.min.css">
 
 </head>
 
@@ -43,7 +43,7 @@
     <script src="dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="dist/js/demo.js"></script>
-    <script src="../assets/modules/izitoast/js/iziToast.min.js"></script>
+    <script src="http://localhost:8000/assets/modules/izitoast/js/iziToast.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <div class="wrapper">
         <!-- Preloader -->

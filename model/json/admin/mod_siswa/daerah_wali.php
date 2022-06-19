@@ -1,5 +1,5 @@
 <?php
-include '../../koneksi.php';
+include '$_SERVER['DOCUMENT_ROOT'] . "/koneksi.php';
 
 $data = $_POST['data'];
 $id = $_POST['id'];
