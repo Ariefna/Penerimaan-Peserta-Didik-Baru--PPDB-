@@ -49,12 +49,17 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                <!-- <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<? //= enkripsi($siswa['id_siswa']) 
+                                                                                                                                                                                    ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a> -->
                                                 <!-- Button trigger modal -->
+                                                <!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-view<?= $no ?>">
+                                                    <i class="fas fa-edit"></i>
+                                                </button> -->
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
-                                                    <i class="fas fa-user    "></i>
+                                                    <i class="fas fa-edit"></i>
                                                 </button>
-                                                <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
+                                                <!-- <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button> -->
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -138,7 +143,7 @@
                                                 e.preventDefault();
                                                 $.ajax({
                                                     type: 'POST',
-                                                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=status',
+                                                    url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=status_pay',
                                                     data: $(this).serialize(),
                                                     success: function(data) {
 

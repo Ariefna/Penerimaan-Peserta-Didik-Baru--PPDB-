@@ -194,10 +194,9 @@ if (isset($_GET['page'])) {
                             message: data,
                             position: 'topRight'
                         });
-                        console.log(data)
-                        // setTimeout(function() {
-                        //     window.location.reload();
-                        // }, 2000);
+                        setTimeout(function() {
+                            window.location.reload();
+                        }, 2000);
                     }
 
                     $('#tambahdata').modal('hide');

@@ -1445,7 +1445,7 @@
                     e.preventDefault();
                     $.ajax({
                         type: 'POST',
-                        url: 'model/json/mod_siswa/crud_siswa.php?pg=simpan',
+                        url: 'model/json/admin/mod_siswa/crud_siswa.php?pg=simpan',
                         data: $(this).serialize(),
                         beforeSend: function() {
                             $('#btnsimpan').prop('readonly', true);
