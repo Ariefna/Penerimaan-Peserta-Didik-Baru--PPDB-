@@ -393,7 +393,6 @@ if ($pg == 'tambah') {
 
             'nisn' => $_POST['nisn'],
             'nama_siswa' => ucwords(strtolower($nama)),
-            'jurusan' => $_POST['jurusan'],
             'password' => $_POST['password'],
             'status' => '1',
             'prov' => '1',
