@@ -4,23 +4,13 @@
 
 --   FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
 --   FOREIGN KEY (PersonID) REFERENCES Persons(PersonID)
-CREATE TABLE `jenis` (
-  `id_jenis` varchar(50) NOT NULL,
-  `nama_jenis` varchar(50) NOT NULL,
-  `status` int(1) NOT NULL,
-  PRIMARY KEY (id_jenis)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-CREATE TABLE `kontak` (
-  `id_kontak`int(11) NOT NULL AUTO_INCREMENT,
-  `nama_kontak` varchar(50) DEFAULT NULL,
-  `no_kontak` varchar(50) DEFAULT NULL,
-  `status` int(1) DEFAULT NULL,
-  PRIMARY KEY (id_kontak)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
 
 CREATE TABLE `setting` (
   `id_setting`int(11) NOT NULL AUTO_INCREMENT,
+  `id_user`int NOT NULL,
   `nama_sekolah` varchar(100) NOT NULL,
   `jenjang` int(11) NOT NULL,
   `nsm` varchar(30) NOT NULL,
@@ -48,7 +38,9 @@ CREATE TABLE `setting` (
   `logo_sidadik` varchar(100) NOT NULL,
   `tgl_pengumuman` date NOT NULL,
   `tgl_tutup` date NOT NULL,
-  PRIMARY KEY (id_setting)
+  PRIMARY KEY (id_setting),
+    CONSTRAINT FK_User FOREIGN KEY (id_user)
+    REFERENCES user(id_user)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
