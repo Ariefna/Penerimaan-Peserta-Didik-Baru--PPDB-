@@ -11,36 +11,28 @@
 CREATE TABLE `setting` (
   `id_setting`int(11) NOT NULL AUTO_INCREMENT,
   `id_user`int NOT NULL,
-  `nama_sekolah` varchar(100) NOT NULL,
-  `jenjang` int(11) NOT NULL,
-  `nsm` varchar(30) NOT NULL,
-  `npsn` varchar(30) DEFAULT NULL,
-  `status` text NOT NULL,
-  `alamat` varchar(255) DEFAULT NULL,
+  `nama_sekolah` varchar(100) NOT NULL, --ok
+  `nsm` varchar(30) NOT NULL, --ok
+  `npsn` varchar(30) DEFAULT NULL, --ok
+  `status` text NOT NULL, --ok
+  `alamat` varchar(255) DEFAULT NULL, --ok
   `kota` varchar(30) DEFAULT NULL,
-  `provinsi` varchar(30) DEFAULT NULL,
-  `logo` varchar(50) DEFAULT NULL,
+  `provinsi` varchar(30) DEFAULT NULL, --ok
+  `logo` varchar(50) DEFAULT NULL, --ok
   `favicon` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `no_telp` varchar(50) DEFAULT NULL,
-  `klikchat` text DEFAULT NULL,
-  `livechat` text DEFAULT NULL,
-  `nolivechat` varchar(50) DEFAULT NULL,
-  `infobayar` text DEFAULT NULL,
-  `syarat` text DEFAULT NULL,
-  `kab` text NOT NULL,
-  `kec` text NOT NULL,
-  `web` text NOT NULL,
-  `kepala` text NOT NULL,
-  `nip` text NOT NULL,
-  `sidadik` text DEFAULT NULL,
-  `kop` varchar(50) NOT NULL,
-  `logo_sidadik` varchar(100) NOT NULL,
-  `tgl_pengumuman` date NOT NULL,
-  `tgl_tutup` date NOT NULL,
+  `no_telp` varchar(50) DEFAULT NULL, --ok
+  `infobayar` text DEFAULT NULL, --ok
+  `kab` text NOT NULL, --ok
+  `kec` text NOT NULL, --ok
+  `web` text NOT NULL, --ok
+  `kepala` text NOT NULL, --ok
+  `nip` text NOT NULL, --ok
+  `kop` varchar(50) NOT NULL, --ok
+  `logo_sidadik` varchar(100) NOT NULL, --ok
   PRIMARY KEY (id_setting),
-    CONSTRAINT FK_User FOREIGN KEY (id_user)
-    REFERENCES user(id_user)
+  CONSTRAINT FK_User FOREIGN KEY (id_user)
+  REFERENCES user(id_user)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
@@ -77,14 +69,14 @@ CREATE TABLE siswa (
   `agama` varchar(50) DEFAULT NULL,
   `cita` varchar(50) DEFAULT NULL,
   `no_hp` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL, --ok
   `hobi` varchar(50) DEFAULT NULL,
   `status_tinggal_siswa` varchar(50) DEFAULT NULL,
   `prov` int NOT NULL,
   `kab` varchar(50) DEFAULT NULL,
   `kec` varchar(50) DEFAULT NULL,
   `desa` varchar(50) DEFAULT NULL,
-  `alamat_siswa` varchar(50) DEFAULT NULL,
+  `alamat_siswa` varchar(50) DEFAULT NULL, --ok
   `kordinat` varchar(50) DEFAULT NULL,
   `kodepos_siswa` varchar(6) DEFAULT NULL,
   `transportasi` varchar(50) DEFAULT NULL,
