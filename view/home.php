@@ -1,3 +1,8 @@
+<style>
+    .align-items-center .col-md-9 {
+        padding-bottom: 9px;
+    }
+</style>
 <!-- Main content -->
 <section class="content">
     <div class="container-fluid">
