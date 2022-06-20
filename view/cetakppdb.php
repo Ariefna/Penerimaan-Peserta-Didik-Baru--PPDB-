@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Verifikasi Dokumen Pembayaran</h4>
+                        <h4>Cetak PPDB</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -21,7 +21,6 @@
                                         <th>L/P</th>
                                         <th>TTL</th>
                                         <th>Status</th>
-                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -47,59 +46,6 @@
                                                 <?php } else { ?>
                                                     <span class="badge badge-danger">Don't Approve</span>
                                                 <?php } ?>
-                                            </td>
-                                            <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
-                                                    <i class="fas fa-user    "></i>
-                                                </button>
-                                                <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <form id="form-edit<?= $no ?>">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Ubah Status Siswa</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-
-                                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
-
-                                                                    <div class="form-group">
-                                                                        <div class="control-label">Pilih Status</div>
-                                                                        <div class="custom-switches-stacked mt-2">
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="1" class="custom-switch-input" checked>
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Aktif</span>
-                                                                            </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="2" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Mutasi</span>
-                                                                            </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
-                                                                            </label>
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-primary">Save</button>
-                                                                    </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </td>
                                         </tr>
                                         <script>
