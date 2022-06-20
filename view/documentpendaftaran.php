@@ -1,4 +1,4 @@
-<?php $siswa = fetch($koneksi, 'siswa', ['id_siswa' => 421]); ?>
+<?php $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]); ?>
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -122,18 +122,14 @@
                 });
             },
             success: function(data) {
-                console.log(data);
-
                 iziToast.success({
                     title: 'Mantap!',
                     message: data,
                     position: 'topRight'
                 });
-                // setTimeout(function() {
-                //     window.location.reload();
-                // }, 2000);
-
-
+                setTimeout(function() {
+                    window.location.reload();
+                }, 2000);
             }
         });
     });

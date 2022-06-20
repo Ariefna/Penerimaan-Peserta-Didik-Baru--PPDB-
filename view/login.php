@@ -100,7 +100,7 @@ if (isset($_GET['page'])) {
                     <div class="modal-body">
                         <div class="form-group">
                             <label>NISN</label>
-                            <input type="text" name="nisn" class="form-control nisn" required="">
+                            <input type="text" onkeypress="return hanyaAngka(this);" maxlength="10" minlength="10" name="nisn" class="form-control nisn" required="">
                         </div>
                         <div class="form-group">
                             <label>Nama Siswa</label>
@@ -234,6 +234,15 @@ if (isset($_GET['page'])) {
                 localStorage.checkBoxValidation = '';
             }
         });
+    </script>
+    <script>
+        function hanyaAngka(evt) {
+            var charCode = (evt.which) ? evt.which : event.keyCode
+            if (charCode > 31 && (charCode < 48 || charCode > 57))
+
+                return false;
+            return true;
+        }
     </script>
 </body>
 

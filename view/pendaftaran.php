@@ -9,20 +9,12 @@
                         <h6 class="font-weight-bold text-primary">Data Siswa</h6>
                     </div>
                     <div class="card-body">
-                        <!-- <div class="author-box-left">
-                            
-                        </div> -->
                         <div class="author-box-details">
                             <div class="row">
                                 <div class="col-12 col-sm-5 col-lg">
                                     <div class="card">
-                                        <!-- <div class="card-header">
-                                            <h4>Edit Data Siswa 
-                                            </h4>
-                                        </div> -->
 
                                         <div class="card-header container-fluid">
-                                            <!-- <div class="col-md-12"> -->
                                             <h3 class="w-75 p-3">Form Siswa | Status <?php if ($siswa['status'] == 1) { ?>
                                                     <span class="badge badge-success">Aktif</span>
                                                 <?php } elseif ($siswa['status'] == 2) { ?>
@@ -279,26 +271,14 @@
                                                                                 <i class="text-info"><b>Provinsi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="prov" value="<?= $siswa['prov'] ?>" required />
-                                                                        <!--<select class='form-control' id="form_prov" name='prov' required>
-                                                                        <?php
-                                                                        $a = mysqli_query($koneksi, "SELECT * FROM siswa INNER JOIN wilayah ON siswa.prov = wilayah.kode");
-                                                                        while ($row = mysqli_fetch_array($a)) {
-                                                                        ?>
-                                                                            <option value=""><?= $row['nama'] ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                        <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
-                                                                        while ($d = mysqli_fetch_array($daerah)) {
-                                                                        ?>
-
-                                                                            <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>-->
+                                                                        <datalist id="prov">
+                                                                            <?php $result = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah");
+                                                                            while ($row = mysqli_fetch_array($result)) { ?>
+                                                                                <option value="<?php echo $row['kode']; ?>-<?php echo $row['nama']; ?>"><?php echo $row['nama']; ?> </option>
+                                                                            <?php } ?>
+                                                                        </datalist>
+                                                                        <input class="form-control" oninput='onInput("prov")' type="text" list="prov" value="<?= $siswa['prov'] ?>" required />
+                                                                        <input class="form-control" type="hidden" id="prov" name="prov" required />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -1079,18 +1059,18 @@
                                                                                 <i class="text-info"><b>Provinsi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
-                                                                        <!--<select class='form-control' id="form_prov_ibu" name='prov_ibu' readonly>
-                                                                        <option value=""><?= $siswa['prov_ibu'] ?></option>
-                                                                        <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
-                                                                        while ($d = mysqli_fetch_array($daerah)) {
-                                                                        ?>
-                                                                            <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>-->
+                                                                        <input class="form-control" hidden type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
+                                                                        <select class='form-control' id="form_prov_ibu" name='prov_ibu'>
+                                                                            <option value=""><?= $siswa['prov_ibu'] ?></option>
+                                                                            <?php
+                                                                            $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE kode=" . $siswa['prov_ibu'] . " ORDER BY nama");
+                                                                            while ($d = mysqli_fetch_array($daerah)) {
+                                                                            ?>
+                                                                                <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -1457,6 +1437,9 @@
                                 message: 'Data Berhasil disimpan',
                                 position: 'topRight'
                             });
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 2000);
                         }
                     });
                     return false;
@@ -1486,6 +1469,9 @@
                                 message: 'Data Berhasil disimpan',
                                 position: 'topRight'
                             });
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 2000);
                         }
                     });
                     return false;
@@ -1524,6 +1510,9 @@
                                 message: 'Data Berhasil disimpan',
                                 position: 'topRight'
                             });
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 2000);
                         }
                     });
                     return false;
@@ -1553,6 +1542,9 @@
                                 message: 'Data Berhasil disimpan',
                                 position: 'topRight'
                             });
+                            setTimeout(function() {
+                                window.location.reload();
+                            }, 2000);
                         }
                     });
                     return false;
@@ -1781,6 +1773,10 @@
                     });
                 });
 
+                function onInput(id) {
+                    var valuenya = $(this).val();
+                    $('#' + id).val(valuenya);
+                }
                 // ambil data desa ketika data memilih kecamatan/kota
                 $('body').on("change", "#form_kec_wali", function() {
                     var id = $(this).val();

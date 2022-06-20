@@ -119,7 +119,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                                 <i class="text-info"><b>NIS Lokal</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>" required="required" />
+                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="18" minlength="18" type="text" name="nis" value="<?= $siswa['nis'] ?>" required="required" />
                                                                     </div>
                                                                 </div>
 
@@ -294,25 +294,25 @@ if (isset($_GET['action']) == 'edit') {
                                                                             </div>
                                                                         </div>
                                                                         <input class="form-control" type="text" name="prov" value="<?= $siswa['prov'] ?>" required />
-                                                                        <!--<select class='form-control' id="form_prov" name='prov' required>
-                                                                        <?php
-                                                                        $a = mysqli_query($koneksi, "SELECT * FROM siswa INNER JOIN wilayah ON siswa.prov = wilayah.kode");
-                                                                        while ($row = mysqli_fetch_array($a)) {
-                                                                        ?>
-                                                                            <option value=""><?= $row['nama'] ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                        <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
-                                                                        while ($d = mysqli_fetch_array($daerah)) {
-                                                                        ?>
+                                                                        <select class='form-control' id="form_prov" name='prov' required>
+                                                                            <?php
+                                                                            $a = mysqli_query($koneksi, "SELECT * FROM siswa INNER JOIN wilayah ON siswa.prov = wilayah.kode");
+                                                                            while ($row = mysqli_fetch_array($a)) {
+                                                                            ?>
+                                                                                <option value=""><?= $row['nama'] ?></option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                            <?php
+                                                                            $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                            while ($d = mysqli_fetch_array($daerah)) {
+                                                                            ?>
 
-                                                                            <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>-->
+                                                                                <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -805,17 +805,17 @@ if (isset($_GET['action']) == 'edit') {
                                                                             </div>
                                                                         </div>
                                                                         <input class="form-control" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
-                                                                        <!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' required>
-                                                                        <option value=""><?= $siswa['prov_ayah'] ?></option>
-                                                                        <?php
-                                                                        $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
-                                                                        while ($d = mysqli_fetch_array($daerah)) {
-                                                                        ?>
-                                                                            <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
-                                                                        <?php
-                                                                        }
-                                                                        ?>
-                                                                    </select>-->
+                                                                        <select class='form-control' id="form_prov_ayah" name='prov_ayah' required>
+                                                                            <option value=""><?= $siswa['prov_ayah'] ?></option>
+                                                                            <?php
+                                                                            $daerah = mysqli_query($koneksi, "SELECT kode,nama FROM wilayah WHERE CHAR_LENGTH(kode)=2 ORDER BY nama");
+                                                                            while ($d = mysqli_fetch_array($daerah)) {
+                                                                            ?>
+                                                                                <option value="<?php echo $d['kode']; ?>"><?php echo $d['nama']; ?></option>
+                                                                            <?php
+                                                                            }
+                                                                            ?>
+                                                                        </select>
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">

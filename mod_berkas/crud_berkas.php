@@ -20,7 +20,7 @@ if ($pg == 'ubah') {
                 $data2 = [
                     'file_kk' => $dest
                 ];
-                $id_siswa = $_POST['id_siswa'];
+                $id_siswa = $_SESSION['id_user'];
                 $exec = update($koneksi, 'siswa', $data2, ['id_siswa' => $id_siswa]);
             } else {
                 echo "gagal";
@@ -39,7 +39,7 @@ if ($pg == 'ubah') {
                 $data2 = [
                     'file_pembayaran' => $dest
                 ];
-                $id_siswa = $_POST['id_siswa'];
+                $id_siswa = $_SESSION['id_user'];
                 $exec = update($koneksi, 'siswa', $data2, ['id_siswa' => $id_siswa]);
             } else {
                 echo "gagal";
@@ -58,7 +58,7 @@ if ($pg == 'ubah') {
                 $data2 = [
                     'file_ijazah' => $dest
                 ];
-                $id_siswa = $_POST['id_siswa'];
+                $id_siswa = $_SESSION['id_user'];
                 $exec = update($koneksi, 'siswa', $data2, ['id_siswa' => $id_siswa]);
             } else {
                 echo "gagal";
@@ -77,7 +77,7 @@ if ($pg == 'ubah') {
                 $data2 = [
                     'file_akte' => $dest
                 ];
-                $id_siswa = $_POST['id_siswa'];
+                $id_siswa = $_SESSION['id_user'];
                 $exec = update($koneksi, 'siswa', $data2, ['id_siswa' => $id_siswa]);
             } else {
                 echo "gagal";
@@ -96,7 +96,7 @@ if ($pg == 'ubah') {
                 $data2 = [
                     'file_kip' => $dest
                 ];
-                $id_siswa = $_POST['id_siswa'];
+                $id_siswa = $_SESSION['id_user'];
                 $exec = update($koneksi, 'siswa', $data2, ['id_siswa' => $id_siswa]);
             } else {
                 echo "gagal";

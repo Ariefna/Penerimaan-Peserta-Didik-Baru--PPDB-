@@ -104,7 +104,7 @@
                                                                         <i class="text-info"><b>NIS Lokal</b></i>
                                                                     </div>
                                                                 </div>
-                                                                <input class="form-control" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>" required="required" />
+                                                                <input class="form-control" maxlength="18" minlength="18" onkeypress="return hanyaAngka(this);" type="text" name="nis" value="<?= $siswa['nis'] ?>" required="required" />
                                                             </div>
                                                         </div>
 
