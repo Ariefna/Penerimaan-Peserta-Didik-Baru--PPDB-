@@ -90,6 +90,7 @@ if ($pg == 'ubah') {
         }
     }
 } else if ($pg == 'bayar') {
+    $ektensi = ['jpg', 'jpeg', 'png'];
     if ($_FILES['file_pembayaran']['name'] <> '' || isset($_FILES['file_pembayaran'])) {
         $file_pembayaran = $_FILES['file_pembayaran']['name'];
         $temp = $_FILES['file_pembayaran']['tmp_name'];

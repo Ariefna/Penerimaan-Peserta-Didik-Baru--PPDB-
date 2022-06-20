@@ -1,3 +1,4 @@
+<?php $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]); ?>
 <section class="content">
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
@@ -9,6 +10,8 @@
                     </div>
                     <div class="card-body">
                         <form id="form-berkas">
+
+                            <input type="hidden" name="id_siswa" value="<?= $_SESSION['id_user'] ?>">
                             <div class="card" id="berkas-card">
                                 <div class="card-body">
                                     <div class="form-group row align-items-center">
@@ -25,7 +28,7 @@
                                     <div class="form-group row align-items-center">
                                         <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                         <div class="col-sm-6 col-md-6">
-                                            <img src="../<?= $siswa['file_pembayaran'] ?>" class="img-thumbnail" width="50%">
+                                            <img src="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="img-thumbnail" width="50%">
                                         </div>
                                     </div>
                                 </div>
@@ -50,7 +53,7 @@
         e.preventDefault();
         $.ajax({
             type: 'post',
-            url: 'mod_berkas/crud_berkas.php?pg=ubah',
+            url: 'mod_berkas/crud_berkas.php?pg=bayar',
             data: new FormData(this),
             processData: false,
             contentType: false,

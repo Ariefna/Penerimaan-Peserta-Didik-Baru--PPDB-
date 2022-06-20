@@ -49,7 +49,7 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
                                                 <!-- <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<? //= enkripsi($siswa['id_siswa']) 
                                                                                                                                                                                     ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a> -->
                                                 <!-- Button trigger modal -->
@@ -66,7 +66,7 @@
                                                         <div class="modal-content">
                                                             <form id="form-edit<?= $no ?>">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title">Ubah Status Siswa</h5>
+                                                                    <h5 class="modal-title">Ubah Status Pembayaran</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>
@@ -81,17 +81,12 @@
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="1" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Aktif</span>
+                                                                                <span class="custom-switch-description">Approve</span>
                                                                             </label>
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Mutasi</span>
-                                                                            </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
+                                                                                <span class="custom-switch-description">Dont Approve</span>
                                                                             </label>
 
 
