@@ -7,7 +7,14 @@ if (isset($_POST['username'])) {
     $query = mysqli_query($koneksi, "select * from user where username='$username' and status='1'");
     $ceklogin = mysqli_num_rows($query);
     $user = mysqli_fetch_array($query);
-    if ($ceklogin == 1 || password_verify($password, $user['password'])) {
+    $check = false;
+    if (isset($user['password'])) {
+        $check = password_verify($password, $user['password']);
+    } else {
+        $check = false;
+    }
+
+    if ($ceklogin == 1 || $check) {
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level'];
