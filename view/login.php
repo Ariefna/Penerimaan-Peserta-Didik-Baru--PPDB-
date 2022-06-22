@@ -70,7 +70,7 @@ if (isset($_GET['page'])) {
                             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                         </div>
                         <div class="col-12 mt-3">
-                            <a class="btn btn-warning text-white btn-block" data-toggle="modal" data-target="#tambahdata">Daftar</a>
+                            <a class="btn btn-secondary text-white btn-block" data-toggle="modal" data-target="#tambahdata">Daftar</a>
                         </div>
                         <!-- /.col -->
                     </div>
