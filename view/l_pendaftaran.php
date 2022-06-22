@@ -2,6 +2,7 @@
 // defined('BASEPATH') or exit('No direct script access allowed');
 // $siswa = $this->db->get('tbl_user')->row_array();
 $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]);
+$setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
 
 ?>
 
@@ -10,9 +11,9 @@ $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]);
 
 <head>
     <meta charset="utf-8">
-    <title><?php echo $judul_web; ?></title>
-    <base href="<?php echo base_url(); ?>" />
-    <link rel="icon" type="image/png" href="img/logo.png" />
+    <title><?= $setting['nama_sekolah'] ?></title>
+    <base href="http://localhost:8000/" />
+    <link rel="icon" type="image/png" href="http://localhost:8000/<?= $setting['logo'] ?>" />
     <style>
         table {
             border-collapse: collapse;
@@ -46,13 +47,40 @@ $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]);
 </head>
 
 <body onload="window.print();">
+
+    <!-- <body> -->
     <?php //$this->load->view('kop_lap'); 
     ?>
+    <table border="0" width="100%">
+        <tr>
+            <td align="left">
+                <img src="http://localhost:8000/<?= $setting['logo'] ?>" alt="logo" width="100">
+            </td>
+            <td align="left">
+                <b style="font-size:25px;">PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB)</b> <br>
+                <b style="font-size:25px;"><?= $setting['nama_sekolah'] ?></b> <br>
+                <b style="font-size:25px;">TAHUN PELAJARAN <?php echo date("Y"); ?>
+                </b><br>
+                <b align="left" style="font-size:15px;">
+                    Kantor : <?= $setting['alamat'] ?> <img src="img/telp.jpg" alt="telp." style="margin-bottom:-5px;margin-right:-5px;"> <?php echo $setting['telp']; ?>
+                    <br>
+                    Website : http://localhost:8000/ - E-mail : <?php echo $setting['email']; ?></b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <hr size="0" color="black" style="margin:0px;margin-bottom:1px;">
+                <hr size="2" color="black" style="margin:0px;">
+            </td>
+        </tr>
+    </table>
+    <br>
     <h4 align="center" style="margin-top:0px;"><u>BUKTI PENDAFTARAN</u></h4>
     <b>
         <center>
             PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB) <br>
-            <?php echo $siswa['nama_lengkap']; ?> TAHUN PELAJARAN <?php echo $siswa['th_pelajaran']; ?></center>
+            <?php echo $siswa['nama_siswa']; ?> TAHUN PELAJARAN <?php echo date("Y"); ?>
+        </center>
     </b>
     <br>
 
@@ -141,11 +169,11 @@ $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]);
     <br>
 
     <div style="float:right;">
-        <?php echo $siswa['kab_sekolah']; ?>, <?php echo date('d-m-Y'); ?> <br>
+        <?php echo $setting['kota']; ?>, <?php echo date('d-m-Y'); ?> <br>
         Ketua Panitia PPDB, <br>
-        <img src="img/ttd.png" alt="" width="100"><br>
-        <b><u><?php echo $siswa['ketua_panitia']; ?></u></b><br>
-        NIP. <?php echo $siswa['nip_ketua']; ?>
+        <img src="http://localhost:8000/assets/tanda.png" alt="" width="100"><br>
+        <b><u><?php echo $setting['kepala']; ?></u></b><br>
+        NIP. <?php echo $setting['nip']; ?>
     </div>
     <br><br><br><br><br><br><br><br><br>
 
@@ -178,7 +206,8 @@ $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]);
         </tr>
         <tr>
             <td valign="top">5.</td>
-            <td colspan="3">Semua berkas dimasukan kedalam map biru (Putra), map kuning (Putri) dan diserahkan kepada Panitia PPDB <?php echo $siswa['nama_lengkap']; ?> Tahun Pelajaran <?php echo $siswa['th_pelajaran']; ?></td>
+            <td colspan="3">Semua berkas dimasukan kedalam map biru (Putra), map kuning (Putri) dan diserahkan kepada Panitia PPDB <?php echo $siswa['nama_siswa']; ?> Tahun Pelajaran <?php echo date("Y"); ?>
+            </td>
         </tr>
     </table>
 
