@@ -141,7 +141,7 @@
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'peserta') { ?>
                             <li class="nav-item">
-                                <a href="?laporan=l_pendaftaran" class="nav-link">
+                                <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
                                     <p>Bukti Pendaftaran</p>
                                 </a>
@@ -157,7 +157,7 @@
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'peserta') { ?>
                             <li class="nav-item">
-                                <a href="?laporan=l_pembayaran" class="nav-link">
+                                <a href="?laporan=l_pembayaran" title="Tunggu Panitia Approve Berkas Pembayaran Anda" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
                                     <p>Bukti Pembayaran</p>
                                 </a>
