@@ -127,6 +127,8 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL AUTO_INCREMENT,
   `nama_siswa` varchar(50) NOT NULL,
   `nisn` varchar(10) NOT NULL,
+  `nama_sekolah` varchar(50) DEFAULT NULL,
+`kota_sekolah` varchar(50) DEFAULT NULL,
   `nis` varchar(50) DEFAULT NULL,
   `warga_siswa` varchar(50) DEFAULT NULL,
   `nik` varchar(30) DEFAULT NULL,

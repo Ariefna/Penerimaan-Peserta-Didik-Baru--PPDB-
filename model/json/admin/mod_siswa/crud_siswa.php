@@ -394,6 +394,8 @@ if ($pg == 'tambah') {
             'nisn' => $_POST['nisn'],
             'nama_siswa' => ucwords(strtolower($nama)),
             'password' => $_POST['password'],
+            'nama_sekolah' => $_POST['nama_sekolah'],
+            'kota_sekolah' => $_POST['kota_sekolah'],
             'status' => '1',
             'prov' => '',
             'prov_ayah' => '',

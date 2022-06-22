@@ -107,6 +107,14 @@ if (isset($_GET['page'])) {
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
                         <div class="form-group">
+                            <label>Asal Sekolah</label>
+                            <input type="text" name="nama_sekolah" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
+                            <label>Kota Asal Sekolah</label>
+                            <input type="text" name="kota_sekolah" class="form-control" required="">
+                        </div>
+                        <div class="form-group">
                             <label>Kata Sandi</label>
                             <input type="text" name="password" class="form-control password" required="">
                         </div>

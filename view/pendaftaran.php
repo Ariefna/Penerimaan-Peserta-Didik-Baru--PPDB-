@@ -16,11 +16,17 @@
 
                                         <div class="card-header container-fluid">
                                             <h3 class="w-75 p-3">Form Siswa | Status <?php if ($siswa['status'] == 1) { ?>
-                                                    <span class="badge badge-success">Aktif</span>
+                                                    <span class="badge badge-secondary">Baru Daftar</span>
                                                 <?php } elseif ($siswa['status'] == 2) { ?>
+                                                    <span class="badge badge-success">Lolos tahap 1</span>
+                                                <?php } elseif ($siswa['status'] == 3) { ?>
+                                                    <span class="badge badge-warning">Tidak Lolos tahap 1</span>
+                                                <?php } elseif ($siswa['status'] == 4) { ?>
+                                                    <span class="badge badge-success">Aktif</span>
+                                                <?php } elseif ($siswa['status'] == 5) { ?>
                                                     <span class="badge badge-danger">Mutasi </span>
-                                                <?php } else { ?>
-                                                    <span class="badge badge-warning">Alumni</span>
+                                                <?php } elseif ($siswa['status'] == 6) { ?>
+                                                    <span class="badge badge-warning">DO/Keluar</span>
                                                 <?php } ?>
                                             </h3>
                                         </div>

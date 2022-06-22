@@ -141,6 +141,14 @@
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'peserta') { ?>
                             <li class="nav-item">
+                                <a href="?laporan=l_pendaftaran" class="nav-link">
+                                    <i class="nav-icon fas fa-upload"></i>
+                                    <p>Bukti Pendaftaran</p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['level'] == 'peserta') { ?>
+                            <li class="nav-item">
                                 <a href="?page=documentpendaftaran" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
                                     <p>Document Pendaftaran</p>
@@ -149,9 +157,17 @@
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'peserta') { ?>
                             <li class="nav-item">
-                                <a href="?page=buktipembayaran" class="nav-link">
+                                <a href="?laporan=l_pembayaran" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
                                     <p>Bukti Pembayaran</p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['level'] == 'admin') { ?>
+                            <li class="nav-item">
+                                <a href="?page=verifikasipendaftaran" class="nav-link">
+                                    <i class="nav-icon fas fa-file-signature"></i>
+                                    <p>Verifikasi Data Diri</p>
                                 </a>
                             </li>
                         <?php } ?>
@@ -201,7 +217,7 @@
                         <li class="nav-item">
                             <a href="?page=logout" class="nav-link">
                                 <i class="nav-icon fas fa-power-off"></i>
-                                <p>Log Out</p>
+                                <p>Keluar</p>
                             </a>
                         </li>
                         <!-- <li class="nav-header">EXAMPLES</li> -->

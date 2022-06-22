@@ -58,10 +58,16 @@
 
                                             <td>
                                                 <?php if ($siswa['status'] == 1) { ?>
-                                                    <span class="badge badge-success">Aktif</span>
+                                                    <span class="badge badge-secondary">Baru Daftar</span>
                                                 <?php } elseif ($siswa['status'] == 2) { ?>
+                                                    <span class="badge badge-success">Lolos tahap 1</span>
+                                                <?php } elseif ($siswa['status'] == 3) { ?>
+                                                    <span class="badge badge-warning">Tidak Lolos tahap 1</span>
+                                                <?php } elseif ($siswa['status'] == 4) { ?>
+                                                    <span class="badge badge-success">Aktif</span>
+                                                <?php } elseif ($siswa['status'] == 5) { ?>
                                                     <span class="badge badge-danger">Mutasi </span>
-                                                <?php } else { ?>
+                                                <?php } elseif ($siswa['status'] == 6) { ?>
                                                     <span class="badge badge-warning">DO/Keluar</span>
                                                 <?php } ?>
                                             </td>
@@ -91,17 +97,17 @@
                                                                         <div class="control-label">Pilih Status</div>
                                                                         <div class="custom-switches-stacked mt-2">
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="1" class="custom-switch-input" checked>
+                                                                                <input type="radio" name="status" value="3" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
                                                                                 <span class="custom-switch-description">Aktif</span>
                                                                             </label>
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="2" class="custom-switch-input">
+                                                                                <input type="radio" name="status" value="4" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
                                                                                 <span class="custom-switch-description">Mutasi</span>
                                                                             </label>
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
+                                                                                <input type="radio" name="status" value="5" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
                                                                                 <span class="custom-switch-description">DO/Putus Sekolah</span>
                                                                             </label>

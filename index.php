@@ -5,10 +5,12 @@
 // $waktu = getdate();
 // $waktu2 = date("Y-m-d H:i:s");
 session_start();
-if (isset($_SESSION['nama'])) {
+
+if (isset($_SESSION['nama']) && !isset($_GET['laporan'])) {
 ?>
     <!-- Model -->
     <?php //include 'model/db.php'; 
+
     ?>
     <!-- Header -->
     <?php include 'view/template/header.php'; ?>
@@ -32,7 +34,13 @@ if (isset($_SESSION['nama'])) {
     <?php include 'view/template/footer.php'; ?>
     <!-- End of Footer -->
 <?php
-} else {
+} else if (!isset($_GET['laporan'])) {
+    echo "sini";
     include 'view/login.php';
+} else if (isset($_GET['laporan'])) {
+
+    $page = $_GET['laporan'];
+    $halaman = "view/$page.php";
+    include "$halaman";
 }
 ?>

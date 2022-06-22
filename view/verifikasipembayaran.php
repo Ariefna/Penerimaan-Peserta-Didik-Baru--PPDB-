@@ -5,7 +5,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Verifikasi Dokumen Pembayaran</h4>
+                        <h4>Verifikasi Dokumen Pendaftaran</h4>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
@@ -40,12 +40,12 @@
                                             <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
 
                                             <td>
-                                                <?php if ($siswa['status_pay'] == 0) { ?>
+                                                <?php if ($siswa['status_pay'] == 1) { ?>
                                                     <span class="badge badge-warning">Panding</span>
-                                                <?php } elseif ($siswa['status_pay'] == 1) { ?>
-                                                    <span class="badge badge-success">Approve </span>
+                                                <?php } elseif ($siswa['status_pay'] == 2) { ?>
+                                                    <span class="badge badge-success">Setujuh </span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Don't Approve</span>
+                                                    <span class="badge badge-danger">Tidak Setujuh</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
@@ -81,12 +81,12 @@
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="1" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Approve</span>
+                                                                                <span class="custom-switch-description">Setujuh</span>
                                                                             </label>
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Dont Approve</span>
+                                                                                <span class="custom-switch-description">Tidak Setujuh</span>
                                                                             </label>
 
 
