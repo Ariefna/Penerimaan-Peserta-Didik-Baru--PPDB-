@@ -10,15 +10,15 @@
 
                         <div class="card-header-action">
                             <!-- <a class="btn btn-info" href="mod_siswa/export_excel.php" role="button"> Export Data</a> -->
-                            <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
+                            <!-- <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
                                 <i class="far fa-edit"></i> Tambah Data
-                            </button>
+                            </button> -->
                             <!-- <button type="button" class="btn btn-primary m-b-5" data-toggle="modal" data-target="#importdata"><i class="sidebar-item-icon fa fa-upload"></i>
                                 Import Data
                             </button>&nbsp; -->
-                            <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
+                            <!-- <button type="button" class="btn btn-icon icon-left btn-danger" data-toggle="modal" data-target="#hapusdata">
                                 <i class="fa fa-trash"></i> Hapus Data
-                            </button>
+                            </button> -->
 
                         </div>
 
@@ -33,7 +33,7 @@
                                             No
                                         </th>
                                         <th>NISN</th>
-                                        <th>Password</th>
+                                        <th>Kata Sandi</th>
                                         <th>Nama Siswa</th>
                                         <th>L/P</th>
                                         <th>TTL</th>
@@ -71,7 +71,7 @@
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                                     <i class="fas fa-user    "></i>
                                                 </button>
-                                                <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
+                                                <!-- <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button> -->
                                                 <!-- Modal -->
                                                 <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
@@ -210,7 +210,7 @@
                         <input type="text" name="nama" class="form-control" required="">
                     </div>
                     <div class="form-group">
-                        <label>Password</label>
+                        <label>Kata Sandi</label>
                         <input type="text" name="password" class="form-control password" required="">
                     </div>
 

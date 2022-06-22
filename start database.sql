@@ -11,23 +11,23 @@
 CREATE TABLE `setting` (
   `id_setting`int(11) NOT NULL AUTO_INCREMENT,
   `id_user`int NOT NULL,
-  `nama_sekolah` varchar(100) NOT NULL, --ok
-  `nsm` varchar(30) NOT NULL, --ok
-  `npsn` varchar(30) DEFAULT NULL, --ok
-  `status` text NOT NULL, --ok
-  `alamat` varchar(255) DEFAULT NULL, --ok
+  `nama_sekolah` varchar(100) NOT NULL, 
+  `nsm` varchar(30) NOT NULL, 
+  `npsn` varchar(30) DEFAULT NULL, 
+  `status` text NOT NULL, 
+  `alamat` varchar(255) DEFAULT NULL, 
   `kota` varchar(30) DEFAULT NULL,
-  `provinsi` varchar(30) DEFAULT NULL, --ok
-  `logo` varchar(50) DEFAULT NULL, --ok
+  `provinsi` text DEFAULT NULL,
+  `logo` varchar(50) DEFAULT NULL, 
   `favicon` varchar(50) DEFAULT NULL,
   `email` varchar(50) DEFAULT NULL,
-  `no_telp` varchar(50) DEFAULT NULL, --ok
-  `infobayar` text DEFAULT NULL, --ok
-  `kab` text NOT NULL, --ok
-  `kec` text NOT NULL, --ok
-  `web` text NOT NULL, --ok
-  `kepala` text NOT NULL, --ok
-  `nip` text NOT NULL, --ok
+  `no_telp` varchar(50) DEFAULT NULL, 
+  `infobayar` text DEFAULT NULL, 
+  `kab` text NOT NULL, 
+  `kec` text NOT NULL, 
+  `web` text NOT NULL, 
+  `kepala` text NOT NULL, 
+  `nip` text NOT NULL, 
   PRIMARY KEY (id_setting),
   CONSTRAINT FK_User FOREIGN KEY (id_user)
   REFERENCES user(id_user)
@@ -45,15 +45,15 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
-CREATE TABLE wilayah (
-  `kode` int NOT NULL AUTO_INCREMENT,
-  `nama` varchar(25) DEFAULT NULL,
-  PRIMARY KEY (kode)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+-- CREATE TABLE wilayah (
+--   `kode` int NOT NULL AUTO_INCREMENT,
+--   `nama` varchar(25) DEFAULT NULL,
+--   PRIMARY KEY (kode)
+-- ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 
 CREATE TABLE siswa (
-  `id_siswa` int NOT NULL,
+  `id_siswa` int(11) NOT NULL AUTO_INCREMENT,
   `nama_siswa` varchar(50) NOT NULL,
   `nisn` varchar(10) NOT NULL,
   `nis` varchar(50) DEFAULT NULL,
@@ -67,14 +67,14 @@ CREATE TABLE siswa (
   `agama` varchar(50) DEFAULT NULL,
   `cita` varchar(50) DEFAULT NULL,
   `no_hp` varchar(50) DEFAULT NULL,
-  `email` varchar(50) DEFAULT NULL, --ok
+  `email` varchar(50) DEFAULT NULL, 
   `hobi` varchar(50) DEFAULT NULL,
   `status_tinggal_siswa` varchar(50) DEFAULT NULL,
-  `prov` int NOT NULL,
+  `prov`  text DEFAULT NULL,
   `kab` varchar(50) DEFAULT NULL,
   `kec` varchar(50) DEFAULT NULL,
   `desa` varchar(50) DEFAULT NULL,
-  `alamat_siswa` varchar(50) DEFAULT NULL, --ok
+  `alamat_siswa` varchar(50) DEFAULT NULL, 
   `kordinat` varchar(50) DEFAULT NULL,
   `kodepos_siswa` varchar(6) DEFAULT NULL,
   `transportasi` varchar(50) DEFAULT NULL,
@@ -108,7 +108,7 @@ CREATE TABLE siswa (
   `no_hp_ayah` varchar(50) DEFAULT NULL,
   `domisili_ayah` varchar(50) DEFAULT NULL,
   `status_tmp_tinggal_ayah` varchar(50) DEFAULT NULL,
-  `prov_ayah` int NOT NULL,
+  `prov_ayah`  text DEFAULT NULL,
   `kab_ayah` varchar(50) DEFAULT NULL,
   `kec_ayah` varchar(50) DEFAULT NULL,
   `desa_ayah` varchar(50) DEFAULT NULL,
@@ -127,7 +127,7 @@ CREATE TABLE siswa (
   `status_tinggal_ibu` varchar(50) DEFAULT NULL,
   `domisili_ibu` varchar(128) DEFAULT NULL,
   `status_tmp_tinggal_ibu` varchar(50) DEFAULT NULL,
-  `prov_ibu` int NOT NULL,
+  `prov_ibu`  text DEFAULT NULL,
   `kab_ibu` varchar(50) DEFAULT NULL,
   `kec_ibu` varchar(50) DEFAULT NULL,
   `desa_ibu` varchar(50) DEFAULT NULL,
@@ -144,7 +144,7 @@ CREATE TABLE siswa (
   `penghasilan_wali` varchar(50) DEFAULT NULL,
   `no_hp_wali` varchar(16) DEFAULT NULL,
   `domisili_wali` varchar(50) DEFAULT NULL,
-  `prov_wali` int NOT NULL,
+  `prov_wali`  text DEFAULT NULL,
   `kab_wali` varchar(50) DEFAULT NULL,
   `kec_wali` varchar(50) DEFAULT NULL,
   `desa_wali` varchar(50) DEFAULT NULL,
@@ -167,24 +167,8 @@ CREATE TABLE siswa (
   `tgl_siswa` date DEFAULT NULL,
   `online` int(1) DEFAULT 0,
   `password` text DEFAULT NULL,
-    PRIMARY KEY (id_siswa),
-    CONSTRAINT FK_Wilayah1 FOREIGN KEY (prov)
-    REFERENCES wilayah(kode),
-    CONSTRAINT FK_Wilayah2 FOREIGN KEY (prov_ayah)
-    REFERENCES wilayah(kode),
-    CONSTRAINT FK_Wilayah3 FOREIGN KEY (prov_ibu)
-    REFERENCES wilayah(kode),
-    CONSTRAINT FK_Wilayah4 FOREIGN KEY (prov_wali)
-    REFERENCES wilayah(kode)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;--
+    PRIMARY KEY (id_siswa)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 -- AUTO_INCREMENT untuk tabel `siswa`
 --
-ALTER TABLE `siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
 
---
--- AUTO_INCREMENT untuk tabel `user`
---
-ALTER TABLE `wilayah`
-  MODIFY `kode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=0;
-COMMIT;

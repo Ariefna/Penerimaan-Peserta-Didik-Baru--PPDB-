@@ -37,11 +37,11 @@ if (isset($_GET['page'])) {
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Sign in to start your session</p>
+                <p class="login-box-msg">Masuk untuk memulai sesi Anda</p>
 
                 <form id="form-login" action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Username">
+                        <input type="text" class="form-control" name="username" placeholder="Nama">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -49,7 +49,7 @@ if (isset($_GET['page'])) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="Password">
+                        <input type="password" class="form-control" name="password" placeholder="kata Sandi">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
@@ -61,16 +61,16 @@ if (isset($_GET['page'])) {
                             <div class="icheck-primary">
                                 <input type="checkbox" id="remember">
                                 <label for="remember">
-                                    Remember Me
+                                    Ingat Saya
                                 </label>
                             </div>
                         </div>
                         <!-- /.col -->
                         <div class="col-4">
-                            <button type="submit" class="btn btn-primary btn-block">Sign In</button>
+                            <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                         </div>
                         <div class="col-12 mt-3">
-                            <a class="btn btn-warning text-white btn-block" data-toggle="modal" data-target="#tambahdata">Register</a>
+                            <a class="btn btn-warning text-white btn-block" data-toggle="modal" data-target="#tambahdata">Daftar</a>
                         </div>
                         <!-- /.col -->
                     </div>
@@ -92,7 +92,7 @@ if (isset($_GET['page'])) {
             <div class="modal-content">
                 <form id="form-tambah">
                     <div class="modal-header">
-                        <h5 class="modal-title">Registrasi Peserta</h5>
+                        <h5 class="modal-title">Daftar Peserta</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -107,7 +107,7 @@ if (isset($_GET['page'])) {
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
                         <div class="form-group">
-                            <label>Password</label>
+                            <label>Kata Sandi</label>
                             <input type="text" name="password" class="form-control password" required="">
                         </div>
 
