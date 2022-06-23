@@ -280,6 +280,7 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES (6,'Ujang Admin','kepala','ujang','$2y$10$4NXRGP7oqVPSHRKQj1mkgerznnXK1.jGP6ULQES3qadtmcQXNUdWy',1),(19,'Arief','admin','Arief','$2y$10$TqpecKkfRMakSeIaFzaNg.iddMwskGWFHGzAk.QlJdAn7rRbp7t2u',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
+alter table setting add `status_pendaftaran` int(1) NOT NULL;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

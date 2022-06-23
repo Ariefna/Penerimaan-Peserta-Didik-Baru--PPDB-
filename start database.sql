@@ -27,6 +27,7 @@ CREATE TABLE `setting` (
   `kec` text NOT NULL, 
   `web` text NOT NULL, 
   `kepala` text NOT NULL, 
+  `status_pendaftaran` int(1) NOT NULL,
   `nip` text NOT NULL, 
   PRIMARY KEY (id_setting),
   CONSTRAINT FK_User FOREIGN KEY (id_user)

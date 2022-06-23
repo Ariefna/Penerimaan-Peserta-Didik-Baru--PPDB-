@@ -216,6 +216,51 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="alert alert-info alert-has-icon">
+                        <div class="alert-icon"><i class=""></i></div>
+                        <div class="alert-body">
+                            <div class="alert-body">Data Peserta Berdasarkan Asal Sekolah </div>
+
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table style="font-size: 16px" class="table table-bordered table-striped" id="table-1">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center">
+                                            No
+                                        </th>
+                                        <th>Asal Sekolah</th>
+                                        <th>Kota</th>
+                                        <th>Jumlah</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
+                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa group by nama_sekolah order by 3");
+                                    $no = 0;
+                                    while ($siswa = mysqli_fetch_array($query)) {
+                                        $no++;
+                                    ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $siswa['kota_sekolah'] ?></td>
+                                            <td><?= $siswa['jumlah'] ?></td>
+                                        </tr>
+                                    <?php }
+                                    ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <!-- /.container-fluid -->
 </section>
 <!-- /.content -->

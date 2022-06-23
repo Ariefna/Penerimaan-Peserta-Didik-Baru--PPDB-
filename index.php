@@ -35,7 +35,6 @@ if (isset($_SESSION['nama']) && !isset($_GET['laporan'])) {
     <!-- End of Footer -->
 <?php
 } else if (!isset($_GET['laporan'])) {
-    echo "sini";
     include 'view/login.php';
 } else if (isset($_GET['laporan'])) {
 
