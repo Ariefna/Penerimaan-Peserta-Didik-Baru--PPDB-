@@ -38,7 +38,6 @@ if (isset($_GET['page'])) {
         <div class="card">
             <div class="card-body login-card-body">
                 <p class="login-box-msg">Masuk untuk memulai sesi Anda</p>
-
                 <form id="form-login" action="" method="post">
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" name="username" placeholder="Nama">
@@ -70,8 +69,10 @@ if (isset($_GET['page'])) {
                             <button type="submit" class="btn btn-primary btn-block">Masuk</button>
                         </div>
                         <div class="col-12 mt-3">
-                            <?= $setting['status_pendaftaran'] == 1 && '<a class="btn btn-secondary text-white btn-block" data-toggle="modal" data-target="#tambahdata">Daftar</a>' ?>
+                            <?= $setting['status_pendaftaran'] == 1 ? '<a class="btn btn-secondary text-white btn-block" data-toggle="modal" data-target="#tambahdata">Daftar</a>' : '' ?>
                         </div>
+
+                        <p class="login-box-msg">Perlu bantuan untuk login / Pendaftaran? Dapatkan Bantuan telp <?= $setting['no_telp'] ?>.</p>
                         <!-- /.col -->
                     </div>
                 </form>

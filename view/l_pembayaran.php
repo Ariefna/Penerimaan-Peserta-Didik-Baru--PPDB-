@@ -75,7 +75,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
         </tr>
     </table>
     <br>
-    <h4 align="center" style="margin-top:0px;"><u>BUKTI PENDAFTARAN</u></h4>
+    <h4 align="center" style="margin-top:0px;"><u>BUKTI PEMBAYARAN</u></h4>
     <b>
         <center>
             PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB) <br>
@@ -86,7 +86,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
 
     <table width="100%" border="0">
         <tr>
-            <td width="200">NO. PENDAFTARAN</td>
+            <td width="200">NO. PEMBAYARAN</td>
             <td width="1">:</td>
             <td><?php echo $siswa['id_siswa']; ?></td>
         </tr>
@@ -168,6 +168,13 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
     </table>
     <br>
 
+    <center>
+        <div style="border:1px solid black; color:green;width:30%;padding:10px;">
+            <b style="font-size:20px;">S U D A H B A Y A R</b>
+        </div>
+    </center>
+    <br>
+
     <div style="float:right;">
         <?php echo $setting['kota']; ?>, <?php echo date('d-m-Y'); ?> <br>
         Ketua Panitia PPDB, <br>
@@ -177,39 +184,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
     </div>
     <br><br><br><br><br><br><br><br><br>
 
-    <b><u>Siapkan Berkas Berikut Ketika anda melakukan DAFTAR ULANG :</u></b>
-    <br>
-    <table width="100%" border="0" style="margin-left:5px;">
-        <tr>
-            <td width="1">1.</td>
-            <td>Cetak bukti pendaftaran</td>
-            <td width="1">:</td>
-            <td>1 lembar</td>
-        </tr>
-        <tr>
-            <td>2.</td>
-            <td>Foto copy Akte Kelahiran dan Kartu Keluarga</td>
-            <td>:</td>
-            <td>2 lembar</td>
-        </tr>
-        <tr>
-            <td>3.</td>
-            <td>Surat Keterangan Lulus dan Ijazah MTs/SMP <b>(*Apabila sudah ada)</b></td>
-            <td>:</td>
-            <td>2 lembar</td>
-        </tr>
-        <tr>
-            <td>4.</td>
-            <td>Fc. Kartu NISN <b>(*No. NISN/Screen NISN)</b></td>
-            <td>:</td>
-            <td>1 lembar</td>
-        </tr>
-        <tr>
-            <td valign="top">5.</td>
-            <td colspan="3">Semua berkas dimasukan kedalam map biru (Putra), map kuning (Putri) dan diserahkan kepada Panitia PPDB <?php echo $siswa['nama_siswa']; ?> Tahun Pelajaran <?php echo date("Y"); ?>
-            </td>
-        </tr>
-    </table>
+
 
 </body>
 
