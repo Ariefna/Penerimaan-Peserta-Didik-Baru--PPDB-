@@ -44,6 +44,18 @@
                     <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+            <div class="col-lg-12">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h3><?= $setting['status_pendaftaran'] == 0 ? "Tidak Aktif" : "Aktif" ?></h3>
+                        <p>Status Pendaftaran</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fa fa-users"></i>
+                    </div>
+                    <a href="?ganti_mode=<?= $setting['status_pendaftaran'] == 0 ? "1" : "0" ?>" class="small-box-footer">Ganti Mode <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
 
         </div>
 

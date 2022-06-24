@@ -20,7 +20,28 @@ define('BASEPATH', dirname(__FILE__));
 $setting = mysqli_fetch_array(mysqli_query($koneksi, "select * from setting where id_setting='1'"));
 
 
-
+if (isset($_GET['ganti_mode'])) {
+    $data = [
+        'status_pendaftaran' => $_GET['ganti_mode']
+    ];
+    $table = "setting";
+    $command = 'UPDATE ' . $table . ' SET ';
+    $field = $value = null;
+    foreach ($data as $f => $v) {
+        $field    .= "," . $f . "='" . $v . "'";
+    }
+    $command .= substr($field, 1);
+    if ($where != null) {
+        foreach ($where as $f => $v) {
+            $value .= "#" . $f . "='" . $v . "'";
+        }
+        $command .= ' WHERE ' . substr($value, 1);
+        $command = str_replace('#', ' AND ', $command);
+    }
+    $exec = mysqli_query($koneksi, $command);
+    // ($exec) ? $status = 'OK' : $status = 'NO';
+    // return $status;
+}
 function fetch($koneksi, $table, $where = null)
 {
     $command = 'SELECT * FROM ' . $table;

@@ -102,6 +102,7 @@ CREATE TABLE `setting` (
   `logo_sidadik` varchar(100) NOT NULL,
   `tgl_pengumuman` date NOT NULL,
   `tgl_tutup` date NOT NULL,
+  `status_pendaftaran` int(1) NOT NULL,
   PRIMARY KEY (`id_setting`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -112,7 +113,7 @@ CREATE TABLE `setting` (
 
 LOCK TABLES `setting` WRITE;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
-INSERT INTO `setting` VALUES (1,'MTSN 1 WONOGIRI',2,'121133120001','20363812','Negeri','Jl. Tandon ','Bulungan','Jawa Tengah','assets/img/logo635.jpg',NULL,'mtsn1wonogiri@gmail.com','081228603030','assalamualikum wr wb','assalamualikum wr wb 2','081228603030','<p>Untuk Info Pembayaran Bisa di Tulis disini melalui Fitur Setting PPDB</p>','<p><br></p><ol><li>Surat Keterangan Lulus</li><li>Akta Kelahiran</li><li>Kartu Keluarga</li></ol>','Wonogiri','Wonogiri','mtsn1wonogiri.sch.id','Drs. H. Marimo, M. Pd','-','1','assets/img/kop/kop.png','assets/img/logo/logo_ppdb505.png','2021-05-21','2021-05-20');
+INSERT INTO `setting` VALUES (1,'MTSN 1 WONOGIRI',2,'121133120001','20363812','Negeri','Jl. Tandon ','Bulungan','Jawa Tengah','assets/img/logo635.jpg',NULL,'mtsn1wonogiri@gmail.com','081228603030','assalamualikum wr wb','assalamualikum wr wb 2','081228603030','<p>Untuk Info Pembayaran Bisa di Tulis disini melalui Fitur Setting PPDB</p>','<p><br></p><ol><li>Surat Keterangan Lulus</li><li>Akta Kelahiran</li><li>Kartu Keluarga</li></ol>','Wonogiri','Wonogiri','mtsn1wonogiri.sch.id','Drs. H. Marimo, M. Pd','-','1','assets/img/kop/kop.png','assets/img/logo/logo_ppdb505.png','2021-05-21','2021-05-20',1);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -127,8 +128,6 @@ CREATE TABLE `siswa` (
   `id_siswa` int(11) NOT NULL AUTO_INCREMENT,
   `nama_siswa` varchar(50) NOT NULL,
   `nisn` varchar(10) NOT NULL,
-  `nama_sekolah` varchar(50) DEFAULT NULL,
-`kota_sekolah` varchar(50) DEFAULT NULL,
   `nis` varchar(50) DEFAULT NULL,
   `warga_siswa` varchar(50) DEFAULT NULL,
   `nik` varchar(30) DEFAULT NULL,
@@ -241,7 +240,7 @@ CREATE TABLE `siswa` (
   `online` int(1) DEFAULT 0,
   `password` text DEFAULT NULL,
   PRIMARY KEY (`id_siswa`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -250,7 +249,7 @@ CREATE TABLE `siswa` (
 
 LOCK TABLES `siswa` WRITE;
 /*!40000 ALTER TABLE `siswa` DISABLE KEYS */;
-INSERT INTO `siswa` VALUES (1,'55555','55555','1234567891234567','WNI','1234567891234567','Surabaya','2022-06-21','L',4,5,'Islam','Dokter','088808002145','gayus733@gmail.com','Kesenian','Tinggal di asrama pesantren','jawa timur','surabaya','surabaya','surabaya','jl. jdnjnd','jdnjndjv','123456','Sepeda motor','Kurang dari 5 km','1-10 menit','Wali/orangtua asuh','Gangguan komunikasi','Tuna Rungu','Y','Y','Y','','','','','','1234567891234567','1234567891234567','1234567891234567','1234567891234567','ajrf',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,'55555');
+INSERT INTO `siswa` VALUES (1,'55555','55555','1234567891234567','WNI','1234567891234567','Surabaya','2022-06-21','L',4,5,'Islam','Dokter','088808002145','gayus733@gmail.com','Kesenian','Tinggal di asrama pesantren','jawa timur','surabaya','surabaya','surabaya','jl. jdnjnd','jdnjndjv','123456','Sepeda motor','Kurang dari 5 km','1-10 menit','Wali/orangtua asuh','Gangguan komunikasi','Tuna Rungu','Y','Y','Y','','','','','','1234567891234567','1234567891234567','1234567891234567','1234567891234567','ajrf',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,NULL,0,'55555'),(2,'Aroef','5555515555',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,'5555515555');
 /*!40000 ALTER TABLE `siswa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -280,7 +279,6 @@ LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
 INSERT INTO `user` VALUES (6,'Ujang Admin','kepala','ujang','$2y$10$4NXRGP7oqVPSHRKQj1mkgerznnXK1.jGP6ULQES3qadtmcQXNUdWy',1),(19,'Arief','admin','Arief','$2y$10$TqpecKkfRMakSeIaFzaNg.iddMwskGWFHGzAk.QlJdAn7rRbp7t2u',1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
-alter table setting add `status_pendaftaran` int(1) NOT NULL;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -292,4 +290,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-22 17:53:52
+-- Dump completed on 2022-06-24 13:15:34
