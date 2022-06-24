@@ -153,7 +153,7 @@
                             <li class="nav-item">
                                 <a href="?page=documentpendaftaran" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
-                                    <p>Document Pendaftaran</p>
+                                    <p>Dokumen Pendaftaran</p>
                                 </a>
                             </li>
                         <?php } ?>
