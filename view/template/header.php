@@ -1,3 +1,5 @@
+<?php $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]); ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
