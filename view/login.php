@@ -37,10 +37,10 @@ if (isset($_GET['page'])) {
         <!-- /.login-logo -->
         <div class="card">
             <div class="card-body login-card-body">
-                <p class="login-box-msg">Masuk untuk memulai sesi Anda</p>
+                <p class="login-box-msg">Aplikasi Penerimaan Peserta Didik Baru (PPDB)</p>
                 <form id="form-login" action="" method="post">
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="username" placeholder="Nama">
+                        <input type="text" class="form-control" name="username" placeholder="NISN / Username">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>
@@ -48,7 +48,7 @@ if (isset($_GET['page'])) {
                         </div>
                     </div>
                     <div class="input-group mb-3">
-                        <input type="password" class="form-control" name="password" placeholder="kata Sandi">
+                        <input type="password" class="form-control" name="password" placeholder="Password">
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-lock"></span>
