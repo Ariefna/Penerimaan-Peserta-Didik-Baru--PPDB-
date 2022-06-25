@@ -96,12 +96,14 @@
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
-                        <li class="nav-item">
-                            <a href="?" class="nav-link">
-                                <i class="nav-icon fa fa-home"></i>
-                                <p>Menu Utama</p>
-                            </a>
-                        </li>
+                        <?php if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') { ?>
+                            <li class="nav-item">
+                                <a href="?" class="nav-link">
+                                    <i class="nav-icon fa fa-home"></i>
+                                    <p>Menu Utama</p>
+                                </a>
+                            </li>
+                        <?php } ?>
                         <?php if ($_SESSION['level'] == 'admin') { ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">

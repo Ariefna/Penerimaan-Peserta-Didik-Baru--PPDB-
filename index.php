@@ -27,7 +27,11 @@ if (isset($_SESSION['nama']) && !isset($_GET['laporan'])) {
             include "$halaman";
         }
     } else {
-        include 'view/home.php';
+        if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') {
+            include 'view/home.php';
+        } else {
+            include 'view/pendaftaran.php';
+        }
     }
     ?>
     <!-- Footer -->
