@@ -113,7 +113,7 @@ CREATE TABLE `setting` (
 
 LOCK TABLES `setting` WRITE;
 /*!40000 ALTER TABLE `setting` DISABLE KEYS */;
-INSERT INTO `setting` VALUES (1,'MTSN 1 WONOGIRI',2,'121133120001','20363812','Negeri','Jl. Tandon ','Bulungan','Jawa Tengah','assets/img/logo635.jpg',NULL,'mtsn1wonogiri@gmail.com','081228603030','assalamualikum wr wb','assalamualikum wr wb 2','081228603030','<p>Untuk Info Pembayaran Bisa di Tulis disini melalui Fitur Setting PPDB</p>','<p><br></p><ol><li>Surat Keterangan Lulus</li><li>Akta Kelahiran</li><li>Kartu Keluarga</li></ol>','Wonogiri','Wonogiri','mtsn1wonogiri.sch.id','Drs. H. Marimo, M. Pd','-','1','assets/img/kop/kop.png','assets/img/logo/logo_ppdb505.png','2021-05-21','2021-05-20',1);
+INSERT INTO `setting` VALUES (1,'MTSN 1 WONOGIRI',2,'121133120001','20363812','Negeri','Jl. Tandon ','Bulungan','Jawa Tengah','assets/img/logo635.jpg',NULL,'mtsn1wonogiri@gmail.com','081228603030','assalamualikum wr wb','assalamualikum wr wb 2','081228603030','<p>Untuk Info Pembayaran Bisa di Tulis disini melalui Fitur Setting PPDB</p>','<p><br></p><ol><li>Surat Keterangan Lulus</li><li>Akta Kelahiran</li><li>Kartu Keluarga</li></ol>','Wonogiri','Wonogiri','mtsn1wonogiri.sch.id','Drs. H. Marimo, M. Pd','-','1','assets/img/kop/kop.png','assets/img/logo/logo_ppdb505.png','2021-05-21','2021-05-20',0);
 /*!40000 ALTER TABLE `setting` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -130,6 +130,8 @@ CREATE TABLE `siswa` (
   `nisn` varchar(10) NOT NULL,
   `nis` varchar(50) DEFAULT NULL,
   `warga_siswa` varchar(50) DEFAULT NULL,
+  `nama_sekolah` varchar(100) NULL,
+  `kota_sekolah` varchar(100) NULL,
   `nik` varchar(30) DEFAULT NULL,
   `tempat_lahir` varchar(50) DEFAULT NULL,
   `tgl_lahir` date DEFAULT NULL,
@@ -249,7 +251,7 @@ CREATE TABLE `siswa` (
 
 LOCK TABLES `siswa` WRITE;
 /*!40000 ALTER TABLE `siswa` DISABLE KEYS */;
-INSERT INTO `siswa` VALUES (1,'55555','55555','1234567891234567','WNI','1234567891234567','Surabaya','2022-06-21','L',4,5,'Islam','Dokter','088808002145','gayus733@gmail.com','Kesenian','Tinggal di asrama pesantren','jawa timur','surabaya','surabaya','surabaya','jl. jdnjnd','jdnjndjv','123456','Sepeda motor','Kurang dari 5 km','1-10 menit','Wali/orangtua asuh','Gangguan komunikasi','Tuna Rungu','Y','Y','Y','','','','','','1234567891234567','1234567891234567','1234567891234567','1234567891234567','ajrf',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,2,NULL,0,'55555'),(2,'Aroef','5555515555',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,'5555515555');
+INSERT INTO `siswa` VALUES (1,'55555','55555','1234567891234567','WNI','1234567891234567','Surabaya','2022-06-21','L',4,5,'Islam','Dokter','088808002145','gayus733@gmail.com','Kesenian','Tinggal di asrama pesantren','jawa timur','surabaya','surabaya','surabaya','jl. jdnjnd','jdnjndjv','123456','Sepeda motor','Kurang dari 5 km','1-10 menit','Wali/orangtua asuh','Gangguan komunikasi','Tuna Rungu','Y','Y','Y','','','','','','1234567891234567','1234567891234567','1234567891234567','1234567891234567','ajrf',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png','kip72.jpeg','kk811.jpg',NULL,0,'ijazah505.png','akta505.png',NULL,NULL,NULL,NULL,NULL,0,2,NULL,0,'55555'),(2,'Aroef','5555515555',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'',NULL,NULL,NULL,NULL,NULL,'default.png',NULL,NULL,NULL,0,NULL,NULL,NULL,NULL,NULL,NULL,NULL,0,1,NULL,0,'5555515555');
 /*!40000 ALTER TABLE `siswa` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -290,4 +292,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-06-24 13:15:34
+-- Dump completed on 2022-06-25 12:11:12
