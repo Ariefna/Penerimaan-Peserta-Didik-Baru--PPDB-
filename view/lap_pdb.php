@@ -15,13 +15,13 @@
                                         <th class="text-center">
                                             No
                                         </th>
-                                        <th>NISN</th>
-                                        <th>Password</th>
-                                        <th>Nama Siswa</th>
-                                        <th>L/P</th>
-                                        <th>TTL</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
+                                        <th>Nama</th>
+                                        <th>Alamat</th>
+                                        <th>No. Hp</th>
+                                        <th>Asal Sekolah</th>
+                                        <th>Tanggal Pengisian Formulir</th>
+                                        <th>Pembayaran</th>
+                                        <th>No Formulir</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -33,74 +33,13 @@
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
-                                            <td><?= $siswa['nisn'] ?></td>
-                                            <td><?= $siswa['password'] ?></td>
                                             <td><?= $siswa['nama_siswa'] ?></td>
-                                            <td><?= $siswa['jk'] ?></td>
-                                            <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
-
-                                            <td>
-                                                <?php if ($siswa['status_pay'] == 0) { ?>
-                                                    <span class="badge badge-warning">Panding</span>
-                                                <?php } elseif ($siswa['status_pay'] == 1) { ?>
-                                                    <span class="badge badge-success">Approve </span>
-                                                <?php } else { ?>
-                                                    <span class="badge badge-danger">Don't Approve</span>
-                                                <?php } ?>
-                                            </td>
-                                            <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
-                                                <!-- Button trigger modal -->
-                                                <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
-                                                    <i class="fas fa-user    "></i>
-                                                </button>
-                                                <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button>
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
-                                                    <div class="modal-dialog" role="document">
-                                                        <div class="modal-content">
-                                                            <form id="form-edit<?= $no ?>">
-                                                                <div class="modal-header">
-                                                                    <h5 class="modal-title">Ubah Status Siswa</h5>
-                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                                        <span aria-hidden="true">&times;</span>
-                                                                    </button>
-                                                                </div>
-                                                                <div class="modal-body">
-
-                                                                    <input type="hidden" value="<?= $siswa['id_siswa'] ?>" name="id_siswa" class="form-control" required="">
-
-                                                                    <div class="form-group">
-                                                                        <div class="control-label">Pilih Status</div>
-                                                                        <div class="custom-switches-stacked mt-2">
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="1" class="custom-switch-input" checked>
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Aktif</span>
-                                                                            </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="2" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Mutasi</span>
-                                                                            </label>
-                                                                            <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input">
-                                                                                <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
-                                                                            </label>
-
-
-                                                                        </div>
-                                                                    </div>
-                                                                    <div class="modal-footer">
-                                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                                        <button type="submit" class="btn btn-primary">Save</button>
-                                                                    </div>
-                                                            </form>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                            <td><?= $siswa['alamat_siswa'] ?></td>
+                                            <td><?= $siswa['no_hp'] ?></td>
+                                            <td><?= $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $siswa['tgl_siswa'] ?></td>
+                                            <td><?= $siswa['status_pay'] == 1 ? "lunas" : "belum lunas" ?></td>
+                                            <td><?= $siswa['id_siswa'] ?></td>
                                         </tr>
                                         <script>
                                             $(function() {

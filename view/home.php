@@ -2,6 +2,10 @@
     .align-items-center .col-md-9 {
         padding-bottom: 9px;
     }
+
+    #myTabContent5 {
+        padding-top: 15px;
+    }
 </style>
 <!-- Main content -->
 <section class="content">
@@ -27,7 +31,7 @@
                         <p>Laki-laki</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-edit"></i>
+                        <i class="fa fa-mars"></i>
                     </div>
                     <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -39,7 +43,7 @@
                         <p>Perempuan</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-flask"></i>
+                        <i class="fa fa-venus"></i>
                     </div>
                     <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
@@ -51,7 +55,7 @@
                         <p>Status Pendaftaran</p>
                     </div>
                     <div class="icon">
-                        <i class="fa fa-users"></i>
+                        <!-- <i class="fa fa-users"></i> -->
                     </div>
                     <a href="?ganti_mode=<?= $setting['status_pendaftaran'] == 0 ? "1" : "0" ?>" class="small-box-footer">Ganti Mode <i class="fa fa-arrow-circle-right"></i></a>
                 </div>

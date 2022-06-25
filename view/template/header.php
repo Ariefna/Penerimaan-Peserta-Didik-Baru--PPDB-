@@ -177,7 +177,7 @@
                             <li class="nav-item">
                                 <a href="?page=verifikasipendaftaran" class="nav-link">
                                     <i class="nav-icon fas fa-file-signature"></i>
-                                    <p>Verifikasi Data Diri</p>
+                                    <p>Verifikasi Pendaftaran</p>
                                 </a>
                             </li>
                         <?php } ?>
@@ -197,15 +197,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['level'] == 'admin') { ?>
-                            <li class="nav-item">
-                                <a href="?page=cetakppdb" class="nav-link">
-                                    <i class="nav-icon fas fa-print"></i>
-                                    <p>Cetak Peserta Didik Baru</p>
-                                </a>
-                            </li>
-                        <?php } ?>
-                        <?php if ($_SESSION['level'] == 'kepala') { ?>
+                        <?php if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') { ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-copy"></i>
