@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><?php echo $setting['nama_sekolah']; ?> | <?php echo $_GET['page'] == "" ? '' : $_GET['page']; ?></title>
+    <title><?php echo $setting['nama_sekolah']; ?> | <?php echo isset($_GET['page']) && $_GET['page']; ?></title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
