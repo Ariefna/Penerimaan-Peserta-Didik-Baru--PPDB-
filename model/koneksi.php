@@ -24,6 +24,7 @@ if (isset($_GET['ganti_mode'])) {
     $data = [
         'status_pendaftaran' => $_GET['ganti_mode']
     ];
+    $where = null;
     $table = "setting";
     $command = 'UPDATE ' . $table . ' SET ';
     $field = $value = null;
