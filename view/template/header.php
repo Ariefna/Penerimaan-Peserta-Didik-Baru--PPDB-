@@ -6,7 +6,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title><?php echo $setting['nama_sekolah']; ?> | <?php echo isset($_GET['page']) && $_GET['page']; ?></title>
+    <title><?php echo $setting['nama_sekolah']; ?></title>
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -144,6 +144,14 @@
                                 <a href="?page=documentpendaftaran" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
                                     <p>Dokumen Pendaftaran</p>
+                                </a>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
+                            <li class="nav-item">
+                                <a href="?page=buktipembayaran" class="nav-link">
+                                    <i class="nav-icon fas fa-upload"></i>
+                                    <p>Dokumen Pembayaran</p>
                                 </a>
                             </li>
                         <?php } ?>
