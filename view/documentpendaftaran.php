@@ -6,7 +6,7 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Data Dokumen</h4>
+                        <h4>Dokumen Pendaftaran</h4>
                     </div>
                     <div class="card-body">
                         <form id="form-berkas">
