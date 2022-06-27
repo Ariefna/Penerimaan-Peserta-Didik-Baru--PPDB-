@@ -43,9 +43,9 @@
                                                 <?php if ($siswa['status_pay'] == 1) { ?>
                                                     <span class="badge badge-warning">Panding</span>
                                                 <?php } elseif ($siswa['status_pay'] == 2) { ?>
-                                                    <span class="badge badge-success">Setujuh </span>
+                                                    <span class="badge badge-success">Diterima </span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Tidak Setujuh</span>
+                                                    <span class="badge badge-danger">Ditolak</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
@@ -81,12 +81,12 @@
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="1" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Setujuh</span>
+                                                                                <span class="custom-switch-description">Diterima</span>
                                                                             </label>
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Tidak Setujuh</span>
+                                                                                <span class="custom-switch-description">Ditolak</span>
                                                                             </label>
 
 
