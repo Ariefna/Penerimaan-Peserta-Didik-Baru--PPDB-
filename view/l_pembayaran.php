@@ -62,7 +62,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
                 <b style="font-size:25px;">TAHUN PELAJARAN <?php echo date("Y"); ?>
                 </b><br>
                 <b align="left" style="font-size:15px;">
-                    Kantor : <?= $setting['alamat'] ?> <img src="img/telp.jpg" alt="telp." style="margin-bottom:-5px;margin-right:-5px;"> <?php echo $setting['telp']; ?>
+                    Kantor : <?= $setting['alamat'] ?> <img src="img/telp.jpg" alt="telp." style="margin-bottom:-5px;margin-right:-5px;"> <?= $setting['no_telp'] ?>
                     <br>
                     Website : http://localhost:8000/ - E-mail : <?php echo $setting['email']; ?></b>
             </td>
