@@ -105,42 +105,42 @@ if ($pg == 'ubah') {
                 }
             }
         }
-        if ($_FILES['kop']['name'] <> '') {
-            $kop = $_FILES['kop']['name'];
-            $temp = $_FILES['kop']['tmp_name'];
-            $ext = explode('.', $kop);
-            $ext = end($ext);
-            if (in_array($ext, $ektensi)) {
-                $dest = 'assets/img/kop'  . rand(1, 1000) . '.' . $ext;
-                $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
-                if ($upload) {
-                    $data2 = [
-                        'kop' => $dest
-                    ];
-                    $exec = update($koneksi, 'setting', $data2, $where);
-                } else {
-                    echo "gagal";
-                }
-            }
-        }
-        if ($_FILES['logo_SIDADIK']['name'] <> '') {
-            $logo_SIDADIK = $_FILES['logo_SIDADIK']['name'];
-            $temp = $_FILES['logo_SIDADIK']['tmp_name'];
-            $ext = explode('.', $logo_SIDADIK);
-            $ext = end($ext);
-            if (in_array($ext, $ektensi)) {
-                $dest = 'assets/img/logo/logo_SIDADIK' . rand(1, 1000) . '.' . $ext;
-                $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
-                if ($upload) {
-                    $data2 = [
-                        'logo_SIDADIK' => $dest
-                    ];
-                    $exec = update($koneksi, 'setting', $data2, $where);
-                } else {
-                    echo "gagal";
-                }
-            }
-        }
+        // if ($_FILES['kop']['name'] <> '') {
+        //     $kop = $_FILES['kop']['name'];
+        //     $temp = $_FILES['kop']['tmp_name'];
+        //     $ext = explode('.', $kop);
+        //     $ext = end($ext);
+        //     if (in_array($ext, $ektensi)) {
+        //         $dest = 'assets/img/kop'  . rand(1, 1000) . '.' . $ext;
+        //         $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
+        //         if ($upload) {
+        //             $data2 = [
+        //                 'kop' => $dest
+        //             ];
+        //             $exec = update($koneksi, 'setting', $data2, $where);
+        //         } else {
+        //             echo "gagal";
+        //         }
+        //     }
+        // }
+        // if ($_FILES['logo_SIDADIK']['name'] <> '') {
+        //     $logo_SIDADIK = $_FILES['logo_SIDADIK']['name'];
+        //     $temp = $_FILES['logo_SIDADIK']['tmp_name'];
+        //     $ext = explode('.', $logo_SIDADIK);
+        //     $ext = end($ext);
+        //     if (in_array($ext, $ektensi)) {
+        //         $dest = 'assets/img/logo/logo_SIDADIK' . rand(1, 1000) . '.' . $ext;
+        //         $upload = move_uploaded_file($temp, $_SERVER['DOCUMENT_ROOT'] . '/' . $dest);
+        //         if ($upload) {
+        //             $data2 = [
+        //                 'logo_SIDADIK' => $dest
+        //             ];
+        //             $exec = update($koneksi, 'setting', $data2, $where);
+        //         } else {
+        //             echo "gagal";
+        //         }
+        //     }
+        // }
         // if ($_FILES['ttd']['name'] <> '') {
         //     $logo = $_FILES['ttd']['name'];
         //     $temp = $_FILES['ttd']['tmp_name'];
