@@ -164,7 +164,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') { ?>
+                        <?php if (($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) || ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2)) { ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-copy"></i>
