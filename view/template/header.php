@@ -129,7 +129,7 @@
                                     <li class="nav-item">
                                         <a href="?page=master_KepalaSekolah" class="nav-link">
                                             <i class="far fa-circle nav-icon"></i>
-                                            <p>Kepala Sekolah</p>
+                                            <p>Sekolah</p>
                                         </a>
                                     </li>
                                 </ul>
