@@ -33,7 +33,7 @@ if (isset($_GET['page'])) {
     <div class="login-box">
         <div class="login-logo">
             <!-- <a href="http://localhost:8000/index2.html"><b>Admin</b>LTE</a> -->
-            <img src="http://localhost:8000/<?= $setting['logo'] ?>" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8;width: 200px;" />
+            <img src="http://localhost:8000/<?= $setting['logo'] ?>" alt="AdminLTE Logo" class="brand-image" style="opacity: 0.8;width: 200px;" />
         </div>
         <!-- /.login-logo -->
         <div class="card">
