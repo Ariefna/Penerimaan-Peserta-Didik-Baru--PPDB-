@@ -86,7 +86,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="contact-tab5" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact" aria-selected="false">
-                                    <i class="fas fa-mail-bulk"></i> Contact</a>
+                                    <i class="fas fa-mail-bulk"></i> Kontak</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="kepala-tab5" data-toggle="tab" href="#kepala5" role="tab" aria-controls="kepala" aria-selected="false">
@@ -206,7 +206,7 @@
                                     <div class="card" id="settings-card">
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Kepala Madrasah</label>
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Kepala Sekolah</label>
                                             <div class="col-sm-7 col-md-9">
                                                 <?= $setting['kepala'] ?>
                                             </div>

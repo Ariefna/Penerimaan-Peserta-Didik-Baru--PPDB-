@@ -126,12 +126,6 @@
                                             <p>Panitia</p>
                                         </a>
                                     </li>
-                                    <li class="nav-item">
-                                        <a href="?page=master_KepalaSekolah" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Sekolah</p>
-                                        </a>
-                                    </li>
                                 </ul>
                             </li>
                         <?php } ?>
@@ -143,14 +137,8 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
-                            <li class="nav-item">
-                                <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
-                                    <i class="nav-icon fas fa-upload"></i>
-                                    <p>Bukti Pendaftaran</p>
-                                </a>
-                            </li>
-                        <?php } ?>
+
+
                         <?php if ($_SESSION['level'] == 'peserta') { ?>
                             <li class="nav-item">
                                 <a href="?page=documentpendaftaran" class="nav-link">
@@ -159,22 +147,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
-                            <li class="nav-item">
-                                <a href="?page=buktipembayaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
-                                    <i class="nav-icon fas fa-upload"></i>
-                                    <p>Bukti Pembayaran</p>
-                                </a>
-                            </li>
-                        <?php } ?>
-                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2) { ?>
-                            <li class="nav-item">
-                                <a href="?laporan=l_pembayaran" title="Tunggu Panitia Approve Berkas Pembayaran Anda" class="nav-link">
-                                    <i class="nav-icon fas fa-upload"></i>
-                                    <p>Bukti Pembayaran</p>
-                                </a>
-                            </li>
-                        <?php } ?>
+
                         <?php if ($_SESSION['level'] == 'admin') { ?>
                             <li class="nav-item">
                                 <a href="?page=verifikasipendaftaran" class="nav-link">
@@ -191,12 +164,33 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if (false) { ?>
+                        <?php if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') { ?>
                             <li class="nav-item">
-                                <a href="?page=cetakppd" class="nav-link">
-                                    <i class="nav-icon fas fa-print"></i>
-                                    <p>Cetak Buku Pendaftaran</p>
+                                <a href="#" class="nav-link">
+                                    <i class="nav-icon fas fa-copy"></i>
+                                    <p>
+                                        Cetak
+                                        <i class="fas fa-angle-left right"></i>
+                                    </p>
                                 </a>
+                                <ul class="nav nav-treeview">
+                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
+                                        <li class="nav-item">
+                                            <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
+                                                <i class="nav-icon fas fa-upload"></i>
+                                                <p>Bukti Pendaftaran</p>
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2) { ?>
+                                        <li class="nav-item">
+                                            <a href="?laporan=l_pembayaran" title="Tunggu Panitia Approve Berkas Pembayaran Anda" class="nav-link">
+                                                <i class="nav-icon fas fa-upload"></i>
+                                                <p>Bukti Pembayaran</p>
+                                            </a>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
                             </li>
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'kepala' || $_SESSION['level'] == 'admin') { ?>
@@ -216,6 +210,14 @@
                                         </a>
                                     </li>
                                 </ul>
+                            </li>
+                        <?php } ?>
+                        <?php if ($_SESSION['level'] == 'admin') { ?>
+                            <li class="nav-item">
+                                <a href="?page=master_KepalaSekolah" class="nav-link">
+                                    <i class="nav-icon fas fa-database"></i>
+                                    <p>Setting</p>
+                                </a>
                             </li>
                         <?php } ?>
                         <li class="nav-item">

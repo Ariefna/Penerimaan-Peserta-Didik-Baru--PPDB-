@@ -3,6 +3,13 @@
     <div class="container-fluid">
         <!-- Small boxes (Stat box) -->
         <div class="row">
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        selamat <?= $_SESSION['nama']; ?> calon peserta didik baru <?= $setting['nama_sekolah']; ?> .
+                    </div>
+                </div>
+            <?php } ?>
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
