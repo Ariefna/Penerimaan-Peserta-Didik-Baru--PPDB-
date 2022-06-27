@@ -4,7 +4,7 @@
     }
 
     #myTabContent5 {
-        padding-top: 15px;
+        padding-top: 40px;
     }
 </style>
 <!-- Main content -->
@@ -70,7 +70,7 @@
                     <div class="alert alert-info alert-has-icon">
                         <div class="alert-icon"><i class=""></i></div>
                         <div class="alert-body">
-                            <div class="alert-body">Data Lembaga </div>
+                            <div class="alert-body">Data Sekolah </div>
 
                         </div>
                     </div>
@@ -82,7 +82,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="profile-tab5" data-toggle="tab" href="#profile5" role="tab" aria-controls="profile" aria-selected="false">
-                                    <i class="fas fa-id-card"></i> Alamat Lembaga</a>
+                                    <i class="fas fa-id-card"></i> Alamat Sekolah</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="contact-tab5" data-toggle="tab" href="#contact5" role="tab" aria-controls="contact" aria-selected="false">
@@ -99,27 +99,27 @@
                                     <div class="card" id="settings-card">
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">NSM</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">NSM</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['nsm'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">NPSN </label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">NPSN </label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['npsn'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Nama Sekolah</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Nama Sekolah</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['nama_sekolah'] ?>
                                             </div>
                                         </div>
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-description" class="form-control-label col-sm-3 text-md-right">Status Sekolah</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-description" class="form-control-label col-sm-2 text-md-right">Status Sekolah</label>
+                                            <div class="col-sm-7 col-md-9">
 
                                                 <?= $setting['status'] ?>
                                             </div>
@@ -135,27 +135,27 @@
                                     <div class="card" id="settings-card">
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Alamat Lengkap</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Alamat Lengkap</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['alamat'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Provinsi </label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Provinsi </label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['provinsi'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Kabupaten</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Kabupaten</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['kab'] ?>
                                             </div>
                                         </div>
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-description" class="form-control-label col-sm-3 text-md-right">Kecamatan</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-description" class="form-control-label col-sm-2 text-md-right">Kecamatan</label>
+                                            <div class="col-sm-7 col-md-9">
 
                                                 <?= $setting['kec'] ?>
 
@@ -175,20 +175,20 @@
                                     <div class="card" id="settings-card">
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">No Telpon</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">No Telpon</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['no_telp'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Email </label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Email </label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['email'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Website</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Website</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['web'] ?>
                                             </div>
                                         </div>
@@ -206,14 +206,14 @@
                                     <div class="card" id="settings-card">
 
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Kepala Madrasah</label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Kepala Madrasah</label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['kepala'] ?>
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
-                                            <label for="site-title" class="form-control-label col-sm-3 text-md-right">Nip </label>
-                                            <div class="col-sm-6 col-md-9">
+                                            <label for="site-title" class="form-control-label col-sm-2 text-md-right">Nip </label>
+                                            <div class="col-sm-7 col-md-9">
                                                 <?= $setting['nip'] ?>
                                             </div>
                                         </div>
@@ -264,8 +264,8 @@
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
-                                            <td><?= $siswa['nama_sekolah'] ?></td>
-                                            <td><?= $siswa['kota_sekolah'] ?></td>
+                                            <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
                                             <td><?= $siswa['jumlah'] ?></td>
                                         </tr>
                                     <?php }
