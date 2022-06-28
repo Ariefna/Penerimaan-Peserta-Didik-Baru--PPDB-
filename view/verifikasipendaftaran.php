@@ -58,7 +58,7 @@
                                                         <div class="modal-content">
                                                             <form id="form-edit<?= $no ?>">
                                                                 <div class="modal-header">
-                                                                    <h5 class="modal-title">Ubah Status Pembayaran</h5>
+                                                                    <h5 class="modal-title">Ubah Status Pendaftaran</h5>
                                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                                         <span aria-hidden="true">&times;</span>
                                                                     </button>

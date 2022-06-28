@@ -147,7 +147,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
+                        <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) { ?>
                             <li class="nav-item">
                                 <a href="?page=buktipembayaran" class="nav-link">
                                     <i class="nav-icon fas fa-upload"></i>
@@ -172,7 +172,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if (($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) || ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2)) { ?>
+                        <?php if (($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) || ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2)) { ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-copy"></i>
@@ -182,7 +182,7 @@
                                     </p>
                                 </a>
                                 <ul class="nav nav-treeview">
-                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] > 1) { ?>
+                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) { ?>
                                         <li class="nav-item">
                                             <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
                                                 <i class="nav-icon fas fa-upload"></i>
