@@ -184,7 +184,7 @@
                                 <ul class="nav nav-treeview">
                                     <?php if ($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) { ?>
                                         <li class="nav-item">
-                                            <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Approve Berkas Anda" class="nav-link">
+                                            <a href="?laporan=l_pendaftaran" title="Tunggu Panitia Diterima Berkas Anda" class="nav-link">
                                                 <i class="nav-icon fas fa-upload"></i>
                                                 <p>Bukti Pendaftaran</p>
                                             </a>
@@ -192,7 +192,7 @@
                                     <?php } ?>
                                     <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2) { ?>
                                         <li class="nav-item">
-                                            <a href="?laporan=l_pembayaran" title="Tunggu Panitia Approve Berkas Pembayaran Anda" class="nav-link">
+                                            <a href="?laporan=l_pembayaran" title="Tunggu Panitia Diterima Berkas Pembayaran Anda" class="nav-link">
                                                 <i class="nav-icon fas fa-upload"></i>
                                                 <p>Bukti Pembayaran</p>
                                             </a>

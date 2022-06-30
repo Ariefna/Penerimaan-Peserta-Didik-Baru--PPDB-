@@ -41,11 +41,11 @@
 
                                             <td>
                                                 <?php if ($siswa['status_pay'] == 0) { ?>
-                                                    <span class="badge badge-warning">Panding</span>
+                                                    <span class="badge badge-warning">menunggu</span>
                                                 <?php } elseif ($siswa['status_pay'] == 1) { ?>
-                                                    <span class="badge badge-success">Approve </span>
+                                                    <span class="badge badge-success">Diterima </span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Don't Approve</span>
+                                                    <span class="badge badge-danger">Ditolak</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
@@ -76,12 +76,12 @@
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="1" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Approve</span>
+                                                                                <span class="custom-switch-description">Diterima</span>
                                                                             </label>
                                                                             <label class="custom-switch">
                                                                                 <input type="radio" name="status" value="2" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">Don't Approve</span>
+                                                                                <span class="custom-switch-description">Ditolak</span>
                                                                             </label>
                                                                         </div>
                                                                     </div>

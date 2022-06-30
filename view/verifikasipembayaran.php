@@ -41,7 +41,7 @@
 
                                             <td>
                                                 <?php if ($siswa['status_pay'] == 1) { ?>
-                                                    <span class="badge badge-warning">Panding</span>
+                                                    <span class="badge badge-warning">menunggu</span>
                                                 <?php } elseif ($siswa['status_pay'] == 2) { ?>
                                                     <span class="badge badge-success">Diterima </span>
                                                 <?php } else { ?>

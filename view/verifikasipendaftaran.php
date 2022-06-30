@@ -41,11 +41,11 @@
 
                                             <td>
                                                 <?php if ($siswa['status'] == 1) { ?>
-                                                    <span class="badge badge-warning">Panding</span>
+                                                    <span class="badge badge-warning">menunggu</span>
                                                 <?php } elseif ($siswa['status'] == 2) { ?>
-                                                    <span class="badge badge-success">Approve </span>
+                                                    <span class="badge badge-success">Diterima </span>
                                                 <?php } else { ?>
-                                                    <span class="badge badge-danger">Don't Approve</span>
+                                                    <span class="badge badge-danger">Ditolak</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
