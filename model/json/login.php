@@ -23,7 +23,7 @@ if (isset($_POST['username'])) {
         $query = mysqli_query($koneksi, "select * from siswa where nisn='$username'");
         $ceklogin1 = mysqli_num_rows($query);
         $user1 = mysqli_fetch_array($query);
-        if ($ceklogin1 == 1 || password_verify($password, $user1['password'])) {
+        if ($ceklogin1 == 1 || password_verify($password, isset($user1['password']))) {
             $_SESSION['id_user'] = $user1['id_siswa'];
             $_SESSION['nama'] = $user1['nama_siswa'];
             $_SESSION['level'] = 'peserta';
