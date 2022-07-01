@@ -126,6 +126,13 @@
                                             <p>Panitia</p>
                                         </a>
                                     </li>
+
+                                    <li class="nav-item">
+                                        <a href="?page=master_kepala" class="nav-link">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p>Kepala Sekolah</p>
+                                        </a>
+                                    </li>
                                 </ul>
                             </li>
                         <?php } ?>

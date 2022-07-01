@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <h4> <i class="fa fa-user" aria-hidden="true"></i> Manajemen User
-                            Panitia</h4>
+                            Kepala Sekolah</h4>
 
                         <div class="card-header-action">
                             <button type="button" class="btn btn-icon icon-left btn-warning" data-toggle="modal" data-target="#tambahdata">
@@ -30,7 +30,7 @@
                                     </thead>
                                     <tbody>
                                         <?php
-                                        $query = mysqli_query($koneksi, "select * from user where not level = 'kepala'");
+                                        $query = mysqli_query($koneksi, "select * from user where level = 'kepala'");
                                         $no = 0;
                                         while ($user = mysqli_fetch_array($query)) {
                                             $no++;
@@ -82,10 +82,10 @@
                                                                             <label for="level">Level</label>
                                                                             <select class="form-control" name="level" id="level" required>
                                                                                 <option value="">Pilih Level</option>
-                                                                                <option value="admin">Panitia || Admin</option>
-                                                                                <!-- <option value="kepala">
+                                                                                <!-- <option value="admin">Panitia || Admin</option> -->
+                                                                                <option value="kepala">
                                                                                     Kepala Sekolah
-                                                                                </option> -->
+                                                                                </option>
                                                                             </select>
                                                                         </div>
                                                                         <div class="form-group">
@@ -178,8 +178,8 @@
                             <label for="level">Level</label>
                             <select class="form-control" name="level" id="level" required>
                                 <option value="">Pilih Level</option>
-                                <option value="admin">Panitia || Admin</option>
-                                <!-- <option value="kepala">Kepala Sekolah</option> -->
+                                <!-- <option value="admin">Panitia || Admin</option> -->
+                                <option value="kepala">Kepala Sekolah</option>
                             </select>
                         </div>
                         <div class="form-group">
