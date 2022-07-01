@@ -295,7 +295,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Jos . . .',
+                    title: '<?= $_SESSION['nama']; ?> . . .',
                     message: 'data siswa berhasil disimpan',
                     position: 'topRight'
                 });

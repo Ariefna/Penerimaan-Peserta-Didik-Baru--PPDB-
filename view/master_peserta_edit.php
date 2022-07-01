@@ -2258,7 +2258,7 @@ if (isset($_GET['action']) == 'edit') {
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2293,7 +2293,7 @@ if (isset($_GET['action']) == 'edit') {
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2328,7 +2328,7 @@ if (isset($_GET['action']) == 'edit') {
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2363,7 +2363,7 @@ if (isset($_GET['action']) == 'edit') {
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });

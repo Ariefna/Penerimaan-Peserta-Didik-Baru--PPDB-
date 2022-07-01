@@ -154,7 +154,7 @@ if (isset($_GET['page'])) {
                 success: function(data) {
                     if (data == 'OK') {
                         iziToast.success({
-                            title: 'Jos . . .',
+                            title: '<?= $_SESSION['nama']; ?> . . .',
                             message: 'data siswa berhasil disimpan',
                             position: 'topRight'
                         });
@@ -191,7 +191,7 @@ if (isset($_GET['page'])) {
                 success: function(data) {
                     if (data == 'ok') {
                         iziToast.success({
-                            title: 'Jos . . .',
+                            title: '<?= $_SESSION['nama']; ?> . . .',
                             message: 'Selamat Anda berhasil Masuk',
                             position: 'topRight'
                         });

@@ -80,7 +80,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap!',
+                    title: 'Berhasil!',
                     message: data,
                     position: 'topRight'
                 });

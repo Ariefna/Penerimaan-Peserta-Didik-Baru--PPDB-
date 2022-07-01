@@ -129,7 +129,7 @@
                                             success: function(data) {
 
                                                 iziToast.success({
-                                                    title: 'Jos . . . ',
+                                                    title: '<?= $_SESSION['nama']; ?> . . . ',
                                                     message: 'Data Berhasil diubah',
                                                     position: 'topRight'
                                                 });
@@ -164,7 +164,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Jos . . . ',
+                    title: '<?= $_SESSION['nama']; ?> . . . ',
                     message: 'Data Berhasil ditambahkan',
                     position: 'topRight'
                 });
@@ -195,7 +195,7 @@
                     data: 'id_kelas=' + id,
                     success: function(data) {
                         iziToast.error({
-                            title: 'Jos . . . ',
+                            title: '<?= $_SESSION['nama']; ?> . . . ',
                             message: 'Data Berhasil dihapus',
                             position: 'topRight'
                         });

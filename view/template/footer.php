@@ -33,7 +33,7 @@
                 success: function(data) {
                     $('#btnsimpan').prop('readonly', false);
                     iziToast.success({
-                        title: 'Jos . . .',
+                        title: '<?= $_SESSION['nama']; ?> . . .',
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
@@ -65,7 +65,7 @@
                 success: function(data) {
                     $('#btnsimpan').prop('readonly', false);
                     iziToast.success({
-                        title: 'Jos . . .',
+                        title: '<?= $_SESSION['nama']; ?> . . .',
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
@@ -106,7 +106,7 @@
                 success: function(data) {
                     $('#btnsimpan').prop('readonly', false);
                     iziToast.success({
-                        title: 'Jos . . .',
+                        title: '<?= $_SESSION['nama']; ?> . . .',
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });
@@ -138,7 +138,7 @@
                 success: function(data) {
                     $('#btnsimpan').prop('readonly', false);
                     iziToast.success({
-                        title: 'Jos . . .',
+                        title: '<?= $_SESSION['nama']; ?> . . .',
                         message: 'Data Berhasil disimpan',
                         position: 'topRight'
                     });

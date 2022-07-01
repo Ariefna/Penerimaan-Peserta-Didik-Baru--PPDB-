@@ -2259,7 +2259,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2294,7 +2294,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2329,7 +2329,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
@@ -2364,7 +2364,7 @@
             success: function(data) {
 
                 iziToast.success({
-                    title: 'Mantap! ',
+                    title: 'Berhasil! ',
                     message: 'Data berhasil disimpan',
                     position: 'topRight'
                 });
