@@ -49,7 +49,9 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                <? if ($siswa['file_pembayaran'] == '') { ?>
+                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
+                                                <? } ?>
                                                 <!-- <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<? //= enkripsi($siswa['id_siswa']) 
                                                                                                                                                                                     ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a> -->
                                                 <!-- Button trigger modal -->
