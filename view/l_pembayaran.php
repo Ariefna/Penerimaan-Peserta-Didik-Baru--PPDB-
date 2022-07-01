@@ -79,7 +79,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
     <b>
         <center>
             PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB) <br>
-            <?php echo $siswa['nama_siswa']; ?> TAHUN PELAJARAN <?php echo date("Y"); ?>
+            <?php echo $setting['nama_sekolah']; ?> TAHUN PELAJARAN <?php echo date("Y"); ?>-<?php echo date("Y") + 1; ?>
         </center>
     </b>
     <br>
