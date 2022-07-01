@@ -10,7 +10,7 @@
                     </div>
                 </div>
             <?php } ?>
-            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null) { ?>
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
                         Peringatan,<?= $_SESSION['nama']; ?> belum melakukan upload dokumen pembayaran.
