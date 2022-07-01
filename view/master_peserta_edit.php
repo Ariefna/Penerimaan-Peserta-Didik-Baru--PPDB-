@@ -1435,7 +1435,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                     <div class="form-group row align-items-center">
                                                                         <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                                                         <div class="col-sm-6 col-md-6">
-                                                                            <img src="../<?= $siswa['file_kk'] ?>" class="img-thumbnail" width="50%">
+                                                                            <img src="http://localhost:8000/assets/upload/kk/<?= $siswa['file_kk'] ?>" class="img-thumbnail" width="50%">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row align-items-center">
@@ -1452,7 +1452,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                     <div class="form-group row align-items-center">
                                                                         <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                                                         <div class="col-sm-6 col-md-6">
-                                                                            <img src="../<?= $siswa['file_akte'] ?>" class="img-thumbnail" width="50%">
+                                                                            <img src="http://localhost:8000/assets/upload/akta/<?= $siswa['file_akte'] ?>" class="img-thumbnail" width="50%">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row align-items-center">
@@ -1469,7 +1469,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                     <div class="form-group row align-items-center">
                                                                         <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                                                         <div class="col-sm-6 col-md-6">
-                                                                            <img src="../<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
+                                                                            <img src="http://localhost:8000/assets/upload/ijazah/<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
                                                                         </div>
                                                                     </div>
                                                                     <div class="form-group row align-items-center">
@@ -1486,7 +1486,7 @@ if (isset($_GET['action']) == 'edit') {
                                                                     <div class="form-group row align-items-center">
                                                                         <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                                                         <div class="col-sm-6 col-md-6">
-                                                                            <img src="../<?= $siswa['file_kip'] ?>" class="img-thumbnail" width="50%">
+                                                                            <img src="http://localhost:8000/assets/upload/kip/<?= $siswa['file_kip'] ?>" class="img-thumbnail" width="50%">
                                                                         </div>
                                                                     </div>
 
