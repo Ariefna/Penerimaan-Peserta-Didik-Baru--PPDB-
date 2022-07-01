@@ -40,8 +40,27 @@ if (isset($_GET['ganti_mode'])) {
         $command = str_replace('#', ' AND ', $command);
     }
     $exec = mysqli_query($koneksi, $command);
+    $data = [
+        'status_pendaftaran'     => $_GET['ganti_mode'] == 1 ? "Aktif" : "Non Aktif",
+    ];
+    $exec = insert($koneksi, 'historypendaftaran', $data);
+    // echo $exec;
     // ($exec) ? $status = 'OK' : $status = 'NO';
     // return $status;
+}
+function insert($koneksi, $table, $data = null)
+{
+    $command = 'INSERT INTO ' . $table;
+    $field = $value = null;
+    foreach ($data as $f => $v) {
+        $field    .= ',' . $f;
+        $value    .= ", '" . $v . "'";
+    }
+    $command .= ' (' . substr($field, 1) . ')';
+    $command .= ' VALUES(' . substr($value, 1) . ')';
+    $exec = mysqli_query($koneksi, $command);
+    ($exec) ? $status = 'OK' : $status = 'NO';
+    return $status;
 }
 function fetch($koneksi, $table, $where = null)
 {

@@ -107,6 +107,13 @@ CREATE TABLE `setting` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+CREATE TABLE `historypendaftaran` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `status_pendaftaran` varchar(50) NOT NULL,
+  `date` DATETIME DEFAULT   CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1 DEFAULT CHARSET=latin1;
+
 --
 -- Dumping data for table `setting`
 --
@@ -276,6 +283,7 @@ CREATE TABLE `user` (
 --
 -- Dumping data for table `user`
 --
+
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
