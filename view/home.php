@@ -90,7 +90,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" id="kepala-tab5" data-toggle="tab" href="#kepala5" role="tab" aria-controls="kepala" aria-selected="false">
-                                    <i class="fas fa-user"></i> Kepala Madrasah</a>
+                                    <i class="fas fa-user"></i> Kepala Sekolah</a>
                             </li>
                         </ul>
                         <div class="tab-content" id="myTabContent5">
