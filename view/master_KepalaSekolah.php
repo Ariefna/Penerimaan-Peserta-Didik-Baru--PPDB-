@@ -5,7 +5,7 @@
             <div class='row'>
                 <div class='col-md-12 notif'></div>
                 <div class='col-md-12'>
-                    <form id="form-setting">
+                    <form class="card" style="padding: 25px;" id="form-setting">
                         <div class='box box-solid'>
                             <div class='box-header with-border'>
                                 <!-- <h3 class='box-title'>Pengaturan Aplikasi</h3> -->
