@@ -231,7 +231,7 @@
                             <li class="nav-item">
                                 <a href="?page=master_KepalaSekolah" class="nav-link">
                                     <i class="nav-icon fas fa-database"></i>
-                                    <p>Setting</p>
+                                    <p>Pengaturan</p>
                                 </a>
                             </li>
                         <?php } ?>
