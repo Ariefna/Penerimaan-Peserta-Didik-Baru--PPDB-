@@ -89,7 +89,7 @@
                                                     success: function(data) {
 
                                                         iziToast.success({
-                                                            title: 'OKee!',
+                                                            title: 'berhasil',
                                                             message: 'Status Berhasil diubah',
                                                             position: 'topRight'
                                                         });
