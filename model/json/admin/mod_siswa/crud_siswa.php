@@ -408,7 +408,7 @@ if ($pg == 'tambah') {
         if ($exec != 'OK') {
             echo mysqli_error($koneksi);
         } else {
-            echo $exec;
+            echo ucwords(strtolower($nama));
         }
     } else {
         echo "nisn sudah tersedia";

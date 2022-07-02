@@ -152,9 +152,9 @@ if (isset($_GET['page'])) {
                     });
                 },
                 success: function(data) {
-                    if (data == 'OK') {
+                    if (data != 'nisn sudah tersedia' && data != 'NO') {
                         iziToast.success({
-                            title: '<?= $_SESSION['nama']; ?> . . .',
+                            title: data + ' . . .',
                             message: 'data siswa berhasil disimpan',
                             position: 'topRight'
                         });
@@ -189,9 +189,9 @@ if (isset($_GET['page'])) {
                     });
                 },
                 success: function(data) {
-                    if (data == 'ok') {
+                    if (data != 'Password atau Username Anda salah') {
                         iziToast.success({
-                            title: '<?= $_SESSION['nama']; ?> . . .',
+                            title: data + '. . .',
                             message: 'Selamat Anda berhasil Masuk',
                             position: 'topRight'
                         });

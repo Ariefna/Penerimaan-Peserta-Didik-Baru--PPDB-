@@ -18,7 +18,7 @@ if (isset($_POST['username'])) {
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level'];
-        echo "ok";
+        echo $user['nama_user'];;
     } else {
         $query = mysqli_query($koneksi, "select * from siswa where nisn='$username'");
         $ceklogin1 = mysqli_num_rows($query);
@@ -27,7 +27,7 @@ if (isset($_POST['username'])) {
             $_SESSION['id_user'] = $user1['id_siswa'];
             $_SESSION['nama'] = $user1['nama_siswa'];
             $_SESSION['level'] = 'peserta';
-            echo "ok";
+            echo $user1['nama_siswa'];;
         } else {
             echo "Password atau Username Anda salah";
             // echo $ceklogin1 == 1 && password_verify($password, $user['password']);
