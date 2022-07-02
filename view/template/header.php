@@ -179,7 +179,7 @@
                                 </a>
                             </li>
                         <?php } ?>
-                        <?php if (($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) || ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2)) { ?>
+                        <?php if (($_SESSION['level'] == 'peserta' && $siswa['status'] == 2) || ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 1)) { ?>
                             <li class="nav-item">
                                 <a href="#" class="nav-link">
                                     <i class="nav-icon fas fa-copy"></i>
@@ -197,7 +197,7 @@
                                             </a>
                                         </li>
                                     <?php } ?>
-                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 2) { ?>
+                                    <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 1) { ?>
                                         <li class="nav-item">
                                             <a href="?laporan=l_pembayaran" title="Tunggu Panitia Diterima Berkas Pembayaran Anda" class="nav-link">
                                                 <i class="nav-icon fas fa-upload"></i>
