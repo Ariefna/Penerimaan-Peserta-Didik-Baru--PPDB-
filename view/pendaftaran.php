@@ -12,8 +12,15 @@
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2) { ?>
                 <div class="col-md-12">
-                    <div class="alert alert-success" role="alert">
+                    <div class="alert alert-warning" role="alert">
                         Peringatan,<?= $_SESSION['nama']; ?> belum melakukan upload dokumen pembayaran.
+                    </div>
+                </div>
+            <?php } ?>
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] != null && $siswa['status'] == 2 && $siswa['status_pay'] == 1) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Selamat,<?= $_SESSION['nama']; ?> dokumen pembayaran telah kami terima.
                     </div>
                 </div>
             <?php } ?>
