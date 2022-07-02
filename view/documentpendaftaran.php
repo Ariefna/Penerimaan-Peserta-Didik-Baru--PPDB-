@@ -24,6 +24,13 @@
                     </div>
                 </div>
             <?php } ?>
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2 && $siswa['status_pay'] == 0) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-success" role="alert">
+                        Selamat,<?= $_SESSION['nama']; ?> dokumen pendaftaran telah kami terima.
+                    </div>
+                </div>
+            <?php } ?>
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
