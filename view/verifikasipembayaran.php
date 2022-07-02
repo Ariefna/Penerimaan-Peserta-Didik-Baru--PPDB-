@@ -42,7 +42,7 @@
                                             <td>
                                                 <?php if ($siswa['status_pay'] == 0) { ?>
                                                     <span class="badge badge-warning">menunggu</span>
-                                                <?php } elseif ($siswa['status_pay'] == 2) { ?>
+                                                <?php } elseif ($siswa['status_pay'] == 1) { ?>
                                                     <span class="badge badge-success">Diterima </span>
                                                 <?php } else { ?>
                                                     <span class="badge badge-danger">Ditolak</span>
