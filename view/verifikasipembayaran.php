@@ -40,7 +40,7 @@
                                             <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
 
                                             <td>
-                                                <?php if ($siswa['status_pay'] == 1) { ?>
+                                                <?php if ($siswa['status_pay'] == 0) { ?>
                                                     <span class="badge badge-warning">menunggu</span>
                                                 <?php } elseif ($siswa['status_pay'] == 2) { ?>
                                                     <span class="badge badge-success">Diterima </span>
