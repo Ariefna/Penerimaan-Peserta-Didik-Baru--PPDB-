@@ -43,10 +43,19 @@ if (isset($_GET['ganti_mode'])) {
     $data = [
         'status_pendaftaran'     => $_GET['ganti_mode'] == 1 ? "Aktif" : "Non Aktif",
     ];
-    $exec = insert($koneksi, 'historypendaftaran', $data);
-    // echo $exec;
-    // ($exec) ? $status = 'OK' : $status = 'NO';
-    // return $status;
+    // $exec = insert($koneksi, 'historypendaftaran', $data);
+    $table = "historypendaftaran";
+    $command = 'INSERT INTO ' . $table;
+    $field = $value = null;
+    foreach ($data as $f => $v) {
+        $field    .= ',' . $f;
+        $value    .= ", '" . $v . "'";
+    }
+    $command .= ' (' . substr($field, 1) . ')';
+    $command .= ' VALUES(' . substr($value, 1) . ')';
+    $exec = mysqli_query($koneksi, $command);
+    ($exec) ? $status = 'OK' : $status = 'NO';
+    // echo $status;
 }
 // function insert($koneksi, $table, $data = null)
 // {

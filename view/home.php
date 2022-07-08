@@ -15,7 +15,7 @@
             <div class="col-lg-4">
                 <div class="small-box bg-blue">
                     <div class="inner">
-                        <h3><?= rowcount($koneksi, 'siswa', ['status' => 1]) ?></h3>
+                        <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk IN ('L','P')")) ?></h3>
                         <p>Jumlah Siswa</p>
                     </div>
                     <div class="icon">

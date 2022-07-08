@@ -6,28 +6,28 @@
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['status_pay'] == 1) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        selamat <?= $_SESSION['nama']; ?> calon peserta didik baru <?= $setting['nama_sekolah']; ?> .
+                        SELAMAT <?= strtoupper($_SESSION['nama']); ?> CALON PESERTA DIDIK BARU <?= strtoupper($setting['nama_sekolah']); ?> .
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-warning" role="alert">
-                        Peringatan,<?= $_SESSION['nama']; ?> belum melakukan upload dokumen pembayaran.
+                        PERINGATAN,<?= strtoupper($_SESSION['nama']); ?> BELUM MELAKUKAN UPLOAD DOKUMEN PEMBAYARAN.
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] != null && $siswa['status'] == 2 && $siswa['status_pay'] == 1) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        Selamat,<?= $_SESSION['nama']; ?> dokumen pembayaran telah kami terima.
+                        SELAMAT,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TERIMA.
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2 && $siswa['status_pay'] == 0) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        Selamat,<?= $_SESSION['nama']; ?> dokumen pendaftaran telah kami terima.
+                        SELAMAT,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PENDAFTARAN TELAH KAMI TERIMA.
                     </div>
                 </div>
             <?php } ?>
