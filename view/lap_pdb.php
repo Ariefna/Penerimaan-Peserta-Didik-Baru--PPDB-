@@ -47,7 +47,41 @@
                                                     "responsive": true,
                                                     "lengthChange": false,
                                                     "autoWidth": false,
-                                                    "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+                                                    buttons: [{
+                                                        extend: 'print',
+                                                        title: '',
+                                                        customize: function(win) {
+                                                            $(win.document.body)
+                                                                .prepend(
+                                                                    ` <table border="0" width="100%">
+        <tr>
+            <td align="left">
+                <img src="http://localhost:8000/<?= $setting['logo'] ?>" alt="logo" width="100">
+            </td>
+            <td align="left">
+                <b style="font-size:25px;">PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB)</b> <br>
+                <b style="font-size:25px;"><?= $setting['nama_sekolah'] ?></b> <br>
+                <b style="font-size:25px;">TAHUN PELAJARAN <?php echo date("Y"); ?>
+                </b><br>
+                <b align="left" style="font-size:15px;">
+                    Kantor : <?= $setting['alamat'] ?> <img src="img/telp.jpg" alt="telp." style="margin-bottom:-5px;margin-right:-5px;"> <?= $setting['no_telp'] ?>
+                    <br>
+                    Website : http://localhost:8000/ - E-mail : <?php echo $setting['email']; ?></b>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                <hr size="0" color="black" style="margin:0px;margin-bottom:1px;">
+                <hr size="2" color="black" style="margin:0px;">
+            </td>
+        </tr>
+    </table>`
+                                                                );
+
+                                                            $(win.document.body).find('table')
+                                                                .addClass('compact');
+                                                        }
+                                                    }]
                                                 }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
                                                 // $('#example2').DataTable({
                                                 //     "paging": true,
