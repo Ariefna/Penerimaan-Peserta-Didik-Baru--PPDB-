@@ -31,6 +31,13 @@
                     </div>
                 </div>
             <?php } ?>
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] != null && $siswa['status'] == 2 && $siswa['status_pay'] == 2) { ?>
+                <div class="col-md-12">
+                    <div class="alert alert-danger" role="alert">
+                        MAAF,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TOLAK. MOHON UPLOAD DOCUMENT PEMBAYARAN ULANG.
+                    </div>
+                </div>
+            <?php } ?>
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
