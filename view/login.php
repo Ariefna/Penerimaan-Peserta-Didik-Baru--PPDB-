@@ -109,12 +109,19 @@ if (isset($_GET['page'])) {
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
                         <div class="form-group">
+                            <label>Alumni</label>
+                            <select class='form-control' name='alumni' onchange="getComboA(this)">
+                                <option value='1'>- Bukan Alumni -</option>
+                                <option value='2'>- Alumni -</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
                             <label>Asal Sekolah</label>
-                            <input type="text" name="nama_sekolah" class="form-control" required="">
+                            <input type="text" id="nama_sekolah" name="nama_sekolah" class="form-control" required="">
                         </div>
                         <div class="form-group">
                             <label>Kota Asal Sekolah</label>
-                            <input type="text" name="kota_sekolah" class="form-control" required="">
+                            <input type="text" id="kota_sekolah" name="kota_sekolah" class="form-control" required="">
                         </div>
                         <div class="form-group">
                             <label>Kata Sandi</label>
@@ -140,6 +147,17 @@ if (isset($_GET['page'])) {
 
 
     <script>
+        function getComboA(selectObject) {
+            var value = selectObject.value;
+            if (value == 2) {
+                $('#nama_sekolah').val("SMP Wachid Hasyim 1");
+                $('#kota_sekolah').val("Surabaya");
+            } else {
+                $('#nama_sekolah').val("");
+                $('#kota_sekolah').val("");
+            }
+
+        }
         $('#form-tambah').submit(function(e) {
             e.preventDefault();
             $.ajax({
