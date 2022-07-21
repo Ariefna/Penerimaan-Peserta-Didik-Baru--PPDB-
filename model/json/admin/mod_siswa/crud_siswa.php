@@ -11,6 +11,7 @@ if ($pg == 'simpan') {
     $status = (isset($_POST['status'])) ? 1 : 0;
     $email = str_replace("'", "`", $_POST['email']);
     $data = [
+        'tgl_siswa' => date("Y-m-d"),
         'nama_siswa' => !isset($_POST['nama_siswa']) ? '' : $_POST['nama_siswa'],
         'warga_siswa' => !isset($_POST['warga_siswa']) ? '' : $_POST['warga_siswa'],
         'nisn' => !isset($_POST['nisn']) ? '' : $_POST['nisn'],

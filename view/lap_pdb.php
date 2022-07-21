@@ -47,7 +47,7 @@
                                                     "responsive": true,
                                                     "lengthChange": false,
                                                     "autoWidth": false,
-                                                    buttons: [{
+                                                    buttons: ["copy", "csv", "excel", "colvis", {
                                                         extend: 'print',
                                                         title: '',
                                                         customize: function(win) {
