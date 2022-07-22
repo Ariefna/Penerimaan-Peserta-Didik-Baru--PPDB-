@@ -1,3 +1,156 @@
+<style>
+    .ui-autocomplete {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        float: left;
+        display: none;
+        min-width: 160px;
+        padding: 4px 0;
+        margin: 0 0 10px 25px;
+        list-style: none;
+        background-color: #ffffff;
+        border-color: #ccc;
+        border-color: rgba(0, 0, 0, 0.2);
+        border-style: solid;
+        border-width: 1px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        border-radius: 5px;
+        -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        -webkit-background-clip: padding-box;
+        -moz-background-clip: padding;
+        background-clip: padding-box;
+        *border-right-width: 2px;
+        *border-bottom-width: 2px;
+    }
+
+    .ui-menu-item>a.ui-corner-all {
+        display: block;
+        padding: 3px 15px;
+        clear: both;
+        font-weight: normal;
+        line-height: 18px;
+        color: #555555;
+        white-space: nowrap;
+        text-decoration: none;
+    }
+
+    .ui-state-hover,
+    .ui-state-active {
+        color: #ffffff;
+        text-decoration: none;
+        background-color: #0088cc;
+        border-radius: 0px;
+        -webkit-border-radius: 0px;
+        -moz-border-radius: 0px;
+        background-image: none;
+    }
+</style>
+<script type="text/javascript">
+    $(document).ready(function() {
+        var get = function(key) {
+            return window.localStorage ? window.localStorage[key] : null;
+        }
+
+        var put = function(key, value) {
+            if (window.localStorage) {
+                window.localStorage[key] = value;
+            }
+        }
+        $(".provinsi").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "http://dev.farizdotid.com/api/daerahindonesia/provinsi",
+                    dataType: "json",
+                    success: function(data) {
+                        newJson = data.provinsi.map(rec => {
+                            return {
+                                'value': rec.nama,
+                                'label': rec.nama,
+                                'id': rec.id,
+                            }
+                        })
+                        response(newJson);
+                    }
+                });
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                put('id_prov', ui.item.id);
+            }
+        });
+        $(".kab").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "https://dev.farizdotid.com/api/daerahindonesia/kota?id_provinsi=" + get("id_prov"),
+                    dataType: "json",
+                    success: function(data) {
+                        newJson = data.kota_kabupaten.map(rec => {
+                            return {
+                                'value': rec.nama,
+                                'label': rec.nama,
+                                'id': rec.id,
+                            }
+                        })
+                        response(newJson);
+                    }
+                });
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                put('id_kab', ui.item.id);
+            }
+        });
+        $(".kac").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "http://dev.farizdotid.com/api/daerahindonesia/kecamatan?id_kota=" + get("id_kab"),
+                    dataType: "json",
+                    success: function(data) {
+                        newJson = data.kecamatan.map(rec => {
+                            return {
+                                'value': rec.nama,
+                                'label': rec.nama,
+                                'id': rec.id,
+                            }
+                        })
+                        response(newJson);
+                    }
+                });
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                put('id_kac', ui.item.id);
+            }
+        });
+        $(".desa").autocomplete({
+            source: function(request, response) {
+                $.ajax({
+                    url: "https://dev.farizdotid.com/api/daerahindonesia/kelurahan?id_kecamatan=" + get("id_kac"),
+                    dataType: "json",
+                    success: function(data) {
+                        newJson = data.kelurahan.map(rec => {
+                            return {
+                                'value': rec.nama,
+                                'label': rec.nama,
+                                'id': rec.id,
+                            }
+                        })
+                        response(newJson);
+                    }
+                });
+            },
+            minLength: 2,
+            select: function(event, ui) {
+                put('id_desa', ui.item.id);
+            }
+        });
+    })
+</script>
 <?php $siswa = fetch($koneksi, 'siswa', ['id_siswa' => $_SESSION['id_user']]); ?>
 <section class="content">
     <div class="container-fluid">
@@ -201,7 +354,7 @@
                                                                             </div>
                                                                         </div>
 
-                                                                        <input class="form-control" name="prov" type="text" value="<?= $siswa['prov'] ?>" required />
+                                                                        <input class="form-control provinsi" name="prov" type="text" value="<?= $siswa['prov'] ?>" required />
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -211,7 +364,7 @@
                                                                                 <i class="text-info"><b>Kabupaten</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kab" value="<?= $siswa['kab'] ?>" required />
+                                                                        <input class="form-control kab" type="text" name="kab" value="<?= $siswa['kab'] ?>" required />
 
                                                                     </div>
                                                                 </div>
@@ -222,7 +375,7 @@
                                                                                 <i class="text-info"><b>Kecamatan</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kec" value="<?= $siswa['kec'] ?>" required />
+                                                                        <input class="form-control kac" type="text" name="kec" value="<?= $siswa['kec'] ?>" required />
 
                                                                     </div>
                                                                 </div>
@@ -233,7 +386,7 @@
                                                                                 <i class="text-info"><b>Desa</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="desa" value="<?= $siswa['desa'] ?>" required />
+                                                                        <input class="form-control desa" type="text" name="desa" value="<?= $siswa['desa'] ?>" required />
 
                                                                     </div>
                                                                 </div>
@@ -808,7 +961,7 @@
                                                                                 <i class="text-info"><b>Provinsi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
+                                                                        <input class="form-control provinsi" type="text" name="prov_ayah" value="<?= $siswa['prov_ayah'] ?>" />
                                                                         <!--<select class='form-control' id="form_prov_ayah" name='prov_ayah' required>
                                                                         <option value=""><?= $siswa['prov_ayah'] ?></option>
                                                                         <?php
@@ -829,7 +982,7 @@
                                                                                 <i class="text-info"><b>Kabupaten</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kab_ayah" value="<?= $siswa['kab_ayah'] ?>" />
+                                                                        <input class="form-control kab" type="text" name="kab_ayah" value="<?= $siswa['kab_ayah'] ?>" />
                                                                         <!--<select class='form-control' id="form_kab_ayah" name='kab_ayah' required>
                                                                         <option value="<?= $siswa['kab_ayah'] ?>"><?= $siswa['kab_ayah'] ?></option>
                                                                     </select>-->
@@ -842,7 +995,7 @@
                                                                                 <i class="text-info"><b>Kecamatan</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kec_ayah" value="<?= $siswa['kec_ayah'] ?>" />
+                                                                        <input class="form-control kac" type="text" name="kec_ayah" value="<?= $siswa['kec_ayah'] ?>" />
                                                                         <!--<select class='form-control' id="form_kec_ayah" name='kec_ayah' required>
                                                                         <option value="<?= $siswa['kec_ayah'] ?>"><?= $siswa['kec_ayah'] ?></option>
                                                                     </select>-->
@@ -855,7 +1008,7 @@
                                                                                 <i class="text-info"><b>Desa</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="desa_ayah" value="<?= $siswa['desa_ayah'] ?>" />
+                                                                        <input class="form-control desa" type="text" name="desa_ayah" value="<?= $siswa['desa_ayah'] ?>" />
                                                                         <!--<select class='form-control' id="form_des_ayah" name='desa_ayah' required>
                                                                         <option value="<?= $siswa['desa_ayah'] ?>"><?= $siswa['desa_ayah'] ?></option>
                                                                     </select>-->
@@ -1097,7 +1250,7 @@
                                                                                 <i class="text-info"><b>Provinsi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" hidden type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
+                                                                        <input class="form-control provinsi" hidden type="text" name="prov_ibu" value="<?= $siswa['prov_ibu'] ?>" readonly />
                                                                         <select class='form-control' id="form_prov_ibu" name='prov_ibu'>
                                                                             <option value=""><?= $siswa['prov_ibu'] ?></option>
                                                                             <?php
@@ -1118,7 +1271,7 @@
                                                                                 <i class="text-info"><b>Kabupaten</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kab_ibu" value="<?= $siswa['kab_ibu'] ?>" readonly />
+                                                                        <input class="form-control kab" type="text" name="kab_ibu" value="<?= $siswa['kab_ibu'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_kab_ibu" name='kab_ibu' readonly>
                                                                         <option value="<?= $siswa['kab_ibu'] ?>"><?= $siswa['kab_ibu'] ?></option>
                                                                     </select>-->
@@ -1131,7 +1284,7 @@
                                                                                 <i class="text-info"><b>Kecamatan</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kec_ibu" value="<?= $siswa['kec_ibu'] ?>" readonly />
+                                                                        <input class="form-control kac" type="text" name="kec_ibu" value="<?= $siswa['kec_ibu'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_kec_ibu" name='kec_ibu' readonly>
                                                                         <option value="<?= $siswa['kec_ibu'] ?>"><?= $siswa['kec_ibu'] ?></option>
                                                                     </select>-->
@@ -1144,7 +1297,7 @@
                                                                                 <i class="text-info"><b>Desa</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="desa_ibu" value="<?= $siswa['desa_ibu'] ?>" readonly />
+                                                                        <input class="form-control desa" type="text" name="desa_ibu" value="<?= $siswa['desa_ibu'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_des_ibu" name='desa_ibu' readonly>
                                                                         <option value="<?= $siswa['desa_ibu'] ?>"><?= $siswa['desa_ibu'] ?></option>
                                                                     </select>-->
@@ -1357,7 +1510,7 @@
                                                                                 <i class="text-info"><b>Provinsi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="prov_wali" value="<?= $siswa['prov_wali'] ?>" readonly />
+                                                                        <input class="form-control provinsi" type="text" name="prov_wali" value="<?= $siswa['prov_wali'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_prov_wali" name='prov_wali' readonly>
                                                                         <option value=""><?= $siswa['prov_wali'] ?></option>
                                                                         <?php
@@ -1378,7 +1531,7 @@
                                                                                 <i class="text-info"><b>Kabupaten</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kab_wali" value="<?= $siswa['kab_wali'] ?>" readonly />
+                                                                        <input class="form-control kab" type="text" name="kab_wali" value="<?= $siswa['kab_wali'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_kab_wali" name='kab_wali' readonly>
                                                                         <option value="<?= $siswa['kab_wali'] ?>"><?= $siswa['kab_wali'] ?></option>
                                                                     </select>-->
@@ -1391,7 +1544,7 @@
                                                                                 <i class="text-info"><b>Kecamatan</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kec_wali" value="<?= $siswa['kec_wali'] ?>" readonly />
+                                                                        <input class="form-control kac" type="text" name="kec_wali" value="<?= $siswa['kec_wali'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_kec_wali" name='kec_wali' readonly>
                                                                         <option value="<?= $siswa['kec_wali'] ?>"><?= $siswa['kec_wali'] ?></option>
                                                                     </select>-->
@@ -1404,7 +1557,7 @@
                                                                                 <i class="text-info"><b>Desa</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="desa_wali" value="<?= $siswa['desa_wali'] ?>" readonly />
+                                                                        <input class="form-control desa" type="text" name="desa_wali" value="<?= $siswa['desa_wali'] ?>" readonly />
                                                                         <!--<select class='form-control' id="form_des_wali" name='desa_wali' readonly>
                                                                         <option value="<?= $siswa['desa_wali'] ?>"><?= $siswa['desa_wali'] ?></option>
                                                                     </select>-->
