@@ -84,7 +84,6 @@
                                             <div class="card-body">
 
                                                 <div class="tab-content" id="myTabContent2">
-
                                                     <!-- DATA DIRI -->
                                                     <div class="tab-pane fade show active" id="datadiri" role="tabpanel" aria-labelledby="data-diri">
                                                         <form id="form-datadiri">
@@ -104,13 +103,13 @@
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
                                                                             <div class="input-group-text">
-                                                                                <i class="text-info"><b>Kewarganegaraan</b></i>
+                                                                                <i class="text-info"><b>Agama</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='warga_siswa' required>
-                                                                            <option value=''>Pilih Kewarganegaraan</option>";
-                                                                            <?php foreach ($kewarganegaraan as $val) { ?>
-                                                                                <?php if ($siswa['warga_siswa'] == $val) { ?>
+                                                                        <select class='form-control' name='agama' required>
+                                                                            <option value=''>Pilih Agama</option>";
+                                                                            <?php foreach ($agama as $val) { ?>
+                                                                                <?php if ($siswa['agama'] == $val) { ?>
                                                                                     <option value='<?= $val ?>' selected><?= $val ?> </option>
                                                                                 <?php  } else { ?>
                                                                                     <option value='<?= $val ?>'><?= $val ?> </option>
@@ -119,7 +118,6 @@
                                                                         </select>
                                                                     </div>
                                                                 </div>
-
                                                                 <div class="form-group col-md-4">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
@@ -175,37 +173,13 @@
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
-                                                                    <div class="text-info"><strong>Jenis Kelamin</strong></div>
-                                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                                        <input type="radio" id="customRadioInline1" name="jk" class="custom-control-input" value="L" <?php if ($siswa['jk'] == 'L') echo 'checked' ?>>
-                                                                        <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
-                                                                    </div>
-                                                                    <div class="custom-control custom-radio custom-control-inline">
-                                                                        <input type="radio" id="customRadioInline2" name="jk" class="custom-control-input" value="P" <?php if ($siswa['jk'] == 'P') echo 'checked' ?>>
-                                                                        <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-row">
-                                                                <div class="form-group col-md-6">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
-                                                                            <div class="input-group-text ">
-                                                                                <i class="text-info"><strong>Anak Ke</strong></i>
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>No. KK</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="anak_ke" value="<?= $siswa['anak_ke'] ?>" required="required" />
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group col-md-6">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text ">
-                                                                                <i class="text-info"><strong>Jml Saudara</strong></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <input class="form-control" type="text" name="saudara" value="<?= $siswa['saudara'] ?>" required="required" />
+                                                                        <input class="form-control" type="text" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" name="no_kk" value="<?= $siswa['no_kk'] ?>" required="required" />
                                                                     </div>
                                                                 </div>
 
@@ -213,98 +187,12 @@
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
                                                                             <div class="input-group-text">
-                                                                                <i class="text-info"><b>Agama</b></i>
+                                                                                <i class="text-info"><b>Nama Kepala Keluarga</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='agama' required>
-                                                                            <option value=''>Pilih Agama</option>";
-                                                                            <?php foreach ($agama as $val) { ?>
-                                                                                <?php if ($siswa['agama'] == $val) { ?>
-                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
-                                                                                <?php  } else { ?>
-                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
-                                                                                <?php } ?>
-                                                                            <?php } ?>
-                                                                        </select>
+                                                                        <input class="form-control" type="text" name="kepala_keluarga" value="<?= $siswa['kepala_keluarga'] ?>" required="required" />
                                                                     </div>
                                                                 </div>
-
-                                                                <div class="form-group col-md-6">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>Cita-cita</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <select class='form-control' name='cita' required>
-                                                                            <option value=''>Pilih Cita-cita</option>";
-                                                                            <?php foreach ($cita as $val) { ?>
-                                                                                <?php if ($siswa['cita'] == $val) { ?>
-                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
-                                                                                <?php  } else { ?>
-                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
-                                                                                <?php } ?>
-                                                                            <?php } ?>
-                                                                        </select>
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>No Hp</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>" required="required" />
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>Email</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <input class="form-control" type="email" name="email" value="<?= $siswa['email'] ?>" />
-                                                                    </div>
-                                                                </div>
-
-                                                                <div class="form-group col-md-4">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>Hobi</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <select class='form-control' name='hobi' required>
-                                                                            <option value=''>Pilih hobi</option>";
-                                                                            <?php foreach ($hobi as $val) { ?>
-                                                                                <?php if ($siswa['hobi'] == $val) { ?>
-                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
-                                                                                <?php  } else { ?>
-                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
-                                                                                <?php } ?>
-                                                                            <?php } ?>
-                                                                        </select>
-                                                                    </div>
-                                                                </div><br>
-                                                                <div class="form-group col-md-12">
-                                                                    <div class="text-info"><strong>Status Tempat Tinggal</strong></div>
-                                                                    <select class='form-control' name='status_tinggal_siswa' required>
-                                                                        <option value=''>Pilih status tinggal</option>";
-                                                                        <?php foreach ($status_tinggal_siswa as $val) { ?>
-                                                                            <?php if ($siswa['status_tinggal_siswa'] == $val) { ?>
-                                                                                <option value='<?= $val ?>' selected><?= $val ?> </option>
-                                                                            <?php  } else { ?>
-                                                                                <option value='<?= $val ?>'><?= $val ?> </option>
-                                                                            <?php } ?>
-                                                                        <?php } ?>
-                                                                    </select>
-                                                                </div>
-
-
                                                                 <div class="form-group col-md-6">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
@@ -324,9 +212,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <input class="form-control" type="text" name="kab" value="<?= $siswa['kab'] ?>" required />
-                                                                        <!--<select class='form-control' id="form_kab" name='kab' required>
-                                                                        <option value="<?= $siswa['kab'] ?>"><?= $siswa['kab'] ?></option>
-                                                                    </select>-->
+
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -337,9 +223,7 @@
                                                                             </div>
                                                                         </div>
                                                                         <input class="form-control" type="text" name="kec" value="<?= $siswa['kec'] ?>" required />
-                                                                        <!--<select class='form-control' id="form_kec" name='kec' required>
-                                                                        <option value="<?= $siswa['kec'] ?>"><?= $siswa['kec'] ?></option>
-                                                                    </select>-->
+
                                                                     </div>
                                                                 </div>
                                                                 <div class="form-group col-md-6">
@@ -350,11 +234,149 @@
                                                                             </div>
                                                                         </div>
                                                                         <input class="form-control" type="text" name="desa" value="<?= $siswa['desa'] ?>" required />
-                                                                        <!--<select class='form-control' id="form_des" name='desa' required>
-                                                                        <option value="<?= $siswa['desa'] ?>"><?= $siswa['desa'] ?></option>
-                                                                    </select>-->
+
                                                                     </div>
                                                                 </div>
+                                                                <div class="form-group col-md-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>No Hp</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="13" minlength="10" type="text" name="no_hp" value="<?= $siswa['no_hp'] ?>" required="required" />
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="text-info"><strong>Jenis Kelamin</strong></div>
+                                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                                        <input type="radio" id="customRadioInline1" name="jk" class="custom-control-input" required value="L" <?php if ($siswa['jk'] == 'L') echo 'checked' ?>>
+                                                                        <label class="custom-control-label" for="customRadioInline1">Laki-laki</label>
+                                                                    </div>
+                                                                    <div class="custom-control custom-radio custom-control-inline">
+                                                                        <input type="radio" id="customRadioInline2" name="jk" class="custom-control-input" value="P" <?php if ($siswa['jk'] == 'P') echo 'checked' ?>>
+                                                                        <label class="custom-control-label" for="customRadioInline2">Perempuan</label>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <label for="Optional">Optional</label>
+                                                            <hr>
+                                                            <div class="form-row">
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text ">
+                                                                                <i class="text-info"><strong>Anak Ke</strong></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input class="form-control" type="text" name="anak_ke" value="<?= $siswa['anak_ke'] ?>" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text ">
+                                                                                <i class="text-info"><strong>Jml Saudara</strong></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input class="form-control" type="text" name="saudara" value="<?= $siswa['saudara'] ?>" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>Kewarganegaraan</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class='form-control' name='warga_siswa'>
+                                                                            <option value=''>Pilih Kewarganegaraan</option>";
+                                                                            <?php foreach ($kewarganegaraan as $val) { ?>
+                                                                                <?php if ($siswa['warga_siswa'] == $val) { ?>
+                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
+                                                                                <?php  } else { ?>
+                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
+                                                                                <?php } ?>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>Cita-cita</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class='form-control' name='cita'>
+                                                                            <option value=''>Pilih Cita-cita</option>";
+                                                                            <?php foreach ($cita as $val) { ?>
+                                                                                <?php if ($siswa['cita'] == $val) { ?>
+                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
+                                                                                <?php  } else { ?>
+                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
+                                                                                <?php } ?>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
+
+
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>Email</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <input class="form-control" type="email" name="email" value="<?= $siswa['email'] ?>" />
+                                                                    </div>
+                                                                </div>
+
+                                                                <div class="form-group col-md-6">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>Hobi</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class='form-control' name='hobi'>
+                                                                            <option value=''>Pilih hobi</option>";
+                                                                            <?php foreach ($hobi as $val) { ?>
+                                                                                <?php if ($siswa['hobi'] == $val) { ?>
+                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
+                                                                                <?php  } else { ?>
+                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
+                                                                                <?php } ?>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div><br>
+                                                                <div class="form-group col-md-12">
+                                                                    <div class="input-group">
+                                                                        <div class="input-group-prepend">
+                                                                            <div class="input-group-text">
+                                                                                <i class="text-info"><b>Status Tempat Tinggal</b></i>
+                                                                            </div>
+                                                                        </div>
+                                                                        <select class='form-control' name='status_tinggal_siswa'>
+                                                                            <option value=''>Pilih status tinggal</option>";
+                                                                            <?php foreach ($status_tinggal_siswa as $val) { ?>
+                                                                                <?php if ($siswa['status_tinggal_siswa'] == $val) { ?>
+                                                                                    <option value='<?= $val ?>' selected><?= $val ?> </option>
+                                                                                <?php  } else { ?>
+                                                                                    <option value='<?= $val ?>'><?= $val ?> </option>
+                                                                                <?php } ?>
+                                                                            <?php } ?>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+
                                                                 <div class="form-group col-md-12">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">
@@ -362,7 +384,7 @@
                                                                                 <i class="text-info"><strong>Nama Jalan / Dusun</strong></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="alamat_siswa" value="<?= $siswa['alamat_siswa'] ?>" required="required" />
+                                                                        <input class="form-control" type="text" name="alamat_siswa" value="<?= $siswa['alamat_siswa'] ?>" />
                                                                     </div>
                                                                 </div>
 
@@ -373,7 +395,7 @@
                                                                                 <i class="text-info"><b>Kordinat Rumah</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" type="text" name="kordinat" value="<?= $siswa['kordinat'] ?>" required="required" />
+                                                                        <input class="form-control" type="text" name="kordinat" value="<?= $siswa['kordinat'] ?>" />
                                                                     </div>
                                                                 </div>
 
@@ -384,7 +406,7 @@
                                                                                 <i class="text-info"><b>Kode Pos</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="6" minlength="6" type="text" name="kodepos_siswa" value="<?= $siswa['kodepos_siswa'] ?>" required="required" />
+                                                                        <input class="form-control" onkeypress="return hanyaAngka(this);" maxlength="6" minlength="6" type="text" name="kodepos_siswa" value="<?= $siswa['kodepos_siswa'] ?>" />
                                                                     </div>
                                                                 </div>
 
@@ -395,7 +417,7 @@
                                                                                 <i class="text-info"><b>Alat transportasi</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='transportasi' required>
+                                                                        <select class='form-control' name='transportasi'>
                                                                             <option value=''>Pilih transportasi</option>";
                                                                             <?php foreach ($transportasi as $val) { ?>
                                                                                 <?php if ($siswa['transportasi'] == $val) { ?>
@@ -415,7 +437,7 @@
                                                                                 <i class="text-info"><b>Jarak Rumah-Sekolah</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='jarak' required>
+                                                                        <select class='form-control' name='jarak'>
                                                                             <option value=''>Pilih jarak</option>";
                                                                             <?php foreach ($jarak as $val) { ?>
                                                                                 <?php if ($siswa['jarak'] == $val) { ?>
@@ -435,7 +457,7 @@
                                                                                 <i class="text-info"><b>Waktu tempuh</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='waktu' required>
+                                                                        <select class='form-control' name='waktu'>
                                                                             <option value=''>Pilih waktu</option>";
                                                                             <?php foreach ($waktu as $val) { ?>
                                                                                 <?php if ($siswa['waktu'] == $val) { ?>
@@ -455,7 +477,7 @@
                                                                                 <i class="text-info"><b>Yang membiayai sekolah</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='biaya_sekolah' required>
+                                                                        <select class='form-control' name='biaya_sekolah'>
                                                                             <option value=''>Pilih biaya sekolah</option>";
                                                                             <?php foreach ($biaya_sekolah as $val) { ?>
                                                                                 <?php if ($siswa['biaya_sekolah'] == $val) { ?>
@@ -475,7 +497,7 @@
                                                                                 <i class="text-info"><b>Kebutuhan Khusus</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='keb_khusus' required>
+                                                                        <select class='form-control' name='keb_khusus'>
                                                                             <option value=''></option>";
                                                                             <?php foreach ($keb_khusus as $val) { ?>
                                                                                 <?php if ($siswa['keb_khusus'] == $val) { ?>
@@ -495,7 +517,7 @@
                                                                                 <i class="text-info"><b>Kebutuhan Disabilitas</b></i>
                                                                             </div>
                                                                         </div>
-                                                                        <select class='form-control' name='keb_disabilitas' required>
+                                                                        <select class='form-control' name='keb_disabilitas'>
                                                                             <option value=''></option>";
                                                                             <?php foreach ($keb_disabilitas as $val) { ?>
                                                                                 <?php if ($siswa['keb_disabilitas'] == $val) { ?>
@@ -579,27 +601,7 @@
                                                                     </div>
                                                                 </div>
 
-                                                                <div class="form-group col-md-6">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>No. KK</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <input class="form-control" type="text" onkeypress="return hanyaAngka(this);" maxlength="16" minlength="16" name="no_kk" value="<?= $siswa['no_kk'] ?>" required="required" />
-                                                                    </div>
-                                                                </div>
 
-                                                                <div class="form-group col-md-6">
-                                                                    <div class="input-group">
-                                                                        <div class="input-group-prepend">
-                                                                            <div class="input-group-text">
-                                                                                <i class="text-info"><b>Nama Kepala Keluarga</b></i>
-                                                                            </div>
-                                                                        </div>
-                                                                        <input class="form-control" type="text" name="kepala_keluarga" value="<?= $siswa['kepala_keluarga'] ?>" required="required" />
-                                                                    </div>
-                                                                </div>
 
                                                             </div>
                                                             <div class="form-group">
@@ -694,6 +696,7 @@
                                                                         <input class="form-control" type="date" name="tgl_lahir_ayah" value="<?= $siswa['tgl_lahir_ayah'] ?>" required="required" />
                                                                     </div>
                                                                 </div>
+
 
                                                                 <div class="form-group col-md-6">
                                                                     <div class="input-group">
