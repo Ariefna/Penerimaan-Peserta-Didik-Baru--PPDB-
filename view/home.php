@@ -247,18 +247,32 @@
                             <table style="font-size: 16px" class="table table-bordered table-striped" id="table-1">
                                 <thead>
                                     <tr>
-                                        <th class="text-center">
+                                        <th class="no-sort">
                                             No
                                         </th>
-                                        <th>Asal Sekolah</th>
-                                        <th>Kota</th>
+                                        <th class="no-sort">Asal Sekolah</th>
+                                        <th class="no-sort">Kota</th>
                                         <th>Jumlah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa group by nama_sekolah order by 3");
+                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa group by nama_sekolah where nama_sekolah LIKE '%SMP Wachid Hasyim 1%' limit 1");
                                     $no = 0;
+                                    while ($siswa = mysqli_fetch_array($query)) {
+                                        $no++;
+                                    ?>
+                                        <tr>
+                                            <td><?= $no; ?></td>
+                                            <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
+                                            <td><?= $siswa['jumlah'] ?></td>
+                                        </tr>
+                                    <?php }
+                                    ?>
+                                    <?php
+                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa where not nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah order by 3");
+
                                     while ($siswa = mysqli_fetch_array($query)) {
                                         $no++;
                                     ?>
@@ -280,3 +294,14 @@
         <!-- /.container-fluid -->
 </section>
 <!-- /.content -->
+<script>
+    $(document).ready(function() {
+        $('#table-1').DataTable({
+            columnDefs: [{
+                orderable: false,
+                targets: "no-sort"
+            }]
+
+        });
+    });
+</script>
