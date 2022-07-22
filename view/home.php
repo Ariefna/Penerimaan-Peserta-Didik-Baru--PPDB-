@@ -257,9 +257,9 @@
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa group by nama_sekolah where nama_sekolah LIKE '%SMP Wachid Hasyim 1%' limit 1");
+                                    $query1 = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa where nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah limit 1");
                                     $no = 0;
-                                    while ($siswa = mysqli_fetch_array($query)) {
+                                    while ($siswa = mysqli_fetch_array($query1)) {
                                         $no++;
                                     ?>
                                         <tr>
