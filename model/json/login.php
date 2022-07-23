@@ -1,7 +1,7 @@
 <?php
 include $_SERVER['DOCUMENT_ROOT'] . "/model/koneksi.php";
 session_start();
-if (isset($_POST['username'])) {
+if (isset($_POST['username']) && $_POST['password'] != "" && $_POST['username'] != "") {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = mysqli_real_escape_string($koneksi, $_POST['password']);
     $query = mysqli_query($koneksi, "select * from user where username='$username' and status='1'");
@@ -33,4 +33,6 @@ if (isset($_POST['username'])) {
             // echo $ceklogin1 == 1 && password_verify($password, $user['password']);
         }
     }
+} else {
+    echo "Password atau Username Anda salah";
 }
