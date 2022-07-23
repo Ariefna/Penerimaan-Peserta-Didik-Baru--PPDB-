@@ -4,7 +4,7 @@ session_start();
 if (isset($_POST['username']) && $_POST['password'] != "" && $_POST['username'] != "") {
     $username = mysqli_real_escape_string($koneksi, $_POST['username']);
     $password = mysqli_real_escape_string($koneksi, $_POST['password']);
-    $query = mysqli_query($koneksi, "select * from user where username='$username' and status='1'");
+    $query = mysqli_query($koneksi, "select * from user where username='$username' and password='$password' and status='1'");
     $ceklogin = mysqli_num_rows($query);
     $user = mysqli_fetch_array($query);
     $check = false;
@@ -18,9 +18,9 @@ if (isset($_POST['username']) && $_POST['password'] != "" && $_POST['username'] 
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level'];
-        echo $user['nama_user'];;
+        echo $user['nama_user'];
     } else {
-        $query = mysqli_query($koneksi, "select * from siswa where nisn='$username'");
+        $query = mysqli_query($koneksi, "select * from siswa where nisn='$username' and password='$password'");
         $ceklogin1 = mysqli_num_rows($query);
         $user1 = mysqli_fetch_array($query);
         if ($ceklogin1 == 1 || password_verify($password, isset($user1['password']))) {
