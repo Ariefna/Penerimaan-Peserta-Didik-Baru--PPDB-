@@ -13,7 +13,11 @@ if (isset($_POST['username']) && $_POST['password'] != "" && $_POST['username'] 
     // } else {
     //     $check = false;
     // }
-    if (password_verify($password, $user['password'])) {
+    $check = false;
+    if ($ceklogin == 1) {
+        $check = password_verify($password, $user['password']);
+    }
+    if ($check) {
         $_SESSION['id_user'] = $user['id_user'];
         $_SESSION['nama'] = $user['nama_user'];
         $_SESSION['level'] = $user['level'];
