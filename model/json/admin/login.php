@@ -85,6 +85,8 @@
                     </button>
                   </div>
                 </form>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" style="font-size:36px;color:#833AB4;"></i></a>
+                <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-f" style="font-size:36px;color:blue;"></i></a>
 
 
               </div>
