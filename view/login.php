@@ -26,6 +26,8 @@ if (isset($_GET['page'])) {
     <link rel="stylesheet" href="http://localhost:8000/assets/modules/summernote/summernote-bs4.css">
     <script src="dist/js/demo.js"></script>
     <script src="http://localhost:8000/assets/modules/izitoast/js/iziToast.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 
@@ -74,6 +76,9 @@ if (isset($_GET['page'])) {
                         </div>
 
                         <p class="login-box-msg">Perlu bantuan untuk login / Pendaftaran? Dapatkan Bantuan telp <?= $setting['no_telp'] ?>.</p>
+                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" style="font-size:36px;color:#833AB4;"></i> </a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-f" style="font-size:36px;color:blue;"></i></a>
+
                         <!-- /.col -->
                     </div>
                 </form>
