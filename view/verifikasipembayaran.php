@@ -16,7 +16,7 @@
                                             No
                                         </th>
                                         <th>NISN</th>
-                                        <th>Password</th>
+                                        <th>Jalur</th>
                                         <th>Nama Siswa</th>
                                         <th>L/P</th>
                                         <th>TTL</th>
@@ -29,15 +29,31 @@
                                     $query = mysqli_query($koneksi, "select * from siswa order by status");
                                     $no = 0;
                                     while ($siswa = mysqli_fetch_array($query)) {
+
+                                        if ($siswa['alumni'] == 1) {
+                                            $alumni = "Umum";
+                                        } else if ($siswa['alumni'] == 2) {
+                                            $alumni = "Alumni";
+                                        } else if ($siswa['alumni'] == 3) {
+                                            $alumni = "Prestasi";
+                                        }
+                                        if ($siswa['tempat_lahir'] != '') {
+                                            $tempat_lahir = $siswa['tempat_lahir'] . ", " . $siswa['tgl_lahir'];
+                                        }
+
+                                        $file_pembayaran = "";
+                                        if ($siswa['file_pembayaran'] != '' && $siswa['alumni'] == 1) {
+                                            $file_pembayaran = '<a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/assets/upload/pay/' . $siswa['file_pembayaran'] . '" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>';
+                                        }
                                         $no++;
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $siswa['nisn'] ?></td>
-                                            <td><?= $siswa['password'] ?></td>
+                                            <td><?= $alumni ?></td>
                                             <td><?= $siswa['nama_siswa'] ?></td>
                                             <td><?= $siswa['jk'] ?></td>
-                                            <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
+                                            <td><?= $tempat_lahir ?></td>
 
                                             <td>
                                                 <?php if ($siswa['status_pay'] == 0) { ?>
@@ -49,20 +65,10 @@
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <? if ($siswa['file_pembayaran'] == '') { ?>
-                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="btn btn-sm btn-info"><i class="fas fa-eye"></i></a>
-                                                <? } ?>
-                                                <!-- <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<? //= enkripsi($siswa['id_siswa']) 
-                                                                                                                                                                                    ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a> -->
-                                                <!-- Button trigger modal -->
-                                                <!-- <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-view<?= $no ?>">
-                                                    <i class="fas fa-edit"></i>
-                                                </button> -->
+                                                <?= $file_pembayaran ?>
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                                     <i class="fas fa-edit"></i>
                                                 </button>
-                                                <!-- <button data-id="<?= $siswa['id_siswa'] ?>" class="hapus btn-sm btn btn-danger"><i class="fas fa-trash    "></i></button> -->
-                                                <!-- Modal -->
                                                 <div class="modal fade" id="modal-edit<?= $no ?>" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
                                                     <div class="modal-dialog" role="document">
                                                         <div class="modal-content">
