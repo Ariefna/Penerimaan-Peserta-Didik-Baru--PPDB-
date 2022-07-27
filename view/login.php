@@ -77,7 +77,7 @@ if (isset($_GET['page'])) {
 
                         <p class="login-box-msg">Perlu bantuan untuk login / Pendaftaran? Dapatkan Bantuan telp <?= $setting['no_telp'] ?>.</p>
                         <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" style="font-size:25px;color:black"></i> </a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square" style="font-size:25px;color:black;margin-left:25px"></i></a>
+                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square" style="font-size:25px;color:black;margin-left:10px"></i></a>
 
                         <!-- /.col -->
                     </div>
