@@ -19,6 +19,7 @@
                                         <th>Alamat</th>
                                         <th>No. Hp</th>
                                         <th>Asal Sekolah</th>
+                                        <th>Jalur</th>
                                         <th>Tanggal Pengisian Formulir</th>
                                         <th>Pembayaran</th>
                                         <th>No Formulir</th>
@@ -29,6 +30,13 @@
                                     $query = mysqli_query($koneksi, "select * from siswa order by status");
                                     $no = 0;
                                     while ($siswa = mysqli_fetch_array($query)) {
+                                        if ($siswa['alumni'] == 1) {
+                                            $alumni = "Umum";
+                                        } else if ($siswa['alumni'] == 2) {
+                                            $alumni = "Alumni";
+                                        } else if ($siswa['alumni'] == 3) {
+                                            $alumni = "Prestasi";
+                                        }
                                         $no++;
                                     ?>
                                         <tr>
@@ -37,6 +45,7 @@
                                             <td><?= $siswa['alamat_siswa'] ?></td>
                                             <td><?= $siswa['no_hp'] ?></td>
                                             <td><?= $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $alumni ?></td>
                                             <td><?= $siswa['tgl_siswa'] ?></td>
                                             <td><?= $siswa['status_pay'] == 1 ? "lunas" : "belum lunas" ?></td>
                                             <td><?= $siswa['id_siswa'] ?></td>

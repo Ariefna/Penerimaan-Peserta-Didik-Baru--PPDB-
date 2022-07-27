@@ -33,7 +33,7 @@
                                             No
                                         </th>
                                         <th>NISN</th>
-                                        <th>Kata Sandi</th>
+                                        <th>Jalur</th>
                                         <th>Nama Siswa</th>
                                         <th>L/P</th>
                                         <th>TTL</th>
@@ -43,15 +43,23 @@
                                 </thead>
                                 <tbody>
                                     <?php
+
                                     $query = mysqli_query($koneksi, "select * from siswa order by status");
                                     $no = 0;
                                     while ($siswa = mysqli_fetch_array($query)) {
+                                        if ($siswa['alumni'] == 1) {
+                                            $alumni = "Umum";
+                                        } else if ($siswa['alumni'] == 2) {
+                                            $alumni = "Alumni";
+                                        } else if ($siswa['alumni'] == 3) {
+                                            $alumni = "Prestasi";
+                                        }
                                         $no++;
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $siswa['nisn'] ?></td>
-                                            <td><?= $siswa['password'] ?></td>
+                                            <td><?= $alumni ?></td>
                                             <td><?= $siswa['nama_siswa'] ?></td>
                                             <td><?= $siswa['jk'] ?></td>
                                             <td><?= $siswa['tempat_lahir'] ?>, <?= $siswa['tgl_lahir'] ?></td>
@@ -68,11 +76,13 @@
                                                 <?php } elseif ($siswa['status'] == 5) { ?>
                                                     <span class="badge badge-danger">Mutasi </span>
                                                 <?php } elseif ($siswa['status'] == 6) { ?>
-                                                    <span class="badge badge-warning">DO/Keluar</span>
+                                                    <span class="badge badge-warning">Lulus</span>
                                                 <?php } ?>
                                             </td>
                                             <td>
-                                                <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
+                                                <?php if ($siswa['alumni'] != 2) { ?>
+                                                    <a data-toggle="tooltip" data-placement="top" title="" data-original-title="detail siswa" href="?page=master_peserta_edit&id=<?= enkripsi($siswa['id_siswa']) ?>" class="btn btn-sm btn-info"><i class="fas fa-eye    "></i></a>
+                                                <?php } ?>
                                                 <!-- Button trigger modal -->
                                                 <button type="button" class="btn btn-sm btn-primary" data-toggle="modal" data-target="#modal-edit<?= $no ?>">
                                                     <i class="fas fa-user    "></i>
@@ -96,19 +106,19 @@
                                                                         <div class="control-label">Pilih Status</div>
                                                                         <div class="custom-switches-stacked mt-2">
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="3" class="custom-switch-input" checked>
+                                                                                <input type="radio" name="status" value="4" class="custom-switch-input" checked>
                                                                                 <span class="custom-switch-indicator"></span>
                                                                                 <span class="custom-switch-description">Aktif</span>
                                                                             </label>
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="4" class="custom-switch-input">
+                                                                                <input type="radio" name="status" value="5" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
                                                                                 <span class="custom-switch-description">Mutasi</span>
                                                                             </label>
                                                                             <label class="custom-switch">
-                                                                                <input type="radio" name="status" value="5" class="custom-switch-input">
+                                                                                <input type="radio" name="status" value="6" class="custom-switch-input">
                                                                                 <span class="custom-switch-indicator"></span>
-                                                                                <span class="custom-switch-description">DO/Putus Sekolah</span>
+                                                                                <span class="custom-switch-description">Lulus</span>
                                                                             </label>
 
 

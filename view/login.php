@@ -116,9 +116,14 @@ if (isset($_GET['page'])) {
                         <div class="form-group">
                             <label>Alumni</label>
                             <select class='form-control' name='alumni' onchange="getComboA(this)">
-                                <option value='1'>- Bukan Alumni -</option>
+                                <option value='1'>- Umum -</option>
                                 <option value='2'>- Alumni -</option>
+                                <option value='3'>- Prestasi -</option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Prestasi</label>
+                            <input type="text" id="prestasi" name="prestasi" class="form-control">
                         </div>
                         <div class="form-group">
                             <label>Asal Sekolah</label>
@@ -157,12 +162,17 @@ if (isset($_GET['page'])) {
             if (value == 2) {
                 $('#nama_sekolah').val("SMP Wachid Hasyim 1");
                 $('#kota_sekolah').val("Surabaya");
-            } else {
+                $("#prestasi").prop('disabled', true);
+            } else if (value == 1) {
                 $('#nama_sekolah').val("");
                 $('#kota_sekolah').val("");
+                $("#prestasi").prop('disabled', true);
+            } else {
+                $("#prestasi").prop('disabled', false);
             }
 
         }
+        $("#prestasi").prop('disabled', true);
         $('#form-tambah').submit(function(e) {
             e.preventDefault();
             $.ajax({

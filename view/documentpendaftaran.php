@@ -44,93 +44,104 @@
                         <h4>Dokumen Pendaftaran</h4>
                     </div>
                     <div class="card-body">
-                        <form id="form-berkas">
-                            <input type="hidden" name="id_siswa" value="<?= $_SESSION['id_user'] ?>">
-                            <div class="card" id="berkas-card">
-                                <div class="card-body">
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Kartu Keluarga</label>
-                                        <div class="col-sm-6 col-md-9">
-
-                                            <div class="custom-file">
-                                                <input type="file" name="file_kk" class="custom-file-input" id="site-kk">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                            <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                        </div>
+                        <?php if ($siswa['alumni'] == 2) { ?>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success" role="alert">
+                                        SELAMAT <?= strtoupper($_SESSION['nama']); ?> Data Anda Telah tersedia di database kami <?= strtoupper($setting['nama_sekolah']); ?> .
                                     </div>
-                                    <? if (isset($siswa['file_kk'])) { ?>
-                                        <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                            <div class="col-sm-6 col-md-6">
-                                                <img src="http://localhost:8000/assets/upload/kk/<?= $siswa['file_kk'] ?>" class="img-thumbnail" width="50%">
-                                            </div>
-                                        </div>
-                                    <? } ?>
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Akta Kelahiran</label>
-                                        <div class="col-sm-6 col-md-9">
-                                            <div class="custom-file">
-                                                <input type="file" name="file_akte" class="custom-file-input" id="site-akta">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                            <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                        </div>
-                                    </div>
-                                    <? if (!isset($siswa['file_akte'])) { ?>
-                                        <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                            <div class="col-sm-6 col-md-6">
-                                                <img src="http://localhost:8000/assets/upload/akta/<?= $siswa['file_akte'] ?>" class="img-thumbnail" width="50%">
-                                            </div>
-                                        </div>
-                                    <? } ?>
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL</label>
-                                        <div class="col-sm-6 col-md-9">
-
-                                            <div class="custom-file">
-                                                <input type="file" name="file_ijazah" class="custom-file-input" id="site-ijazah">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                            <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                        </div>
-                                    </div>
-                                    <? if (isset($siswa['file_ijazah'])) { ?>
-                                        <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                            <div class="col-sm-6 col-md-6">
-                                                <img src="http://localhost:8000/assets/upload/ijazah/<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
-                                            </div>
-                                        </div>
-                                    <? } ?>
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Kartu Indonesia Pintar</label>
-                                        <div class="col-sm-6 col-md-9">
-
-                                            <div class="custom-file">
-                                                <input type="file" name="file_kip" class="custom-file-input" id="site-kip">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                            <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                        </div>
-
-                                    </div>
-                                    <? if (isset($siswa['file_kip'])) { ?>
-                                        <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                            <div class="col-sm-6 col-md-6">
-                                                <img src="http://localhost:8000/assets/upload/kip/<?= $siswa['file_kip'] ?>" class="img-thumbnail" width="50%">
-                                            </div>
-                                        </div>
-                                    <? } ?>
-                                </div>
-                                <div class="card-footer bg-whitesmoke text-md-right">
-                                    <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
-                                    <button class="btn btn-secondary" type="button">Reset</button>
                                 </div>
                             </div>
-                        </form>
+                        <?php } ?>
+                        <?php if ($siswa['alumni'] != 2) { ?>
+                            <form id="form-berkas">
+                                <input type="hidden" name="id_siswa" value="<?= $_SESSION['id_user'] ?>">
+                                <div class="card" id="berkas-card">
+                                    <div class="card-body">
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Kartu Keluarga</label>
+                                            <div class="col-sm-6 col-md-9">
+
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_kk" class="custom-file-input" id="site-kk">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+                                        </div>
+                                        <? if (isset($siswa['file_kk'])) { ?>
+                                            <div class="form-group row align-items-center">
+                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                                <div class="col-sm-6 col-md-6">
+                                                    <img src="http://localhost:8000/assets/upload/kk/<?= $siswa['file_kk'] ?>" class="img-thumbnail" width="50%">
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Akta Kelahiran</label>
+                                            <div class="col-sm-6 col-md-9">
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_akte" class="custom-file-input" id="site-akta">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+                                        </div>
+                                        <? if (!isset($siswa['file_akte'])) { ?>
+                                            <div class="form-group row align-items-center">
+                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                                <div class="col-sm-6 col-md-6">
+                                                    <img src="http://localhost:8000/assets/upload/akta/<?= $siswa['file_akte'] ?>" class="img-thumbnail" width="50%">
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL</label>
+                                            <div class="col-sm-6 col-md-9">
+
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_ijazah" class="custom-file-input" id="site-ijazah">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+                                        </div>
+                                        <? if (isset($siswa['file_ijazah'])) { ?>
+                                            <div class="form-group row align-items-center">
+                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                                <div class="col-sm-6 col-md-6">
+                                                    <img src="http://localhost:8000/assets/upload/ijazah/<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Kartu Indonesia Pintar</label>
+                                            <div class="col-sm-6 col-md-9">
+
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_kip" class="custom-file-input" id="site-kip">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+
+                                        </div>
+                                        <? if (isset($siswa['file_kip'])) { ?>
+                                            <div class="form-group row align-items-center">
+                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                                <div class="col-sm-6 col-md-6">
+                                                    <img src="http://localhost:8000/assets/upload/kip/<?= $siswa['file_kip'] ?>" class="img-thumbnail" width="50%">
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                    </div>
+                                    <div class="card-footer bg-whitesmoke text-md-right">
+                                        <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
+                                        <button class="btn btn-secondary" type="button">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>

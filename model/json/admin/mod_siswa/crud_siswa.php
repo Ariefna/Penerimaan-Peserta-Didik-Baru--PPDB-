@@ -390,21 +390,58 @@ if ($pg == 'tambah') {
     if ($ceklogin == 0) {
 
         $nama = str_replace("'", "`", $_POST['nama']);
-        $data = [
+        if ($_POST['alumni'] == 1) { //umum
+            $data = [
+                'nisn' => $_POST['nisn'],
+                'nama_siswa' => ucwords(strtolower($nama)),
+                'password' => $_POST['password'],
+                'nama_sekolah' => $_POST['nama_sekolah'],
+                'kota_sekolah' => $_POST['kota_sekolah'],
+                'prestasi' => $_POST['prestasi'],
+                'alumni' => $_POST['alumni'],
+                'status' => '1',
+                'prov' => '',
+                'prov_ayah' => '',
+                'prov_ibu' => '',
+                'prov_wali' => '',
+                'foto' => 'default.png'
+            ];
+        } else if ($_POST['alumni'] == 2) { //alumni
+            $data = [
+                'nisn' => $_POST['nisn'],
+                'nama_siswa' => ucwords(strtolower($nama)),
+                'password' => $_POST['password'],
+                'nama_sekolah' => $_POST['nama_sekolah'],
+                'kota_sekolah' => $_POST['kota_sekolah'],
+                'prestasi' => $_POST['prestasi'],
+                'alumni' => $_POST['alumni'],
+                'status' => '2',
+                'status_pay' => '1',
+                'file_pembayaran' => '-',
+                'prov' => '',
+                'prov_ayah' => '',
+                'prov_ibu' => '',
+                'prov_wali' => '',
+                'foto' => 'default.png'
+            ];
+        } else { //prestasi
+            $data = [
+                'nisn' => $_POST['nisn'],
+                'nama_siswa' => ucwords(strtolower($nama)),
+                'password' => $_POST['password'],
+                'nama_sekolah' => $_POST['nama_sekolah'],
+                'kota_sekolah' => $_POST['kota_sekolah'],
+                'prestasi' => $_POST['prestasi'],
+                'alumni' => $_POST['alumni'],
+                'status' => '2',
+                'prov' => '',
+                'prov_ayah' => '',
+                'prov_ibu' => '',
+                'prov_wali' => '',
+                'foto' => 'default.png'
+            ];
+        }
 
-            'nisn' => $_POST['nisn'],
-            'nama_siswa' => ucwords(strtolower($nama)),
-            'password' => $_POST['password'],
-            'nama_sekolah' => $_POST['nama_sekolah'],
-            'kota_sekolah' => $_POST['kota_sekolah'],
-            'status' => '1',
-            'prov' => '',
-            'prov_ayah' => '',
-            'prov_ibu' => '',
-            'prov_wali' => '',
-            'foto' => 'default.png'
-
-        ];
         $exec = insert($koneksi, 'siswa', $data);
         if ($exec != 'OK') {
             echo mysqli_error($koneksi);

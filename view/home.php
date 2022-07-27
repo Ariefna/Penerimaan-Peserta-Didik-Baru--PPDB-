@@ -251,34 +251,51 @@
                                             No
                                         </th>
                                         <th class="no-sort">Asal Sekolah</th>
+                                        <th>Jalur</th>
                                         <th class="no-sort">Kota</th>
                                         <th>Jumlah</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $query1 = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa where nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah limit 1");
+                                    $query1 = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah, alumni from siswa where nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah limit 1");
                                     $no = 0;
                                     while ($siswa = mysqli_fetch_array($query1)) {
                                         $no++;
+                                        if ($siswa['alumni'] == 1) {
+                                            $alumni = "Umum";
+                                        } else if ($siswa['alumni'] == 2) {
+                                            $alumni = "Alumni";
+                                        } else if ($siswa['alumni'] == 3) {
+                                            $alumni = "Prestasi";
+                                        }
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $alumni ?></td>
                                             <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
                                             <td><?= $siswa['jumlah'] ?></td>
                                         </tr>
                                     <?php }
                                     ?>
                                     <?php
-                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah from siswa where not nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah order by 3");
+                                    $query = mysqli_query($koneksi, "select nama_sekolah, kota_sekolah, count(*) jumlah, alumni from siswa where not nama_sekolah LIKE '%SMP Wachid Hasyim 1%' group by nama_sekolah order by 3");
 
                                     while ($siswa = mysqli_fetch_array($query)) {
                                         $no++;
+                                        if ($siswa['alumni'] == 1) {
+                                            $alumni = "Umum";
+                                        } else if ($siswa['alumni'] == 2) {
+                                            $alumni = "Alumni";
+                                        } else if ($siswa['alumni'] == 3) {
+                                            $alumni = "Prestasi";
+                                        }
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $alumni ?></td>
                                             <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
                                             <td><?= $siswa['jumlah'] ?></td>
                                         </tr>
