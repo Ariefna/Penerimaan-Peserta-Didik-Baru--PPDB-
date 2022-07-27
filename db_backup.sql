@@ -247,7 +247,10 @@ CREATE TABLE `siswa` (
   `status` int(1) DEFAULT 0,
   `tgl_siswa` date DEFAULT NULL,
   `online` int(1) DEFAULT 0,
+  `alumni` int(1) DEFAULT 1,
   `password` text DEFAULT NULL,
+  `prestasi` text DEFAULT NULL,
+  
   PRIMARY KEY (`id_siswa`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
