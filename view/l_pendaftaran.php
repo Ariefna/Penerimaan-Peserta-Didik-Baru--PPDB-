@@ -75,7 +75,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
         </tr>
     </table>
     <br>
-    <h4 align="center" style="margin-top:0px;"><u>Laporan Peserta Didik Baru</u></h4>
+    <h4 align="center" style="margin-top:0px;"><u>BUKTI PENDAFTARAN</u></h4>
     <b>
         <center>
             PANITIA PENERIMAAN PESERTA DIDIK BARU (PPDB) <br>
