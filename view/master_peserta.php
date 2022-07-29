@@ -34,11 +34,11 @@
                                         </th>
                                         <th>NISN</th>
                                         <th>Jalur</th>
-                                        <th>Nama Siswa</th>
-                                        <th>L/P</th>
-                                        <th>TTL</th>
+                                        <th class="no-sort">Nama Siswa</th>
+                                        <th class="no-sort">L/P</th>
+                                        <th class="no-sort">TTL</th>
                                         <th>Status</th>
-                                        <th>Action</th>
+                                        <th class="no-sort">Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -348,5 +348,14 @@
             }
         })
 
+    });
+    $(document).ready(function() {
+        $('#table-1').DataTable({
+            columnDefs: [{
+                orderable: false,
+                targets: "no-sort"
+            }]
+
+        });
     });
 </script>
