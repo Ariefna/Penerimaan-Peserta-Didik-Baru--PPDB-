@@ -166,28 +166,28 @@
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-warning" role="alert">
-                        PERINGATAN,<?= strtoupper($_SESSION['nama']); ?> BELUM MELAKUKAN UPLOAD DOKUMEN PEMBAYARAN.
+                        PERINGATAN, <?= strtoupper($_SESSION['nama']); ?> BELUM MELAKUKAN UPLOAD DOKUMEN PEMBAYARAN.
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] != null && $siswa['status'] == 2 && $siswa['status_pay'] == 1) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        SELAMAT,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TERIMA.
+                        SELAMAT, <?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TERIMA.
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2 && $siswa['status_pay'] == 0) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-success" role="alert">
-                        SELAMAT,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PENDAFTARAN TELAH KAMI TERIMA.
+                        SELAMAT, <?= strtoupper($_SESSION['nama']); ?> DOKUMEN PENDAFTARAN TELAH KAMI TERIMA.
                     </div>
                 </div>
             <?php } ?>
             <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] != null && $siswa['status'] == 2 && $siswa['status_pay'] == 2) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-danger" role="alert">
-                        MAAF,<?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TOLAK. MOHON UPLOAD DOCUMENT PEMBAYARAN ULANG.
+                        MAAF, <?= strtoupper($_SESSION['nama']); ?> DOKUMEN PEMBAYARAN TELAH KAMI TOLAK. MOHON UPLOAD DOCUMENT PEMBAYARAN ULANG.
                     </div>
                 </div>
             <?php } ?>

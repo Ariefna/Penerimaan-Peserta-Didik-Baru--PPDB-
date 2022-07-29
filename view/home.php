@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class="col-lg-4 ">
-                <div class="small-box bg-yellow">
+                <div class="small-box bg-blue">
                     <div class="inner">
                         <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'L'")) ?></h3>
                         <p>Laki-laki</p>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="col-lg-4">
-                <div class="small-box bg-red">
+                <div class="small-box bg-blue">
                     <div class="inner">
                         <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where jk = 'P'")) ?></h3>
                         <p>Perempuan</p>
@@ -49,7 +49,7 @@
                 </div>
             </div>
             <div class="col-lg-12">
-                <div class="small-box bg-blue">
+                <div class="small-box bg-info">
                     <div class="inner">
                         <h3><?= $setting['status_pendaftaran'] == 0 ? "Tidak Aktif" : "Aktif" ?></h3>
                         <p>Status Pendaftaran</p>
@@ -67,7 +67,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="alert alert-info alert-has-icon">
+                    <div class="alert alert-dark alert-has-icon">
                         <div class="alert-icon"><i class=""></i></div>
                         <div class="alert-body">
                             <div class="alert-body">Data Sekolah </div>
@@ -235,7 +235,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card">
-                    <div class="alert alert-info alert-has-icon">
+                    <div class="alert alert-dark alert-has-icon">
                         <div class="alert-icon"><i class=""></i></div>
                         <div class="alert-body">
                             <div class="alert-body">Data Peserta Berdasarkan Asal Sekolah </div>
@@ -272,7 +272,8 @@
                                     ?>
                                         <tr>
                                             <td><?= $no; ?></td>
-                                            <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?></td>
+                                            <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?>
+                                            <span class="badge badge-primary">Prioritas</span></td>
                                             <td><?= $alumni ?></td>
                                             <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
                                             <td><?= $siswa['jumlah'] ?></td>

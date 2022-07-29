@@ -2,8 +2,8 @@
 // deklarasi parameter koneksi database
 $server   = "localhost";
 $username = "root";
-$password = "arief";
-$database = "nas";
+$password = "";
+$database = "ppdb";
 
 // koneksi database
 $koneksi = mysqli_connect($server, $username, $password, $database);

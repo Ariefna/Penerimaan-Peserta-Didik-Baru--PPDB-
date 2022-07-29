@@ -128,7 +128,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
         <tr>
             <td>TEMPAT, TANGGAL LAHIR</td>
             <td>:</td>
-            <td><?php echo $siswa['tempat_lahir'] . ',' . $siswa['tgl_lahir']; ?></td>
+            <td><?php echo $siswa['tempat_lahir'] . ', ' . $siswa['tgl_lahir']; ?></td>
         </tr>
         <tr>
             <td>AGAMA</td>

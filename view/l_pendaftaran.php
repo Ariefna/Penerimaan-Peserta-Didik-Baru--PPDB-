@@ -128,7 +128,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
         <tr>
             <td>TEMPAT, TANGGAL LAHIR</td>
             <td>:</td>
-            <td><?php echo $siswa['tempat_lahir'] . ',' . $siswa['tgl_lahir']; ?></td>
+            <td><?php echo $siswa['tempat_lahir'] . ', ' . $siswa['tgl_lahir']; ?></td>
         </tr>
         <tr>
             <td>AGAMA</td>
@@ -206,7 +206,7 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
         </tr>
         <tr>
             <td valign="top">5.</td>
-            <td colspan="3">Semua berkas dimasukan kedalam map biru (Putra), map kuning (Putri) dan diserahkan kepada Panitia PPDB <?php echo $siswa['nama_siswa']; ?> Tahun Pelajaran <?php echo date("Y"); ?>
+            <td colspan="3">Semua berkas dimasukan kedalam map biru (Putra), map kuning (Putri) dan diserahkan kepada Panitia PPDB <?php echo $setting['nama_sekolah']; ?> Tahun Pelajaran <?php echo date("Y"); ?>
             </td>
         </tr>
     </table>

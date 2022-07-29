@@ -75,8 +75,8 @@ if (isset($_GET['page'])) {
                         </div>
 
                         <p class="login-box-msg">Perlu bantuan untuk login / Pendaftaran? Dapatkan Bantuan telp <?= $setting['no_telp'] ?>.</p>
-                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" style="font-size:25px;color:black"></i> </a>
-                        <a href="http://" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square" style="font-size:25px;color:black;margin-left:10px"></i></a>
+                        <a href="https://www.instagram.com/sma.waha1" target="_blank" rel="noopener noreferrer"><i class="fa fa-instagram" style="font-size:25px;color:black;margin-left:140px"></i> </a>
+                        <a href="https://www.facebook.com/SMA-Wachid-Hasyim-1-Surabaya-254558730831/" target="_blank" rel="noopener noreferrer"><i class="fa fa-facebook-square" style="font-size:25px;color:black;margin-left:10px"></i></a>
 
                         <!-- /.col -->
                     </div>
@@ -160,7 +160,7 @@ if (isset($_GET['page'])) {
             var value = selectObject.value;
             if (value == 2) {
                 $('#nama_sekolah').val("SMP Wachid Hasyim 1");
-                $('#kota_sekolah').val("Surabaya");
+                $('#kota_sekolah').val("SURABAYA");
                 $("#prestasi").prop('disabled', true);
             } else if (value == 1) {
                 $('#nama_sekolah').val("");

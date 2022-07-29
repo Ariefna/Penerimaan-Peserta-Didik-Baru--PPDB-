@@ -47,7 +47,7 @@
                                             <td><?= $siswa['nama_sekolah'] ?></td>
                                             <td><?= $alumni ?></td>
                                             <td><?= $siswa['tgl_siswa'] ?></td>
-                                            <td><?= $siswa['status_pay'] == 1 ? "lunas" : "belum lunas" ?></td>
+                                            <td><?= $siswa['status_pay'] == 1 ? "Lunas" : "Belum Lunas" ?></td>
                                             <td><?= $siswa['id_siswa'] ?></td>
                                         </tr>
                                         <script>
@@ -56,7 +56,7 @@
                                                     "responsive": true,
                                                     "lengthChange": false,
                                                     "autoWidth": false,
-                                                    buttons: ["copy", "csv", "excel", "colvis", {
+                                                    buttons: ["colvis", "copy", "csv", "excel", {
                                                         extend: 'print',
                                                         title: '',
                                                         customize: function(win) {
