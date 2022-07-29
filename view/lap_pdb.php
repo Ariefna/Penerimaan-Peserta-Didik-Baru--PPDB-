@@ -86,9 +86,21 @@
         </tr>
     </table>`
                                                                 );
-
                                                             $(win.document.body).find('table')
                                                                 .addClass('compact');
+
+                                                            $(win.document.body).append(`<table width="25%" border="0"><tr>
+            <td>TANGGAL CETAK </td>
+            <td>:</td>
+            <td><?php echo date('d-m-Y'); ?></td>
+        </tr></table><div style="float:right;">
+        <?php echo $setting['kota']; ?>, <?php echo date('d-m-Y'); ?> <br>
+        Ketua Panitia PPDB, <br>
+        <img src="http://localhost:8000/assets/tanda.png" alt="" width="100"><br>
+        <b><u><?php echo $setting['kepala']; ?></u></b><br>
+        NIP. <?php echo $setting['nip']; ?>
+    </div>`);
+
                                                         }
                                                     }]
                                                 }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
