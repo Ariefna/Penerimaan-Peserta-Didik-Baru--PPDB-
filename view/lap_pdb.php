@@ -82,9 +82,11 @@
             <td colspan="3" align="center">
                 <hr size="0" color="black" style="margin:0px;margin-bottom:1px;">
                 <hr size="2" color="black" style="margin:0px;">
-            </td>
+                </td>
         </tr>
-    </table>`
+    </table>
+    <br>
+    <h4 align="center" style="margin-top:0px;"><u>LAPORAN PENERIMAAN PESERTA DIDIK BARU</u></h4>`
                                                                 );
                                                             $(win.document.body).find('table')
                                                                 .addClass('compact');

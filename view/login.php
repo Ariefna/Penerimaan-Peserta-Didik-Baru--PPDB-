@@ -167,6 +167,8 @@ if (isset($_GET['page'])) {
                 $('#kota_sekolah').val("");
                 $("#prestasi").prop('disabled', true);
             } else {
+                $('#nama_sekolah').val("");
+                $('#kota_sekolah').val("");
                 $("#prestasi").prop('disabled', false);
             }
 
