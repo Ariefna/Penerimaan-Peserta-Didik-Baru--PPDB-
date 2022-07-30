@@ -48,7 +48,7 @@
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="alert alert-success" role="alert">
-                                        SELAMAT <?= strtoupper($_SESSION['nama']); ?> Pembayaran Anda kami <?= strtoupper($setting['nama_sekolah']); ?> gratiskan .
+                                        SELAMAT <?= strtoupper($_SESSION['nama']); ?>, PEMBAYARAN ANDA KAMI GRATISKAN.
                                     </div>
                                 </div>
                             </div>
