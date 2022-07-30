@@ -163,7 +163,7 @@
                     </div>
                 </div>
             <?php } ?>
-            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2) { ?>
+            <?php if ($_SESSION['level'] == 'peserta' && $siswa['file_pembayaran'] == null && $siswa['status'] == 2 && $siswa['alumni'] == 1) { ?>
                 <div class="col-md-12">
                     <div class="alert alert-warning" role="alert">
                         PERINGATAN, <?= strtoupper($_SESSION['nama']); ?> BELUM MELAKUKAN UPLOAD DOKUMEN PEMBAYARAN.
