@@ -44,35 +44,46 @@
                         <h4>Bukti Pembayaran</h4>
                     </div>
                     <div class="card-body">
-                        <form id="form-berkas">
-
-                            <input type="hidden" name="id_siswa" value="<?= $_SESSION['id_user'] ?>">
-                            <div class="card" id="berkas-card">
-                                <div class="card-body">
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Bukti Transfer</label>
-                                        <div class="col-sm-6 col-md-9">
-
-                                            <div class="custom-file">
-                                                <input type="file" name="file_pembayaran" class="custom-file-input" id="site-file_pembayaran">
-                                                <label class="custom-file-label">Choose File</label>
-                                            </div>
-                                            <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                        </div>
+                        <?php if ($siswa['alumni'] == 2 || $siswa['alumni'] == 3) { ?>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="alert alert-success" role="alert">
+                                        SELAMAT <?= strtoupper($_SESSION['nama']); ?> Pembayaran Anda kami <?= strtoupper($setting['nama_sekolah']); ?> gratiskan .
                                     </div>
-                                    <div class="form-group row align-items-center">
-                                        <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                        <div class="col-sm-6 col-md-6">
-                                            <img src="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="img-thumbnail" width="50%">
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer bg-whitesmoke text-md-right">
-                                    <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
-                                    <button class="btn btn-secondary" type="button">Reset</button>
                                 </div>
                             </div>
-                        </form>
+                        <?php } ?>
+                        <?php if ($siswa['alumni'] == 1) { ?>
+                            <form id="form-berkas">
+
+                                <input type="hidden" name="id_siswa" value="<?= $_SESSION['id_user'] ?>">
+                                <div class="card" id="berkas-card">
+                                    <div class="card-body">
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Bukti Transfer</label>
+                                            <div class="col-sm-6 col-md-9">
+
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_pembayaran" class="custom-file-input" id="site-file_pembayaran">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                            <div class="col-sm-6 col-md-6">
+                                                <img src="http://localhost:8000/assets/upload/pay/<?= $siswa['file_pembayaran'] ?>" class="img-thumbnail" width="50%">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer bg-whitesmoke text-md-right">
+                                        <button type="submit" class="btn btn-primary" id="save-btn">Save Changes</button>
+                                        <button class="btn btn-secondary" type="button">Reset</button>
+                                    </div>
+                                </div>
+                            </form>
+                        <?php } ?>
                     </div>
                 </div>
             </div>
