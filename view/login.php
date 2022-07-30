@@ -166,7 +166,7 @@ if (isset($_GET['page'])) {
                 $('#nama_sekolah').val("");
                 $('#kota_sekolah').val("");
                 $("#prestasi").prop('disabled', true);
-            } else {
+            } else if (value == 3) {
                 $('#nama_sekolah').val("");
                 $('#kota_sekolah').val("");
                 $("#prestasi").prop('disabled', false);
