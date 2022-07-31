@@ -92,6 +92,9 @@
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?= $_SESSION['nama']; ?></a>
+                        <span class="badge badge-success">
+                            <?php echo $_SESSION['level']; ?>
+                        </span>
                     </div>
                 </div>
 
