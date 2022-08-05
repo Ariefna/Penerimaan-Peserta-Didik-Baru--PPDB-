@@ -62,12 +62,17 @@
                                         <div class="form-group row align-items-center">
                                             <label class="form-control-label col-sm-3 text-md-right">Bukti Transfer</label>
                                             <div class="col-sm-6 col-md-9">
-
+                                                <div class="alert alert-primary" role="alert">
+                                                    Kirim Ke BANK BNI
+                                                    No. Rekening : 1 2 0 0 4 5 5
+                                                    Atas Nama : YAYASAN WACHID HASYIM 1 SURABAYA
+                                                </div><br>
                                                 <div class="custom-file">
                                                     <input type="file" name="file_pembayaran" class="custom-file-input" id="site-file_pembayaran">
                                                     <label class="custom-file-label">Choose File</label>
                                                 </div>
                                                 <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+
                                             </div>
                                         </div>
                                         <div class="form-group row align-items-center">
