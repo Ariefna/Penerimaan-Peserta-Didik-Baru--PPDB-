@@ -59,6 +59,25 @@
                                 <div class="card" id="berkas-card">
                                     <div class="card-body">
                                         <div class="form-group row align-items-center">
+                                            <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL *</label>
+                                            <div class="col-sm-6 col-md-9">
+
+                                                <div class="custom-file">
+                                                    <input type="file" name="file_ijazah" required class="custom-file-input" id="site-ijazah">
+                                                    <label class="custom-file-label">Choose File</label>
+                                                </div>
+                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
+                                            </div>
+                                        </div>
+                                        <? if (isset($siswa['file_ijazah'])) { ?>
+                                            <div class="form-group row align-items-center">
+                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
+                                                <div class="col-sm-6 col-md-6">
+                                                    <img src="http://localhost:8000/assets/upload/ijazah/<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
+                                                </div>
+                                            </div>
+                                        <? } ?>
+                                        <div class="form-group row align-items-center">
                                             <label class="form-control-label col-sm-3 text-md-right">Kartu Keluarga</label>
                                             <div class="col-sm-6 col-md-9">
 
@@ -92,25 +111,6 @@
                                                 <label class="form-control-label col-sm-3 text-md-right">Preview</label>
                                                 <div class="col-sm-6 col-md-6">
                                                     <img src="http://localhost:8000/assets/upload/akta/<?= $siswa['file_akte'] ?>" class="img-thumbnail" width="50%">
-                                                </div>
-                                            </div>
-                                        <? } ?>
-                                        <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL</label>
-                                            <div class="col-sm-6 col-md-9">
-
-                                                <div class="custom-file">
-                                                    <input type="file" name="file_ijazah" class="custom-file-input" id="site-ijazah">
-                                                    <label class="custom-file-label">Choose File</label>
-                                                </div>
-                                                <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
-                                            </div>
-                                        </div>
-                                        <? if (isset($siswa['file_ijazah'])) { ?>
-                                            <div class="form-group row align-items-center">
-                                                <label class="form-control-label col-sm-3 text-md-right">Preview</label>
-                                                <div class="col-sm-6 col-md-6">
-                                                    <img src="http://localhost:8000/assets/upload/ijazah/<?= $siswa['file_ijazah'] ?>" class="img-thumbnail" width="50%">
                                                 </div>
                                             </div>
                                         <? } ?>
