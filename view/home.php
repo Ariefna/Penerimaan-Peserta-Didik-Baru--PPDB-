@@ -48,6 +48,40 @@
                     <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
+            <div class="col-lg-4">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where alumni = 2")) ?></h3>
+                        <p>Jumlah Jalur Alumni</p>
+                    </div>
+                    <div class="icon">
+                    </div>
+                    <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where alumni = 3")) ?></h3>
+                        <p>Jumlah Jalur Prestasi</p>
+                    </div>
+                    <div class="icon">
+                    </div>
+                    <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="small-box bg-blue">
+                    <div class="inner">
+                        <h3><?= mysqli_num_rows(mysqli_query($koneksi, "select * from siswa where alumni = 1")) ?></h3>
+                        <p>Jumlah Jalur Umum</p>
+                    </div>
+                    <div class="icon">
+                    </div>
+                    <a href="?page=master_peserta" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
             <div class="col-lg-12">
                 <div class="small-box bg-info">
                     <div class="inner">
@@ -58,6 +92,11 @@
                         <!-- <i class="fa fa-users"></i> -->
                     </div>
                     <a href="?ganti_mode=<?= $setting['status_pendaftaran'] == 0 ? "1" : "0" ?>" class="small-box-footer">Ganti Mode <i class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="alert alert-<?= $setting['status_pendaftaran'] == 0 ? "warning" : "success" ?>" role="alert">
+                    PPDB Online masih <?= $setting['status_pendaftaran'] == 0 ? "ditutup" : "dibuka" ?>. Terakhir diubah <?= $setting['date'] ?>.
                 </div>
             </div>
 
@@ -273,7 +312,8 @@
                                         <tr>
                                             <td><?= $no; ?></td>
                                             <td><?= $siswa['nama_sekolah'] == '' ? 'Kosong' : $siswa['nama_sekolah'] ?>
-                                            <span class="badge badge-primary">Prioritas</span></td>
+                                                <span class="badge badge-primary">Prioritas</span>
+                                            </td>
                                             <td><?= $alumni ?></td>
                                             <td><?= $siswa['kota_sekolah'] == '' ? 'Kosong' : $siswa['kota_sekolah'] ?></td>
                                             <td><?= $siswa['jumlah'] ?></td>

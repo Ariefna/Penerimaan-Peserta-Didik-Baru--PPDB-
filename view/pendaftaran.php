@@ -414,8 +414,10 @@
 
                                                             </div>
                                                             <label for="Optional">Optional</label>
+                                                            <label for="Optional">minimize</label>
+                                                            <input type="checkbox" value="false" checked="true" data-toggle="collapse" data-target="#collapseExample">
                                                             <hr>
-                                                            <div class="form-row">
+                                                            <div class="form-row collapse" id="collapseExample">
                                                                 <div class="form-group col-md-6">
                                                                     <div class="input-group">
                                                                         <div class="input-group-prepend">

@@ -1,5 +1,5 @@
 <?php
-$setting = mysqli_fetch_array(mysqli_query($koneksi, "select * from setting where id_setting='1'"));
+$setting = mysqli_fetch_array(mysqli_query($koneksi, "select *, (select date from historypendaftaran order by date desc limit 1) date from setting where id_setting='1'"));
 
 if (!function_exists('base_url')) {
 	function base_url($atRoot = FALSE, $atCore = FALSE, $parse = FALSE)
