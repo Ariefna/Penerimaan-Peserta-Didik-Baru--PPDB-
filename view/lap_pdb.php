@@ -5,10 +5,12 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Laporan Peserta Didik Baru</h4>
+                        <h4 class="float-left">Laporan Peserta Didik Baru</h4>
+                        <a href="?laporan=l_ppdb" target="_blank" class="btn btn-warning float-right">Laporan PPDB Per Jalur</a>
                     </div>
                     <div class="card-body">
                         <div class="table-responsive">
+                            <br>
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                     <tr>

@@ -224,14 +224,27 @@
                                         <i class="fas fa-angle-left right"></i>
                                     </p>
                                 </a>
-                                <ul class="nav nav-treeview">
-                                    <li class="nav-item">
-                                        <a href="?page=lap_pdb" class="nav-link">
-                                            <i class="far fa-circle nav-icon"></i>
-                                            <p>Peserta Didik Baru</p>
-                                        </a>
-                                    </li>
-                                </ul>
+                                <?php if ($_SESSION['level'] == 'admin') { ?>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="?page=lap_pdb" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Peserta Didik Baru</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <?php } ?>
+
+                                <?php if ($_SESSION['level'] == 'kepala') { ?>
+                                    <ul class="nav nav-treeview">
+                                        <li class="nav-item">
+                                            <a href="?page=lap_pdb_kepala" class="nav-link">
+                                                <i class="far fa-circle nav-icon"></i>
+                                                <p>Peserta Didik Baru</p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                <?php } ?>
                             </li>
                         <?php } ?>
                         <?php if ($_SESSION['level'] == 'admin') { ?>
