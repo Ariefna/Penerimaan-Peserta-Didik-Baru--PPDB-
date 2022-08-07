@@ -5,34 +5,94 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4 class="float-left">Laporan Peserta Didik Baru</h4>
-                        <a href="?laporan=l_ppdb" target="_blank" class="btn btn-warning float-right">Laporan PPDB Per Jalur</a>
+                        <h4>Laporan Peserta Didik Baru</h4>
                     </div>
                     <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="card card-danger">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Jenis Kelamin</h3>
 
-                        <div class="col-md-6">
-                            <div class="card card-danger">
-                                <div class="card-header">
-                                    <h3 class="card-title">Donut Chart</h3>
-
-                                    <div class="card-tools">
-                                        <button type="button" class="btn btn-tool" data-card-widget="collapse">
-                                            <i class="fas fa-minus"></i>
-                                        </button>
-                                        <button type="button" class="btn btn-tool" data-card-widget="remove">
-                                            <i class="fas fa-times"></i>
-                                        </button>
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
                                     </div>
+                                    <div class="card-body">
+                                        <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <div class="card-body">
-                                    <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-danger">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Jalur</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="donutChartJalur" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                    <!-- /.card-body -->
                                 </div>
-                                <!-- /.card-body -->
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-success">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Tanggal Daftar</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="chart">
+                                            <canvas id="barChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                        </div>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="card card-danger">
+                                    <div class="card-header">
+                                        <h3 class="card-title">Biaya</h3>
+
+                                        <div class="card-tools">
+                                            <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                                <i class="fas fa-minus"></i>
+                                            </button>
+                                            <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <canvas id="donutChartBiaya" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                    </div>
+                                    <!-- /.card-body -->
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6"></div>
-                        <div class="col-md-6"></div>
+
                     </div>
                 </div>
             </div>
@@ -41,11 +101,24 @@
 </section>
 <script src="plugins/chart.js/Chart.min.js"></script>
 <?php
-$sql2 = "SELECT * FROM siswa";
-$result2 = mysqli_query($conn, $sql2);
-$kelamin = [];
+$sql1 = "SELECT tgl_siswa, count(tgl_siswa) jumlah FROM siswa group by tgl_siswa";
+$result1 = mysqli_query($koneksi, $sql1);
+$tgl_siswa = [];
+$tgl_siswa_jml = [];
+while ($row1 = mysqli_fetch_assoc($result1)) {
+    array_push($tgl_siswa, $row1["tgl_siswa"]);
+    array_push($tgl_siswa_jml, $row1["jumlah"]);
+}
+$sql2 = "SELECT coalesce(sum(case when alumni = 2 then 1 else 0 end),0) as umum, coalesce(sum(case when alumni = 3 then 1 else 0 end),0) as prestasi, coalesce(sum(case when alumni = 2 then 1 else 0 end),0) as alumni, coalesce(sum(case when jk = 'L' then 1 else 0 end),0) as totallaki, coalesce(sum(case when jk = 'P' then 1 else 0 end),0) as totalperempuan, coalesce(sum(case when status_pay = '1' then 1 else 0 end),0) as pay_berhasil, coalesce(sum(case when status_pay = '1' then 0 else 1 end),0) as pay_gagal FROM siswa";
+$result2 = mysqli_query($koneksi, $sql2);
 while ($row2 = mysqli_fetch_assoc($result2)) {
-    array_push($kelamin, $row2["Target"]);
+    $laki = $row2["totallaki"];
+    $perempuan = $row2["totalperempuan"];
+    $umum = $row2["umum"];
+    $prestasi = $row2["prestasi"];
+    $alumni = $row2["alumni"];
+    $pay_berhasil = $row2["pay_berhasil"];
+    $pay_gagal = $row2["pay_gagal"];
 }
 ?>
 <script>
@@ -56,7 +129,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
             'Perempuan',
         ],
         datasets: [{
-            data: [700, 500],
+            data: [<?= $laki ?>, <?= $perempuan ?>],
             backgroundColor: ['#f56954', '#00a65a'],
         }]
     }
@@ -65,6 +138,106 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
         responsive: true,
     }
     new Chart(donutChartCanvas, {
+        type: 'doughnut',
+        data: donutData,
+        options: donutOptions
+    })
+</script>
+<script>
+    var donutChartJalurCanvas = $('#donutChartJalur').get(0).getContext('2d')
+    var donutData = {
+        labels: [
+            'Umum',
+            'Prestasi',
+            'Alumni',
+        ],
+        datasets: [{
+            data: [<?= $umum ?>, <?= $prestasi ?>, <?= $alumni ?>],
+            backgroundColor: ['#f56954', '#00a65a', '#f39c12'],
+        }]
+    }
+    var donutOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+    }
+    new Chart(donutChartJalurCanvas, {
+        type: 'doughnut',
+        data: donutData,
+        options: donutOptions
+    })
+</script>
+<script>
+    //-------------
+    //- BAR CHART -
+    //-------------
+
+    const config = {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        },
+    };
+
+    var data = {
+        labels: [<?php echo '"' . implode('","', $tgl_siswa) . '"' ?>],
+        datasets: [{
+            label: 'My First Dataset',
+            data: [<?php echo '' . implode(',', $tgl_siswa_jml) . '' ?>],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(255, 159, 64, 0.2)',
+                'rgba(255, 205, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(201, 203, 207, 0.2)'
+            ],
+            borderColor: [
+                'rgb(255, 99, 132)',
+                'rgb(255, 159, 64)',
+                'rgb(255, 205, 86)',
+                'rgb(75, 192, 192)',
+                'rgb(54, 162, 235)',
+                'rgb(153, 102, 255)',
+                'rgb(201, 203, 207)'
+            ],
+            borderWidth: 1
+        }]
+    };
+    new Chart(barChart, {
+        type: 'bar',
+        data: data,
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        },
+    })
+</script>
+<script>
+    var donutChartBiayaCanvas = $('#donutChartBiaya').get(0).getContext('2d')
+    var donutData = {
+        labels: [
+            'Lunas',
+            'Belum Lunas',
+        ],
+        datasets: [{
+            data: [<?= $pay_berhasil ?>, <?= $pay_gagal ?>],
+            backgroundColor: ['#00a65a', '#f39c12'],
+        }]
+    }
+    var donutOptions = {
+        maintainAspectRatio: false,
+        responsive: true,
+    }
+    new Chart(donutChartBiayaCanvas, {
         type: 'doughnut',
         data: donutData,
         options: donutOptions
