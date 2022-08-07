@@ -32,20 +32,20 @@ $setting = fetch($koneksi, 'setting', ['id_setting' => 1]);
                 padding-top: 12px;
                 padding-bottom: 12px;
                 text-align: left;
-                background-color: black;
+                background-color: #0070C0;
                 color: white;
             }
+
+            body {
+                -webkit-print-color-adjust: exact;
+                background-color: white !important;
+            }
+
         }
     </style>
 </head>
 
 <body onload="window.print();">
-
-    <!-- <body onload=""> -->
-
-    <!-- <body> -->
-    <?php //$this->load->view('kop_lap'); 
-    ?>
     <table border="0" width="100%">
         <tr>
             <td align="left">

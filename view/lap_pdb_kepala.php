@@ -186,7 +186,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     var data = {
         labels: [<?php echo '"' . implode('","', $tgl_siswa) . '"' ?>],
         datasets: [{
-            label: 'My First Dataset',
+            label: 'Total Pendaftar',
             data: [<?php echo '' . implode(',', $tgl_siswa_jml) . '' ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
