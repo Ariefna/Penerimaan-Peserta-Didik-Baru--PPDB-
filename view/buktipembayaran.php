@@ -71,6 +71,7 @@
                                                     <input type="file" name="file_pembayaran" class="custom-file-input" id="site-file_pembayaran">
                                                     <label class="custom-file-label">Choose File</label>
                                                 </div>
+                                                <div class="form-text text-muted">Wajib di isi</div>
                                                 <div class="form-text text-muted">The image must have a maximum size of 1MB</div>
 
                                             </div>
