@@ -120,6 +120,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     $pay_berhasil = $row2["pay_berhasil"];
     $pay_gagal = $row2["pay_gagal"];
 }
+$total_pay = $pay_berhasil + $pay_gagal;
+$total_jalur = $umum + $prestasi + $alumni;
 ?>
 <script>
     var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
@@ -147,9 +149,9 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     var donutChartJalurCanvas = $('#donutChartJalur').get(0).getContext('2d')
     var donutData = {
         labels: [
-            'Umum',
-            'Prestasi',
-            'Alumni',
+            'Umum <?= ($umum / $total_jalur) * 100 ?>%',
+            'Prestasi <?= ($prestasi / $total_jalur) * 100 ?>%',
+            'Alumni <?= ($alumni / $total_jalur) * 100 ?>%',
         ],
         datasets: [{
             data: [<?= $umum ?>, <?= $prestasi ?>, <?= $alumni ?>],
@@ -186,7 +188,7 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     var data = {
         labels: [<?php echo '"' . implode('","', $tgl_siswa) . '"' ?>],
         datasets: [{
-            label: 'Total Pendaftar',
+            label: 'Total Pendaftar 100%',
             data: [<?php echo '' . implode(',', $tgl_siswa_jml) . '' ?>],
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
@@ -225,8 +227,8 @@ while ($row2 = mysqli_fetch_assoc($result2)) {
     var donutChartBiayaCanvas = $('#donutChartBiaya').get(0).getContext('2d')
     var donutData = {
         labels: [
-            'Lunas',
-            'Belum Lunas',
+            'Lunas <?= ($pay_berhasil / $total_pay) * 100 ?>%',
+            'Belum Lunas <?= ($pay_gagal / $total_pay) * 100 ?>%',
         ],
         datasets: [{
             data: [<?= $pay_berhasil ?>, <?= $pay_gagal ?>],
