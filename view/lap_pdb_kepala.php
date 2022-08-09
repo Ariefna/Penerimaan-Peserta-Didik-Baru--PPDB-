@@ -10,7 +10,7 @@
                     <div class="card-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <div class="card card-danger">
+                                <div class="card card-primary">
                                     <div class="card-header">
                                         <h3 class="card-title">Jenis Kelamin</h3>
 
@@ -30,7 +30,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card card-danger">
+                                <div class="card card-primary">
                                     <div class="card-header">
                                         <h3 class="card-title">Jalur</h3>
 
@@ -50,7 +50,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card card-success">
+                                <div class="card card-primary">
                                     <div class="card-header">
                                         <h3 class="card-title">Tanggal Daftar</h3>
 
@@ -72,7 +72,7 @@
                                 </div>
                             </div>
                             <div class="col-md-6">
-                                <div class="card card-danger">
+                                <div class="card card-primary">
                                     <div class="card-header">
                                         <h3 class="card-title">Biaya</h3>
 
@@ -132,7 +132,7 @@ $total_jalur = $umum + $prestasi + $alumni;
         ],
         datasets: [{
             data: [<?= $laki ?>, <?= $perempuan ?>],
-            backgroundColor: ['#f56954', '#00a65a'],
+            backgroundColor: ['#eb4034', '#3287a8'],
         }]
     }
     var donutOptions = {
@@ -155,7 +155,7 @@ $total_jalur = $umum + $prestasi + $alumni;
         ],
         datasets: [{
             data: [<?= $umum ?>, <?= $prestasi ?>, <?= $alumni ?>],
-            backgroundColor: ['#f56954', '#00a65a', '#f39c12'],
+            backgroundColor: ['#eb4034', '#34ebcc', '#3287a8'],
         }]
     }
     var donutOptions = {
@@ -232,7 +232,7 @@ $total_jalur = $umum + $prestasi + $alumni;
         ],
         datasets: [{
             data: [<?= $pay_berhasil ?>, <?= $pay_gagal ?>],
-            backgroundColor: ['#00a65a', '#f39c12'],
+            backgroundColor: ['#eb4034', '#3287a8'],
         }]
     }
     var donutOptions = {

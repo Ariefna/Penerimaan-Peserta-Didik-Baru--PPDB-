@@ -59,7 +59,7 @@
                                 <div class="card" id="berkas-card">
                                     <div class="card-body">
                                         <div class="form-group row align-items-center">
-                                            <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL *</label>
+                                            <label class="form-control-label col-sm-3 text-md-right">Ijazah/SKL *Wajib Diisi</label>
                                             <div class="col-sm-6 col-md-9">
 
                                                 <div class="custom-file">

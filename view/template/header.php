@@ -54,7 +54,7 @@
     <div class="wrapper">
         <!-- Preloader -->
         <div class="preloader flex-column justify-content-center align-items-center">
-            <img class="animation__shake" src="dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60" />
+            <img class="animation__shake" src="dist/img/waha1.png" alt="TUNGGU" height="60" width="60" />
         </div>
 
         <!-- Navbar -->
@@ -88,11 +88,11 @@
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
-                        <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image" />
+                        <img src="dist/img/profile.png" class="img-circle elevation-2" alt="User Image" />
                     </div>
                     <div class="info">
                         <a href="#" class="d-block"><?= $_SESSION['nama']; ?></a>
-                        <span class="badge badge-success">
+                        <span class="badge badge-primary">
                             <?php echo $_SESSION['level']; ?>
                         </span>
                     </div>

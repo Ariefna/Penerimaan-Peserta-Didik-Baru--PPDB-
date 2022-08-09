@@ -9,6 +9,8 @@ if (isset($_GET['page'])) {
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="icon" type="image/png" href="http://localhost:8000/<?= $setting['logo'] ?>" />
     <title><?php echo $setting['nama_sekolah']; ?> | Log in</title>
 
     <!-- Google Font: Source Sans Pro -->
@@ -118,7 +120,7 @@ if (isset($_GET['page'])) {
                             <input type="text" name="nama" class="form-control" required="">
                         </div>
                         <div class="form-group">
-                            <label>Alumni</label>
+                            <label>Jalur</label>
                             <select class='form-control' name='alumni' onchange="getComboA(this)">
                                 <option value='1'>- Umum -</option>
                                 <option value='2'>- Alumni -</option>
