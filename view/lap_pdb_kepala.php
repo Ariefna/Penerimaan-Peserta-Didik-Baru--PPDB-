@@ -127,8 +127,8 @@ $total_jalur = $umum + $prestasi + $alumni;
     var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
     var donutData = {
         labels: [
-            'Laki Laki',
-            'Perempuan',
+            'Laki Laki <?= $laki ?> Orang',
+            'Perempuan <?= $perempuan ?> Orang',
         ],
         datasets: [{
             data: [<?= $laki ?>, <?= $perempuan ?>],
@@ -149,9 +149,9 @@ $total_jalur = $umum + $prestasi + $alumni;
     var donutChartJalurCanvas = $('#donutChartJalur').get(0).getContext('2d')
     var donutData = {
         labels: [
-            'Umum <?= ($umum / $total_jalur) * 100 ?>%',
-            'Prestasi <?= ($prestasi / $total_jalur) * 100 ?>%',
-            'Alumni <?= ($alumni / $total_jalur) * 100 ?>%',
+            'Umum <?= ($umum / $total_jalur) * 100 ?>% <?= $umum ?> Orang',
+            'Prestasi <?= ($prestasi / $total_jalur) * 100 ?>%  <?= $prestasi ?> Orang',
+            'Alumni <?= ($alumni / $total_jalur) * 100 ?>%  <?= $alumni ?> Orang',
         ],
         datasets: [{
             data: [<?= $umum ?>, <?= $prestasi ?>, <?= $alumni ?>],
@@ -227,8 +227,8 @@ $total_jalur = $umum + $prestasi + $alumni;
     var donutChartBiayaCanvas = $('#donutChartBiaya').get(0).getContext('2d')
     var donutData = {
         labels: [
-            'Lunas <?= ($pay_berhasil / $total_pay) * 100 ?>%',
-            'Belum Lunas <?= ($pay_gagal / $total_pay) * 100 ?>%',
+            '<?= $pay_berhasil ?> Lunas <?= ($pay_berhasil / $total_pay) * 100 ?>%',
+            '<?= $pay_gagal ?> Belum Lunas <?= ($pay_gagal / $total_pay) * 100 ?>%',
         ],
         datasets: [{
             data: [<?= $pay_berhasil ?>, <?= $pay_gagal ?>],
